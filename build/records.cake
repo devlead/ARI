@@ -54,9 +54,10 @@ public record BuildData(
                                                             System.Environment.GetEnvironmentVariable("AZURE_AUTHORITY_HOST")
                                                         );
 
-    public string AzureTenantId { get; } = System.Environment.GetEnvironmentVariable("AZURE_CONTAINER_REGISTRY");
+    public string AzureTenantId { get; } = System.Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
+    public string AzureDomain { get; } = System.Environment.GetEnvironmentVariable("AZURE_DOMAIN");
 
-    public bool ShouldRunIntegrationTests() =>  !string.IsNullOrWhiteSpace(AzureTenantId) &&
+    public bool ShouldRunIntegrationTests() =>  !string.IsNullOrWhiteSpace(AzureDomain) &&
                                                 (
                                                     AzureCredentials.AzureCredentialsSpecified ||
                                                     IsLocalBuild

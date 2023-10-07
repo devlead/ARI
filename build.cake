@@ -190,10 +190,10 @@ Task("Clean")
     .WithCriteria<BuildData>((context, data) => data.ShouldRunIntegrationTests(), "ShouldRunIntegrationTests")
     .Does<BuildData>(
          async (context, data) => {
-            var resultPath = data.IntegrationTestPath.Combine(data.AzureTenantId);
+            var resultPath = data.IntegrationTestPath.Combine(data.AzureDomain);
             await GitHubActions.Commands.UploadArtifact(
                 resultPath,
-                data.AzureTenantId
+                data.AzureDomain
             );
             GitHubActions.Commands.SetStepSummary(
                 string.Join(
