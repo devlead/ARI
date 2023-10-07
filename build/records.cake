@@ -55,8 +55,9 @@ public record BuildData(
                                                         );
 
     public string AzureTenantId { get; } = System.Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
+    public string AzureDomain { get; } = System.Environment.GetEnvironmentVariable("AZURE_DOMAIN");
 
-    public bool ShouldRunIntegrationTests() =>  !string.IsNullOrWhiteSpace(AzureTenantId) &&
+    public bool ShouldRunIntegrationTests() =>  !string.IsNullOrWhiteSpace(AzureDomain) &&
                                                 (
                                                     AzureCredentials.AzureCredentialsSpecified ||
                                                     IsLocalBuild
