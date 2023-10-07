@@ -1,0 +1,49 @@
+﻿[
+  {
+    Id: /subscriptions/72ac930a-f34e-42d8-b06d-dc2a9e12ed71,
+    SubscriptionId: Guid_1,
+    TenantId: Guid_2,
+    DisplayName: Example Subscription2,
+    State: Enabled,
+    SubscriptionPolicies: {
+      LocationPlacementId: Internal_2014-09-01,
+      QuotaId: Internal_2014-09-01,
+      SpendingLimit: Off
+    },
+    AuthorizationSource: RoleBased,
+    ManagedByTenants: [
+      {
+        TenantId: Guid_3
+      },
+      {
+        TenantId: Guid_4
+      }
+    ],
+    Tags: {
+      tagKey1: tagValue1,
+      tagKey2: tagValue2
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05,
+    SubscriptionId: Guid_5,
+    TenantId: Guid_2,
+    DisplayName: Example Subscription,
+    State: Enabled,
+    SubscriptionPolicies: {
+      LocationPlacementId: Internal_2014-09-01,
+      QuotaId: Internal_2014-09-01,
+      SpendingLimit: Off
+    },
+    AuthorizationSource: RoleBased,
+    ManagedByTenants: [
+      {
+        TenantId: Guid_3
+      }
+    ],
+    Tags: {
+      tagKey1: tagValue1,
+      tagKey2: tagValue2
+    }
+  }
+]

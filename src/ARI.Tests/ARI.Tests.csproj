@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\GraphOrg.json" />
+    <None Remove="Resources\Subscriptions.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GraphOrg.json" />
+    <EmbeddedResource Include="Resources\Subscriptions.json" />
+    <EmbeddedResource Include="Resources\TenantsServicePrinciple.json" />
+    <EmbeddedResource Include="Resources\TenantsUser.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="System.Text" />
+    <Using Include="NSubstitute" />
+    <Using Include="Microsoft.Extensions.Logging" />
+    <Using Include="Microsoft.Extensions.DependencyInjection" />
+    <Using Include="Cake.Testing" />
+    <Using Include="ARI.Tests.Fixture" />
+    <Using Include="ARI.Tests.Extensions" />
+    <Using Include="ARI.Services" />
+    <Using Include="ARI.Services.ARM" />
+    <Using Include="ARI.Extensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.8.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Verify.NUnit" Version="22.1.1" />
+    <PackageReference Include="Verify.Http" Version="4.3.2" />
+    <PackageReference Include="Cake.Testing" Version="3.1.0" />
+    <PackageReference Include="NSubstitute" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ARI\ARI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+</Project>

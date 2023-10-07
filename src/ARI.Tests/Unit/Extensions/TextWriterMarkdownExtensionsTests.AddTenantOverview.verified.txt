@@ -1,0 +1,10 @@
+﻿# Overview
+
+|                                     |                                                                                                 |
+|-------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Name**                            | `DisplayName`                                                                                   |
+| **Id**                              | `Id`                                                                                            |
+| **Tenant Id**                       | `TenantId`                                                                                      |
+| **Country code**                    | `CountryCode`                                                                                   |
+| **Default domain**                  | `DefaultDomain`                                                                                 |
+| **Domains**                         | `Domain1<br>Domain2`                                                                            |

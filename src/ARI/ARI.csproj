@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameWork Condition="$(TargetFrameworks) == ''">net7.0</TargetFrameWork>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PackageIcon>icon/ari.png</PackageIcon>
+    <PackAsTool>true</PackAsTool>
+    <PackageId>ARI</PackageId>
+    <ToolCommandName>ari</ToolCommandName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Using Include="System.Globalization" />
+    <Using Include="System.Text" />
+    <Using Include="System.Text.Json" />
+    <Using Include="System.Text.Json.Serialization" />
+    <Using Include="Microsoft.Extensions.Logging" />
+    <Using Include="Microsoft.Extensions.DependencyInjection" />
+    <Using Include="ARI.Commands.Validation" />
+    <Using Include="ARI.Commands.Settings" />
+    <Using Include="ARI.Models" />
+    <Using Include="ARI.Models.Graph" />
+    <Using Include="ARI.Models.Tenant" />
+    <Using Include="ARI.Models.Tenant.Subscription" />
+    <Using Include="ARI.Extensions" />
+    <Using Include="ARI.Services" />
+    <Using Include="ARI.Services.ARM" />
+    <Using Include="Spectre.Console" />
+    <Using Include="Spectre.Console.Cli" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.10.1" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
+    <PackageReference Include="System.Linq.Async" Version="6.0.1" />
+    <PackageReference Include="Cake.Bridge.DependencyInjection" Version="0.15.0" />
+    <PackageReference Include="Cake.Common" Version="3.1.0" />
+    <PackageReference Include="Spectre.Console.Cli.Extensions.DependencyInjection" Version="0.1.0" />
+    <PackageReference Include="Spectre.Console" Version="0.47.0" />
+    <PackageReference Include="Spectre.Console.Cli" Version="0.47.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+     <None Include="../../icon/LICENSE.md" Pack="true" PackagePath="icon" />
+     <None Include="../../icon/ari.png" Pack="true" PackagePath="icon" />
+  </ItemGroup>
+
+</Project>
