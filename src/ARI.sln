@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARI", "ARI\ARI.csproj", "{A3F1983B-E12E-4F0E-898D-ACF8C5071BC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARI.Tests", "ARI.Tests\ARI.Tests.csproj", "{0302D2CC-CCC1-4EC5-B40B-DDA04C69BE4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARI.TestWeb", "ARI.TestWeb\ARI.TestWeb.csproj", "{268159B3-618B-41C1-9DBD-7ADB040833C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3F1983B-E12E-4F0E-898D-ACF8C5071BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F1983B-E12E-4F0E-898D-ACF8C5071BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F1983B-E12E-4F0E-898D-ACF8C5071BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F1983B-E12E-4F0E-898D-ACF8C5071BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0302D2CC-CCC1-4EC5-B40B-DDA04C69BE4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0302D2CC-CCC1-4EC5-B40B-DDA04C69BE4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0302D2CC-CCC1-4EC5-B40B-DDA04C69BE4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0302D2CC-CCC1-4EC5-B40B-DDA04C69BE4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{268159B3-618B-41C1-9DBD-7ADB040833C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{268159B3-618B-41C1-9DBD-7ADB040833C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{268159B3-618B-41C1-9DBD-7ADB040833C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{268159B3-618B-41C1-9DBD-7ADB040833C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

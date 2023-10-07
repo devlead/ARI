@@ -1,0 +1,17 @@
+{
+  "value": [
+    {
+      "id": "/tenants/a70a1586-9c4a-4373-b907-1d310660dbd1",
+      "tenantId": "a70a1586-9c4a-4373-b907-1d310660dbd1"
+    },
+    {
+      "id": "/tenants/83abe5cd-bcc3-441a-bd86-e6a75360cecc",
+      "tenantId": "83abe5cd-bcc3-441a-bd86-e6a75360cecc"
+    },
+    {
+      "id": "/tenants/daea2e9b-847b-4c93-850d-2aa6f2d7af33",
+      "tenantId": "daea2e9b-847b-4c93-850d-2aa6f2d7af33"
+    }
+  ],
+  "nextLink": "..."
+}

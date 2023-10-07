@@ -1,0 +1,19 @@
+﻿{
+  DisplayName: TEST_TEST_RDV,
+  CountryLetterCode: US,
+  TenantType: AAD,
+  VerifiedDomains: [
+    {
+      IsDefault: true,
+      Name: rdvmohoro.mail.ccsctp.net
+    },
+    {
+      IsDefault: false,
+      Name: rdvmohoro.ccsctp.net
+    },
+    {
+      IsDefault: false,
+      Name: rdvmohoro.com
+    }
+  ]
+}
