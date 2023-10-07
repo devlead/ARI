@@ -23,16 +23,18 @@ public class TestCaseGenericAttribute : TestCaseAttribute, ITestBuilder
 
     public Type[] TypeArguments { get; set; }
 
+#pragma warning disable CS8769 // Nullability of reference types in type of parameter doesn't match implemented member (possibly because of nullability attributes).
     IEnumerable<TestMethod> ITestBuilder.BuildFrom(IMethodInfo method, Test suite)
+#pragma warning restore CS8769 // Nullability of reference types in type of parameter doesn't match implemented member (possibly because of nullability attributes).
     {
         if (!method.IsGenericMethodDefinition)
             return base.BuildFrom(method, suite);
 
         if (TypeArguments == null || TypeArguments.Length != method.GetGenericArguments().Length)
         {
-            var parms = new TestCaseParameters { RunState = RunState.NotRunnable };
-            parms.Properties.Set(PropertyNames.SkipReason, $"{nameof(TypeArguments)} should have {method.GetGenericArguments().Length} elements");
-            return new[] { new NUnitTestCaseBuilder().BuildTestMethod(method, suite, parms) };
+            var @params = new TestCaseParameters { RunState = RunState.NotRunnable };
+            @params.Properties.Set(PropertyNames.SkipReason, $"{nameof(TypeArguments)} should have {method.GetGenericArguments().Length} elements");
+            return new[] { new NUnitTestCaseBuilder().BuildTestMethod(method, suite, @params) };
         }
 
         var genMethod = method.MakeGenericMethod(TypeArguments);
