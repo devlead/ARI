@@ -54,7 +54,7 @@ public record BuildData(
                                                             System.Environment.GetEnvironmentVariable("AZURE_AUTHORITY_HOST")
                                                         );
 
-    public string AzureTenantId { get; } = System.Environment.GetEnvironmentVariable("AZURE_CONTAINER_REGISTRY");
+    public string AzureTenantId { get; } = System.Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
 
     public bool ShouldRunIntegrationTests() =>  !string.IsNullOrWhiteSpace(AzureTenantId) &&
                                                 (
