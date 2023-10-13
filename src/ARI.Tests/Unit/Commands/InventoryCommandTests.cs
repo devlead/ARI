@@ -26,8 +26,9 @@ public class InventoryCommandTests
             cakeContext,
             logger,
             tenantService,
-            subscriptionService
-            ) = ARIServiceProviderFixture.GetRequiredService<ICakeContext, ILogger<InventoryCommand>, TenantService, SubscriptionService>(
+            subscriptionService,
+            resourceGroupService
+            ) = ARIServiceProviderFixture.GetRequiredService<ICakeContext, ILogger<InventoryCommand>, TenantService, SubscriptionService, ResourceGroupService>(
                 services => services
                                 .AddCakeFakes(
                                     fileSystem => fileSystem.CreateDirectory(settings.OutputPath)
@@ -38,7 +39,8 @@ public class InventoryCommandTests
             cakeContext,
             logger,
             tenantService,
-            subscriptionService
+            subscriptionService,
+            resourceGroupService
             );
 
         // When

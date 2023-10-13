@@ -25,6 +25,7 @@
     <Using Include="ARI.Models.Graph" />
     <Using Include="ARI.Models.Tenant" />
     <Using Include="ARI.Models.Tenant.Subscription" />
+    <Using Include="ARI.Models.Tenant.Subscription.ResourceGroup" />
     <Using Include="ARI.Extensions" />
     <Using Include="ARI.Services" />
     <Using Include="ARI.Services.ARM" />

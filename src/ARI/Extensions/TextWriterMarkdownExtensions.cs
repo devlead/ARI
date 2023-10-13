@@ -1,4 +1,6 @@
-﻿namespace ARI.Extensions;
+﻿using ARI.Models.Tenant.Subscription.ResourceGroup;
+
+namespace ARI.Extensions;
 
 public static  class TextWriterMarkdownExtensions
 {
@@ -66,5 +68,57 @@ public static  class TextWriterMarkdownExtensions
                     """
                 )
             );
+    }
+
+    public static async Task AddResourceGroupOverview(
+        this TextWriter writer,
+        ResourceGroup resourceGroup
+        )
+    {
+        await writer.WriteLineAsync(
+            FormattableString.Invariant(
+                    $$"""
+                    # Overview
+                   
+                    |                                     |                                                                                                 |
+                    |-------------------------------------|-------------------------------------------------------------------------------------------------|
+                    | **Name**                            | {{resourceGroup.Name.CodeLine(),-DescriptionColumnWidth}} |
+                    | **Id**                              | {{resourceGroup.Id.CodeLine(),-DescriptionColumnWidth}} |
+                    | **Location**                        | {{resourceGroup.Location.CodeLine(),-DescriptionColumnWidth}} |
+                    """
+                )
+            );
+    }
+
+    public static async Task AddTags(
+        this TextWriter writer,
+        Dictionary<string, string> tags
+        )
+    {
+        await writer.WriteLineAsync(
+           FormattableString.Invariant(
+                   $$"""
+
+                   ## Tags
+                   
+                   | Tag                                 | Value                                                                                           |
+                   |-------------------------------------|-------------------------------------------------------------------------------------------------|
+                   """
+               )
+           );
+
+        if (tags == null )
+        {
+            return;
+        }
+
+        foreach ( var (key, value) in tags )
+        {
+            await writer.WriteLineAsync(
+                FormattableString.Invariant(
+                    $"| {key.Bold(),-NameColumnWidth} | {value.CodeLine(),-DescriptionColumnWidth} |"
+                )
+            );
+        }
     }
 }

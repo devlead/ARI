@@ -13,11 +13,10 @@ public record SubscriptionService(
             );
 
         ArgumentNullException.ThrowIfNull(subscriptions.Value);
-
+ 
         return subscriptions
                 .Value
-                .Where(subscription => subscription.TenantId == tenantId)
-                .OrderByDescending(subscription => subscription.DisplayName, StringComparer.OrdinalIgnoreCase)
+                .Index(subscription => subscription.TenantId == tenantId)
                 .ToArray();
     }
 }

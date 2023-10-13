@@ -16,10 +16,8 @@ public record Subscription(
     [property:JsonPropertyName("authorizationSource")]
     string AuthorizationSource,
     [property:JsonPropertyName("managedByTenants")]
-    ManagedByTenant[] ManagedByTenants,
-    [property:JsonPropertyName("tags")]
-    Dictionary<string, string> Tags
-)
+    ManagedByTenant[] ManagedByTenants
+) : AzureResourceBase
 {
-    public int Order { get; } = 0;
+    public override string Description => DisplayName;
 }

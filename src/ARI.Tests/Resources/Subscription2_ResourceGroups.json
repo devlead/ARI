@@ -1,0 +1,19 @@
+{
+  "value": [
+    {
+      "id": "/subscriptions/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/resourceGroups/common-dev",
+      "name": "common-dev",
+      "type": "Microsoft.Resources/resourceGroups",
+      "location": "westeurope",
+      "tags": {
+        "Creator": "Bicep-common",
+        "Dimension": "common",
+        "BillingDimension": "common",
+        "Environment": "dev"
+      },
+      "properties": {
+        "provisioningState": "Succeeded"
+      }
+    }
+  ]
+}

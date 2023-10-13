@@ -1,5 +1,3 @@
-using ARI.Extensions;
-using ARI.Services.ARM;
 using Cake.Common.IO;
 
 namespace ARI.Commands;
@@ -10,6 +8,7 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
     private ILogger Logger { get; }
     private TenantService TenantService { get; }
     private SubscriptionService SubscriptionService { get; }
+    private ResourceGroupService ResourceGroupService { get; }
 
     public override async Task<int> ExecuteAsync(CommandContext context, InventorySettings settings)
     {
@@ -26,15 +25,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
         CakeContext.CleanDirectory(targetPath);
         Logger.LogInformation("Done cleaning directory {TargetPath}.", targetPath);
 
-        using var stream = CakeContext
-                          .FileSystem
-                          .GetFile(targetPath.CombineWithFilePath("index.md"))
-                          .OpenWrite();
-
-        using var writer = new StreamWriter(
-            stream,
-            System.Text.Encoding.UTF8
-        );
+        using var writer = CakeContext
+                          .OpenIndexWrite(targetPath);
 
         await writer.AddFrontmatter(
             modified,
@@ -53,17 +45,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
             {
                 var subscriptionPath = targetPath.Combine(subscription.SubscriptionId);
 
-                CakeContext.EnsureDirectoryExists(subscriptionPath);
-
-                using var stream = CakeContext
-                          .FileSystem
-                          .GetFile(subscriptionPath.CombineWithFilePath("index.md"))
-                          .OpenWrite();
-
-                using var writer = new StreamWriter(
-                    stream,
-                    Encoding.UTF8
-                );
+                using var writer = CakeContext
+                                    .OpenIndexWrite(subscriptionPath);
 
                 await writer.AddFrontmatter(
                     modified,
@@ -72,6 +55,36 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                     );
 
                 await writer.AddSubscriptionOverview(subscription);
+
+                await writer.AddTags(subscription.Tags);
+
+                var resourceGroups = await ResourceGroupService.GetResourceGroups(
+                    subscription.TenantId,
+                    subscription.SubscriptionId
+                    );
+
+                await Parallel.ForEachAsync(
+                    resourceGroups,
+                    async (resourceGroup, ct) =>
+                    {
+                        var resourceGroupPath = targetPath
+                                                    .Combine(subscription.SubscriptionId)
+                                                    .Combine(resourceGroup.Name);
+
+                        using var writer = CakeContext
+                                            .OpenIndexWrite(resourceGroupPath);
+
+                        await writer.AddFrontmatter(
+                            modified,
+                            $"Resource {resourceGroup.Name} ({subscription.SubscriptionId})",
+                            resourceGroup.Order
+                            );
+
+                        await writer.AddResourceGroupOverview(resourceGroup);
+
+                        await writer.AddTags(resourceGroup.Tags);
+                    }
+                    );
             }
         );
 
@@ -85,12 +98,14 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
         ICakeContext cakeContext,
         ILogger<InventoryCommand> logger,
         TenantService tenantService,
-        SubscriptionService subscriptionService
+        SubscriptionService subscriptionService,
+        ResourceGroupService resourceGroupService
         )
     {
         CakeContext = cakeContext;
         Logger = logger;
         TenantService = tenantService;
         SubscriptionService = subscriptionService;
+        ResourceGroupService = resourceGroupService;
     }
 }

@@ -9,13 +9,17 @@
 
   <ItemGroup>
     <None Remove="Resources\GraphOrg.json" />
+    <None Remove="Resources\Subscription1_ResourceGroups.json" />
+    <None Remove="Resources\Subscription2_ResourceGroups.json" />
     <None Remove="Resources\Subscriptions.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\GraphOrg.json" />
+    <EmbeddedResource Include="Resources\Subscription2_ResourceGroups.json" />
     <EmbeddedResource Include="Resources\Subscriptions.json" />
     <EmbeddedResource Include="Resources\TenantsServicePrinciple.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroups.json" />
     <EmbeddedResource Include="Resources\TenantsUser.json" />
   </ItemGroup>
 

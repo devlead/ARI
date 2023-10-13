@@ -33,4 +33,14 @@ public class StringMarkdownExtensionsTests
         // Then
         await Verify(result);
     }
+
+    [TestCase("Bold")]
+    public async Task Bold(string value)
+    {
+        // Given / When
+        var result = value.Bold();
+
+        // Then
+        await Verify(result);
+    }
 }

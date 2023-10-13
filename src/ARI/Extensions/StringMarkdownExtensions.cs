@@ -10,4 +10,7 @@ public static class StringMarkdownExtensions
 
     public static string? SingleLine(this string? value)
         => value?.NormalizeLineEndings().ReplaceLineEndings("<br>");
+
+    public static string Bold(this string? value)
+        => $"**{value.SingleLine()}**";
 }
