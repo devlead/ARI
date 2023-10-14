@@ -1,5 +1,6 @@
 ﻿using ARI.Models.Tenant;
 using ARI.Models.Tenant.Subscription;
+using ARI.Models.Tenant.Subscription.ResourceGroup;
 
 namespace ARI.Tests.Unit.Extensions;
 
@@ -69,17 +70,56 @@ public class TextWriterMarkdownExtensionsTests
                                         "SpendingLimit"
                                     ),
                                 "AuthorizationSource",
-                                Array.Empty<ManagedByTenant>(),
-                                new Dictionary<string, string>
-                                {
-                                    { "Tag1", "Value1" },
-                                    { "Tag2", "Value2" }
-                                }
+                                Array.Empty<ManagedByTenant>()
                             );
 
         // When
         await sw.AddSubscriptionOverview(
             subscription
+            );
+
+        // Then
+        await Verify(sw);
+    }
+
+    [Test]
+    public async Task AddTags()
+    {
+        // Given
+        var sw = new StringWriter();
+        var tags = new Dictionary<string, string>
+                                {
+                                    { "Tag1", "Value1" },
+                                    { "Tag2", "Value2" }
+                                };
+
+        // When
+        await sw.AddTags(tags);
+
+        // Then
+        await Verify(sw);
+    }
+
+    [Test]
+    public async Task AddResourceGroupOverview()
+    {
+        // Given
+        var sw = new StringWriter();
+        var resourceGroup = new ResourceGroup(
+                                "Id",
+                                "Location",
+                                "ManagedBy",
+                                "Name",
+                                new Dictionary<string, string>
+                                {
+                                    { "provisioningState", "Succeeded" }
+                                },
+                                "Type"
+                            );
+
+        // When
+        await sw.AddResourceGroupOverview(
+            resourceGroup
             );
 
         // Then

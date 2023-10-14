@@ -1,0 +1,49 @@
+{
+  "value": [
+    {
+      "id": "/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev",
+      "name": "lab-dev",
+      "type": "Microsoft.Resources/resourceGroups",
+      "location": "westeurope",
+      "tags": {
+        "Creator": "Bicep-lab",
+        "Dimension": "lab",
+        "BillingDimension": "lab",
+        "Environment": "dev"
+      },
+      "properties": {
+        "provisioningState": "Succeeded"
+      }
+    },
+    {
+      "id": "/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-stg",
+      "name": "lab-stg",
+      "type": "Microsoft.Resources/resourceGroups",
+      "location": "westeurope",
+      "tags": {
+        "Creator": "Bicep-lab",
+        "Dimension": "lab",
+        "BillingDimension": "lab",
+        "Environment": "stg"
+      },
+      "properties": {
+        "provisioningState": "Succeeded"
+      }
+    },
+    {
+      "id": "/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd",
+      "name": "lab-prd",
+      "type": "Microsoft.Resources/resourceGroups",
+      "location": "westeurope",
+      "tags": {
+        "Creator": "Bicep-lab",
+        "Dimension": "lab",
+        "BillingDimension": "lab",
+        "Environment": "prd"
+      },
+      "properties": {
+        "provisioningState": "Succeeded"
+      }
+    }
+  ]
+}

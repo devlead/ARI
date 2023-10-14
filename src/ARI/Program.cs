@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Spectre.Console.Cli.Extensions.DependencyInjection;
 using Azure.Core;
 using Azure.Identity;
-using ARI.Services.ARM;
 
 var serviceCollection = new ServiceCollection()
     .AddCakeCore()
@@ -43,7 +42,8 @@ var serviceCollection = new ServiceCollection()
     .AddSingleton<InventoryCommand>()
     .AddSingleton<TokenService>()
     .AddSingleton<TenantService>()
-    .AddSingleton<SubscriptionService>();
+    .AddSingleton<SubscriptionService>()
+    .AddSingleton<ResourceGroupService>();
 
 serviceCollection.AddHttpClient();
 

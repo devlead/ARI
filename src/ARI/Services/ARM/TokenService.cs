@@ -55,13 +55,13 @@ public record TokenService(
     }
 
     public async Task<T> ARMHttpClientGetAsync<T>(
-        string tentantId,
+        string tenantId,
         string url,
         string? accept = "application/json"
         )
     {
         using var repoHttpClient = GetBearerTokenHttpClient(
-            await GetAzureToken(tentantId),
+            await GetAzureToken(tenantId),
             accept,
             null
             );
@@ -69,13 +69,13 @@ public record TokenService(
         return await GetFromJsonAsync<T>(repoHttpClient, url);
     }
     public async Task<T> GraphHttpClientGetAsync<T>(
-       string tentantId,
+       string tenantId,
        string url,
        string? accept = "application/json"
        )
     {
         using var repoHttpClient = GetBearerTokenHttpClient(
-            await GetGraphToken(tentantId),
+            await GetGraphToken(tenantId),
             accept,
             null
             );

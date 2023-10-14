@@ -12,5 +12,6 @@
       Id: /tenants/daea2e9b-847b-4c93-850d-2aa6f2d7af33,
       TenantId: Guid_3
     }
-  ]
+  ],
+  NextLink: ...
 }

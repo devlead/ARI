@@ -70,6 +70,24 @@ public static class IServiceCollectionExtensions
                                     Constants.MediaType.Json
                                 )
         };
+        static HttpResponseMessage GetMockSubscription1ResourceGroupsResponse()
+        => new()
+        {
+            Content = new StringContent(
+                                    Constants.Response.Json.Subscription1.ResourceGroups,
+                                    Encoding.UTF8,
+                                    Constants.MediaType.Json
+                                )
+        };
+        static HttpResponseMessage GetMockSubscription2ResourceGroupsResponse()
+        => new()
+        {
+            Content = new StringContent(
+                                    Constants.Response.Json.Subscription2.ResourceGroups,
+                                    Encoding.UTF8,
+                                    Constants.MediaType.Json
+                                )
+        };
 
         static MockHttpClient CreateClient()
             => new (
@@ -89,6 +107,16 @@ public static class IServiceCollectionExtensions
                             Method.Method: Constants.Request.Method.Get,
                             RequestUri.AbsoluteUri: Constants.Request.Uri.Subscriptions
                         } => GetMockSubscriptionsResponse(),
+
+                        {
+                            Method.Method: Constants.Request.Method.Get,
+                            RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription1.ResourceGroups
+                        } => GetMockSubscription1ResourceGroupsResponse(),
+
+                        {
+                            Method.Method: Constants.Request.Method.Get,
+                            RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription2.ResourceGroups
+                        } => GetMockSubscription2ResourceGroupsResponse(),
 
                         _ => new HttpResponseMessage
                         {
