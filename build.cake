@@ -180,7 +180,8 @@ Task("Clean")
                                                         .Append("ARI")
                                                         .Append("inventory")
                                                         .AppendQuotedSecret(data.AzureTenantId)
-                                                        .AppendQuoted(data.IntegrationTestPath.FullPath),
+                                                        .AppendQuoted(data.IntegrationTestPath.FullPath)
+                                                        .Append("--skip-tenant-overview"),
                     WorkingDirectory = data.IntegrationTestPath
                 }
             )
@@ -190,7 +191,7 @@ Task("Clean")
     .WithCriteria<BuildData>((context, data) => data.ShouldRunIntegrationTests(), "ShouldRunIntegrationTests")
     .Does<BuildData>(
          async (context, data) => {
-            var resultPath = data.IntegrationTestPath.Combine(data.AzureDomain);
+            var resultPath = data.IntegrationTestPath;
             await GitHubActions.Commands.UploadArtifact(
                 resultPath,
                 data.AzureDomain

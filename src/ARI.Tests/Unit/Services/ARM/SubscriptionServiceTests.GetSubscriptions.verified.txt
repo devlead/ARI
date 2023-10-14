@@ -16,6 +16,7 @@
         TenantId: Guid_3
       }
     ],
+    PublicId: Guid_1,
     Description: Example Subscription,
     Order: 1,
     Tags: {
@@ -43,6 +44,7 @@
         TenantId: Guid_5
       }
     ],
+    PublicId: Guid_4,
     Description: Example Subscription2,
     Order: 2,
     Tags: {

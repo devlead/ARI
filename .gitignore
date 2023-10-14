@@ -351,3 +351,5 @@ MigrationBackup/
 [Aa]rtifacts/
 
 launchSettings.json
+
+!src/**/ARM/*.cs

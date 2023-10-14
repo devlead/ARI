@@ -19,5 +19,6 @@ public record Subscription(
     ManagedByTenant[] ManagedByTenants
 ) : AzureResourceBase
 {
+    public override string PublicId => SubscriptionId;
     public override string Description => DisplayName;
 }

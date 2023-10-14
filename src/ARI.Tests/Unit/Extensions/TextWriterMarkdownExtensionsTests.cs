@@ -32,17 +32,7 @@ public class TextWriterMarkdownExtensionsTests
     {
         // Given
         var sw = new StringWriter();
-        var tenant = new AzureTenant(
-                "Id",
-                "TenantId",
-                "CountryCode",
-                "DisplayName",
-                new[] { "Domain1", "Domain2" },
-                "TenantCategory",
-                "DefaultDomain",
-                "TenantType",
-                "TenantBrandingLogoUrl"
-            );
+        var tenant = MocksFixture.AzureTenant;
 
         // When
         await sw.AddTenantOverview(
@@ -58,20 +48,7 @@ public class TextWriterMarkdownExtensionsTests
     {
         // Given
         var sw = new StringWriter();
-        var subscription = new Subscription(
-                                "Id",
-                                "SubscriptionId",
-                                "TenantId",
-                                "DisplayName",
-                                "State",
-                                new SubscriptionPolicies(
-                                        "LocationPlacementId",
-                                        "QuotaId",
-                                        "SpendingLimit"
-                                    ),
-                                "AuthorizationSource",
-                                Array.Empty<ManagedByTenant>()
-                            );
+        var subscription = MocksFixture.Subscription;
 
         // When
         await sw.AddSubscriptionOverview(
@@ -87,11 +64,7 @@ public class TextWriterMarkdownExtensionsTests
     {
         // Given
         var sw = new StringWriter();
-        var tags = new Dictionary<string, string>
-                                {
-                                    { "Tag1", "Value1" },
-                                    { "Tag2", "Value2" }
-                                };
+        var tags = MocksFixture.Tags;
 
         // When
         await sw.AddTags(tags);
@@ -105,21 +78,27 @@ public class TextWriterMarkdownExtensionsTests
     {
         // Given
         var sw = new StringWriter();
-        var resourceGroup = new ResourceGroup(
-                                "Id",
-                                "Location",
-                                "ManagedBy",
-                                "Name",
-                                new Dictionary<string, string>
-                                {
-                                    { "provisioningState", "Succeeded" }
-                                },
-                                "Type"
-                            );
+        var resourceGroup = MocksFixture.ResourceGroup;
 
         // When
         await sw.AddResourceGroupOverview(
             resourceGroup
+            );
+
+        // Then
+        await Verify(sw);
+    }
+
+    [Test]
+    public async Task AddChildrenIndex()
+    {
+        // Given
+        var sw = new StringWriter();
+        var children = MocksFixture.Children;
+
+        // When
+        await sw.AddChildrenIndex(
+            children
             );
 
         // Then

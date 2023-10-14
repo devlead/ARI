@@ -15,5 +15,11 @@ public record ResourceGroup(
     string Type
     ) : AzureResourceBase
 {
+    public override string PublicId => Name;
     public override string Description => Name;
+    public override void Deconstruct(out string key, out string value)
+    {
+        key = Name;
+        value = Location;
+    }
 }

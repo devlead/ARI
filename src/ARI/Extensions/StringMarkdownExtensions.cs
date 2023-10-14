@@ -13,4 +13,7 @@ public static class StringMarkdownExtensions
 
     public static string Bold(this string? value)
         => $"**{value.SingleLine()}**";
+
+    public static string Link(this string description, string? href = default)
+        => $"[{description}]({href ?? description})";
 }

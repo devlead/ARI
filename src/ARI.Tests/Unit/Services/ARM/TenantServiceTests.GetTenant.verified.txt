@@ -9,5 +9,7 @@
     rdvmohoro.com
   ],
   DefaultDomain: rdvmohoro.mail.ccsctp.net,
-  TenantType: AAD
+  TenantType: AAD,
+  PublicId: rdvmohoro.mail.ccsctp.net,
+  Description: TEST_TEST_RDV
 }
