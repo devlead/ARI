@@ -5,6 +5,18 @@ public static class CakeContextExtension
 {
     public static TextWriter OpenIndexWrite(
         this ICakeContext cakeContext,
+        DirectoryPath parentPath,
+        AzureResourceBase azureResource,
+        out DirectoryPath targetPath
+        )
+    {
+        targetPath = parentPath.Combine(azureResource.PublicId);
+
+        return cakeContext.OpenIndexWrite(targetPath);
+    }
+
+    public static TextWriter OpenIndexWrite(
+        this ICakeContext cakeContext,
         DirectoryPath targetPath
         )
     {

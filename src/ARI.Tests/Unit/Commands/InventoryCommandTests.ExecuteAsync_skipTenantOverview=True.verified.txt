@@ -1,0 +1,99 @@
+﻿{
+  Output: {
+    Path: /home/docs,
+    Exists: true,
+    Hidden: false,
+    Directories: [
+      {
+        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05,
+        Exists: true,
+        Hidden: false,
+        Directories: [
+          {
+            Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 1643
+              }
+            ]
+          },
+          {
+            Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 1643
+              }
+            ]
+          },
+          {
+            Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 1643
+              }
+            ]
+          }
+        ],
+        Files: [
+          {
+            Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/index.md,
+            Exists: true,
+            Hidden: false,
+            Length: 2525
+          }
+        ]
+      },
+      {
+        Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71,
+        Exists: true,
+        Hidden: false,
+        Directories: [
+          {
+            Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 1646
+              }
+            ]
+          }
+        ],
+        Files: [
+          {
+            Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/index.md,
+            Exists: true,
+            Hidden: false,
+            Length: 2132
+          }
+        ]
+      }
+    ],
+    Files: [
+      {
+        Path: /home/docs/index.md,
+        Exists: true,
+        Hidden: false,
+        Length: 883
+      }
+    ]
+  }
+}

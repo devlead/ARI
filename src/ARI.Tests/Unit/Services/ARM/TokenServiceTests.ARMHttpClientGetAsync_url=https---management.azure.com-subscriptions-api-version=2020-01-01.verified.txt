@@ -17,6 +17,7 @@
           TenantId: Guid_3
         }
       ],
+      PublicId: Guid_1,
       Description: Example Subscription,
       Tags: {
         tagKey1: tagValue1,
@@ -43,6 +44,7 @@
           TenantId: Guid_5
         }
       ],
+      PublicId: Guid_4,
       Description: Example Subscription2,
       Tags: {
         tagKey1: tagValue1,

@@ -26,4 +26,8 @@ public record AzureTenant(
     // Only available for users
     [property: JsonPropertyName("tenantBrandingLogoUrl")]
     string TenantBrandingLogoUrl
-);
+) :AzureResourceBase
+{
+    public override string PublicId => DefaultDomain;
+    public override string Description => DisplayName;
+}

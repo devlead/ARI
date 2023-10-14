@@ -1,3 +1,4 @@
+using ARI.Extensions;
 using Cake.Common.IO;
 
 namespace ARI.Commands;
@@ -19,7 +20,9 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
 
         var tenant = await TenantService.GetTenant(settings.TenantId);
 
-        var targetPath = settings.OutputPath.Combine(tenant.DefaultDomain);
+        var targetPath = (!settings.SkipTenantOverview)
+                            ? settings.OutputPath.Combine(tenant.DefaultDomain)
+                            : settings.OutputPath;
 
         Logger.LogInformation("Cleaning directory {TargetPath}...", targetPath);
         CakeContext.CleanDirectory(targetPath);
@@ -28,25 +31,37 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
         using var writer = CakeContext
                           .OpenIndexWrite(targetPath);
 
-        await writer.AddFrontmatter(
-            modified,
-            $"Tenant {tenant.DisplayName} ({tenant.TenantId})",
-            1
+        if (!settings.SkipTenantOverview)
+        {
+            await writer.AddFrontmatter(
+                modified,
+                $"Tenant {tenant.DisplayName} ({tenant.TenantId})",
+                1
             );
 
-        await writer.AddTenantOverview(tenant);
+            await writer.AddTenantOverview(tenant);
+        }
+        else
+        {
+            await writer.AddFrontmatter(
+                modified,
+                "Azure Inventory",
+                1
+            );
+        }
 
         Logger.LogInformation("Getting subscriptions...");
         var subscriptions = await SubscriptionService.GetSubscriptions(settings.TenantId);
         Logger.LogInformation("Found {SubscriptionCount}", subscriptions.Count);
+
+        await writer.AddChildrenIndex(subscriptions);
+
         await Parallel.ForEachAsync(
             subscriptions,
             async (subscription, ct) =>
             {
-                var subscriptionPath = targetPath.Combine(subscription.SubscriptionId);
-
                 using var writer = CakeContext
-                                    .OpenIndexWrite(subscriptionPath);
+                                    .OpenIndexWrite(targetPath, subscription, out var subscriptionPath);
 
                 await writer.AddFrontmatter(
                     modified,
@@ -63,16 +78,14 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                     subscription.SubscriptionId
                     );
 
+                await writer.AddChildrenIndex(resourceGroups);
+
                 await Parallel.ForEachAsync(
                     resourceGroups,
                     async (resourceGroup, ct) =>
                     {
-                        var resourceGroupPath = targetPath
-                                                    .Combine(subscription.SubscriptionId)
-                                                    .Combine(resourceGroup.Name);
-
                         using var writer = CakeContext
-                                            .OpenIndexWrite(resourceGroupPath);
+                                            .OpenIndexWrite(subscriptionPath, resourceGroup, out var resourceGroupPath);
 
                         await writer.AddFrontmatter(
                             modified,

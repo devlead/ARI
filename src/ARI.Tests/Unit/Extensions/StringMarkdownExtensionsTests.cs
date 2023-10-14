@@ -43,4 +43,15 @@ public class StringMarkdownExtensionsTests
         // Then
         await Verify(result);
     }
+
+    [TestCase("Description", null)]
+    [TestCase("Description", "Href")]
+    public async Task Link(string description, string? href)
+    {
+        // Given / When
+        var result = description.Link(href);
+
+        // Then
+        await Verify(result);
+    }
 }

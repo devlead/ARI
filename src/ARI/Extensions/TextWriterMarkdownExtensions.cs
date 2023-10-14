@@ -1,4 +1,5 @@
 ﻿using ARI.Models.Tenant.Subscription.ResourceGroup;
+using System.Runtime.CompilerServices;
 
 namespace ARI.Extensions;
 
@@ -92,7 +93,7 @@ public static  class TextWriterMarkdownExtensions
 
     public static async Task AddTags(
         this TextWriter writer,
-        Dictionary<string, string> tags
+        IDictionary<string, string> tags
         )
     {
         await writer.WriteLineAsync(
@@ -117,6 +118,35 @@ public static  class TextWriterMarkdownExtensions
             await writer.WriteLineAsync(
                 FormattableString.Invariant(
                     $"| {key.Bold(),-NameColumnWidth} | {value.CodeLine(),-DescriptionColumnWidth} |"
+                )
+            );
+        }
+    }
+
+    public static async Task AddChildrenIndex(
+        this TextWriter writer,
+        IEnumerable<AzureResourceBase> children,
+        string? headline = null,
+        [CallerArgumentExpression("children")] string headlineFallback = ""
+        )
+    {
+        await writer.WriteLineAsync(
+           FormattableString.Invariant(
+                   $$"""
+
+                   ## {{ headline ?? CultureInfo.InvariantCulture.TextInfo.ToTitleCase(headlineFallback) }}
+                   
+                   |                                                                                                 |                                                                                                 |
+                   |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+                   """
+               )
+           );
+
+        foreach (var (key, value) in children)
+        {
+            await writer.WriteLineAsync(
+                FormattableString.Invariant(
+                    $"| {key.Link(),-DescriptionColumnWidth} | {value.Link(key),-DescriptionColumnWidth} |"
                 )
             );
         }

@@ -8,8 +8,9 @@ namespace ARI.Tests.Unit.Commands;
 [TestFixture]
 public class InventoryCommandTests
 {
-    [Test]
-    public async Task ExecuteAsync()
+    [TestCase(false)]
+    [TestCase(true)]
+    public async Task ExecuteAsync(bool skipTenantOverview)
     {
         // Given
         var context = new CommandContext(
@@ -20,7 +21,8 @@ public class InventoryCommandTests
         var settings = new InventorySettings
         {
             TenantId = Constants.Tenant.Id,
-            OutputPath = "/home/docs"
+            OutputPath = "/home/docs",
+            SkipTenantOverview = skipTenantOverview
         };
         var (
             cakeContext,
