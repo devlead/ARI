@@ -121,7 +121,7 @@ public class TextWriterMarkdownExtensionsTests
         await Verify(sw);
     }
 
-    [TestCase("2023-10-15 23:08")]
+    [TestCase("2023-10-15 23:08+0")]
     public async Task AddNameDescriptionRow(DateTimeOffset? description)
     {
         // Given
