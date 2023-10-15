@@ -13,12 +13,278 @@
             Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev,
             Exists: true,
             Hidden: false,
+            Directories: [
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/Application Insights Smart Detection,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/Application Insights Smart Detection/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1732
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/devops-azuresql-private-endpoint,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/devops-azuresql-private-endpoint/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2275
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2358
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/Failure Anomalies - lab-appi-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/Failure Anomalies - lab-appi-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1743
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-appi-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-appi-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2230
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-asp-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-asp-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 3189
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-devops-sql-dev,
+                Exists: true,
+                Hidden: false,
+                Directories: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-devops-sql-dev/DevOps,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-devops-sql-dev/DevOps/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2949
+                      }
+                    ]
+                  },
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-devops-sql-dev/master,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-devops-sql-dev/master/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2401
+                      }
+                    ]
+                  },
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-devops-sql-dev/SecondDatabase,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-devops-sql-dev/SecondDatabase/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2966
+                      }
+                    ]
+                  }
+                ],
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-devops-sql-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2234
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-docs-stapp-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-docs-stapp-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2793
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-kv-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-kv-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2223
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-log-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-log-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2240
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-srch-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-srch-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2650
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-vnet-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-vnet-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2235
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-web-web-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-web-web-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2227
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/labdevecdo,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/labdevecdo/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2785
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/privatelink.database.windows.net,
+                Exists: true,
+                Hidden: false,
+                Directories: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/privatelink.database.windows.net/privatelink.database.windows.net-link,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/privatelink.database.windows.net/privatelink.database.windows.net-link/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2371
+                      }
+                    ]
+                  }
+                ],
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/privatelink.database.windows.net/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2275
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/web.dev.ecdo.azurevoodoo.net-lab-asp-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/web.dev.ecdo.azurevoodoo.net-lab-asp-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1736
+                  }
+                ]
+              }
+            ],
             Files: [
               {
                 Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/index.md,
                 Exists: true,
                 Hidden: false,
-                Length: 1643
+                Length: 9433
               }
             ]
           },
@@ -26,12 +292,278 @@
             Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd,
             Exists: true,
             Hidden: false,
+            Directories: [
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/Application Insights Smart Detection,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/Application Insights Smart Detection/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1732
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/devops-azuresql-private-endpoint,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/devops-azuresql-private-endpoint/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2275
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2358
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/Failure Anomalies - lab-appi-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/Failure Anomalies - lab-appi-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1743
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-appi-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-appi-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2230
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-asp-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-asp-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 3189
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-docs-stapp-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-docs-stapp-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2792
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-kv-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-kv-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2222
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-log-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-log-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2239
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-prdops-sql-prd,
+                Exists: true,
+                Hidden: false,
+                Directories: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-prdops-sql-prd/DevOps,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-prdops-sql-prd/DevOps/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2950
+                      }
+                    ]
+                  },
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-prdops-sql-prd/master,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-prdops-sql-prd/master/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2402
+                      }
+                    ]
+                  },
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-prdops-sql-prd/SecondDatabase,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-prdops-sql-prd/SecondDatabase/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2966
+                      }
+                    ]
+                  }
+                ],
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-prdops-sql-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2235
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-srch-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-srch-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2650
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-vnet-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-vnet-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2235
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-web-web-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-web-web-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2227
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/labdevecdo,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/labdevecdo/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2785
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/privatelink.database.windows.net,
+                Exists: true,
+                Hidden: false,
+                Directories: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/privatelink.database.windows.net/privatelink.database.windows.net-link,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/privatelink.database.windows.net/privatelink.database.windows.net-link/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2371
+                      }
+                    ]
+                  }
+                ],
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/privatelink.database.windows.net/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2275
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/web.dev.ecdo.azurevoodoo.net-lab-asp-prd,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/web.dev.ecdo.azurevoodoo.net-lab-asp-prd/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1736
+                  }
+                ]
+              }
+            ],
             Files: [
               {
                 Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/index.md,
                 Exists: true,
                 Hidden: false,
-                Length: 1643
+                Length: 9433
               }
             ]
           },
@@ -39,12 +571,278 @@
             Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg,
             Exists: true,
             Hidden: false,
+            Directories: [
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/Application Insights Smart Detection,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/Application Insights Smart Detection/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1732
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/devops-azuresql-private-endpoint,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/devops-azuresql-private-endpoint/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2275
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2358
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/Failure Anomalies - lab-appi-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/Failure Anomalies - lab-appi-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1743
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-appi-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-appi-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2230
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-asp-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-asp-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 3189
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-docs-stapp-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-docs-stapp-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2792
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-kv-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-kv-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2222
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-log-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-log-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2239
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-srch-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-srch-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2650
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-stgops-sql-stg,
+                Exists: true,
+                Hidden: false,
+                Directories: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-stgops-sql-stg/DevOps,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-stgops-sql-stg/DevOps/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2950
+                      }
+                    ]
+                  },
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-stgops-sql-stg/master,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-stgops-sql-stg/master/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2402
+                      }
+                    ]
+                  },
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-stgops-sql-stg/SecondDatabase,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-stgops-sql-stg/SecondDatabase/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2966
+                      }
+                    ]
+                  }
+                ],
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-stgops-sql-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2235
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-vnet-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-vnet-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2235
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-web-web-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-web-web-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2227
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/labdevecdo,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/labdevecdo/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2785
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/privatelink.database.windows.net,
+                Exists: true,
+                Hidden: false,
+                Directories: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/privatelink.database.windows.net/privatelink.database.windows.net-link,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/privatelink.database.windows.net/privatelink.database.windows.net-link/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2371
+                      }
+                    ]
+                  }
+                ],
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/privatelink.database.windows.net/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2275
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/web.dev.ecdo.azurevoodoo.net-lab-asp-stg,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/web.dev.ecdo.azurevoodoo.net-lab-asp-stg/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1736
+                  }
+                ]
+              }
+            ],
             Files: [
               {
                 Path: /home/docs/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/index.md,
                 Exists: true,
                 Hidden: false,
-                Length: 1643
+                Length: 9433
               }
             ]
           }
@@ -67,12 +865,278 @@
             Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev,
             Exists: true,
             Hidden: false,
+            Directories: [
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/Application Insights Smart Detection,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/Application Insights Smart Detection/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1732
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/devops-azuresql-private-endpoint,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/devops-azuresql-private-endpoint/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2275
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2358
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/Failure Anomalies - lab-appi-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/Failure Anomalies - lab-appi-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1743
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-appi-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-appi-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2230
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-asp-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-asp-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 3189
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev,
+                Exists: true,
+                Hidden: false,
+                Directories: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/DevOps,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/DevOps/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2949
+                      }
+                    ]
+                  },
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/master,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/master/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2401
+                      }
+                    ]
+                  },
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/SecondDatabase,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/SecondDatabase/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2966
+                      }
+                    ]
+                  }
+                ],
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2234
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-docs-stapp-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-docs-stapp-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2793
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-kv-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-kv-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2223
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-log-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-log-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2240
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-srch-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-srch-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2650
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-vnet-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-vnet-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2235
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-web-web-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-web-web-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2227
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/labdevecdo,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/labdevecdo/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2785
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/privatelink.database.windows.net,
+                Exists: true,
+                Hidden: false,
+                Directories: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/privatelink.database.windows.net/privatelink.database.windows.net-link,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/privatelink.database.windows.net/privatelink.database.windows.net-link/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 2371
+                      }
+                    ]
+                  }
+                ],
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/privatelink.database.windows.net/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 2275
+                  }
+                ]
+              },
+              {
+                Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/web.dev.ecdo.azurevoodoo.net-lab-asp-dev,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/web.dev.ecdo.azurevoodoo.net-lab-asp-dev/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 1736
+                  }
+                ]
+              }
+            ],
             Files: [
               {
                 Path: /home/docs/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/index.md,
                 Exists: true,
                 Hidden: false,
-                Length: 1646
+                Length: 9436
               }
             ]
           }

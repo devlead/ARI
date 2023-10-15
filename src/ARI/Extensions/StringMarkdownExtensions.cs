@@ -1,19 +1,35 @@
-﻿namespace ARI.Extensions;
+﻿using Newtonsoft.Json.Linq;
+
+namespace ARI.Extensions;
 
 public static class StringMarkdownExtensions
 {
     public static string CodeLine(this string? value)
-        => $"`{value.SingleLine()}`";
+        => string.IsNullOrWhiteSpace(value)
+            ? string.Empty
+            : $"`{value.SingleLine()}`";
 
     public static string PreLine(this string? value)
-      => $"<pre style=\"white-space: pre-wrap;\">{value.SingleLine()}</pre>";
+      => string.IsNullOrWhiteSpace(value)
+            ? string.Empty
+            : $"<pre style=\"white-space: pre-wrap;\">{value.SingleLine()}</pre>";
 
     public static string? SingleLine(this string? value)
         => value?.NormalizeLineEndings().ReplaceLineEndings("<br>");
 
     public static string Bold(this string? value)
-        => $"**{value.SingleLine()}**";
+        => string.IsNullOrWhiteSpace(value)
+            ? string.Empty
+            : $"**{value.SingleLine()}**";
 
     public static string Link(this string description, string? href = default)
-        => $"[{description}]({href ?? description})";
+        => string.IsNullOrWhiteSpace(description)
+            ? string.Empty
+            : $"[{description}]({href ?? description})";
+
+    public static string LastPart(this string? value, char separator)
+        => value?.Split(separator, StringSplitOptions.TrimEntries) 
+            is string[] parts
+                ? parts[^1]
+                : string.Empty;
 }

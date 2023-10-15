@@ -1,6 +1,8 @@
 ﻿using ARI.Models.Tenant;
 using ARI.Models.Tenant.Subscription;
 using ARI.Models.Tenant.Subscription.ResourceGroup;
+using ARI.Models.Tenant.Subscription.ResourceGroup.Resource;
+using System.Reflection;
 
 namespace ARI.Tests.Fixture;
 public static class MocksFixture
@@ -53,4 +55,23 @@ public static class MocksFixture
                                                                             Subscription,
                                                                             ResourceGroup,
                                                                         };
+    public static Resource Resource { get; } = new Resource(
+                                                "Id",
+                                                "Location",
+                                                "ManagedBy",
+                                                "Name",
+                                                DateTimeOffset.MinValue,
+                                                DateTimeOffset.MaxValue,
+                                                new Dictionary<string, string>(),
+                                                "ProvisioningState",
+                                                "Type",
+                                                new SKU(
+                                                    0,
+                                                    "Family",
+                                                    "Model",
+                                                    "Name",
+                                                    "Size",
+                                                    "Tier"
+                                                    )
+                                                );
 }

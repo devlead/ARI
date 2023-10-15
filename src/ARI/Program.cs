@@ -43,7 +43,8 @@ var serviceCollection = new ServiceCollection()
     .AddSingleton<TokenService>()
     .AddSingleton<TenantService>()
     .AddSingleton<SubscriptionService>()
-    .AddSingleton<ResourceGroupService>();
+    .AddSingleton<ResourceGroupService>()
+    .AddSingleton<ResourceService>();
 
 serviceCollection.AddHttpClient();
 

@@ -43,47 +43,11 @@ public static class IServiceCollectionExtensions
 
     public static IServiceCollection AddMockHttpClient(this IServiceCollection services)
     {
-        static HttpResponseMessage GetMockTenantsResponse()
+        static HttpResponseMessage GetMockJsonResponse(string response)
         => new()
         {
             Content = new StringContent(
-                                    Constants.Response.Json.TenantsServicePrinciple,
-                                    Encoding.UTF8,
-                                    Constants.MediaType.Json
-                                )
-        };
-        static HttpResponseMessage GetMockGraphOrgResponse()
-        => new()
-        {
-            Content = new StringContent(
-                                    Constants.Response.Json.GraphOrg,
-                                    Encoding.UTF8,
-                                    Constants.MediaType.Json
-                                )
-        };
-        static HttpResponseMessage GetMockSubscriptionsResponse()
-        => new()
-        {
-            Content = new StringContent(
-                                    Constants.Response.Json.Subscriptions,
-                                    Encoding.UTF8,
-                                    Constants.MediaType.Json
-                                )
-        };
-        static HttpResponseMessage GetMockSubscription1ResourceGroupsResponse()
-        => new()
-        {
-            Content = new StringContent(
-                                    Constants.Response.Json.Subscription1.ResourceGroups,
-                                    Encoding.UTF8,
-                                    Constants.MediaType.Json
-                                )
-        };
-        static HttpResponseMessage GetMockSubscription2ResourceGroupsResponse()
-        => new()
-        {
-            Content = new StringContent(
-                                    Constants.Response.Json.Subscription2.ResourceGroups,
+                                    response,
                                     Encoding.UTF8,
                                     Constants.MediaType.Json
                                 )
@@ -96,27 +60,47 @@ public static class IServiceCollectionExtensions
                         {
                             Method.Method: Constants.Request.Method.Get,
                             RequestUri.AbsoluteUri: Constants.Request.Uri.Tenants
-                        } => GetMockTenantsResponse(),
+                        } => GetMockJsonResponse(Constants.Response.Json.TenantsServicePrinciple),
 
                         {
                             Method.Method: Constants.Request.Method.Get,
                             RequestUri.AbsoluteUri: Constants.Request.Uri.GraphOrg
-                        } => GetMockGraphOrgResponse(),
+                        } => GetMockJsonResponse(Constants.Response.Json.GraphOrg),
 
                         {
                             Method.Method: Constants.Request.Method.Get,
                             RequestUri.AbsoluteUri: Constants.Request.Uri.Subscriptions
-                        } => GetMockSubscriptionsResponse(),
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscriptions),
 
                         {
                             Method.Method: Constants.Request.Method.Get,
                             RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription1.ResourceGroups
-                        } => GetMockSubscription1ResourceGroupsResponse(),
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscription1.ResourceGroups),
 
                         {
                             Method.Method: Constants.Request.Method.Get,
                             RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription2.ResourceGroups
-                        } => GetMockSubscription2ResourceGroupsResponse(),
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscription2.ResourceGroups),
+
+                        {
+                            Method.Method: Constants.Request.Method.Get,
+                            RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription1.ResourceGroup1.Resources
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscription1.ResourceGroup1.Resources),
+
+                        {
+                            Method.Method: Constants.Request.Method.Get,
+                            RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription1.ResourceGroup2.Resources
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscription1.ResourceGroup2.Resources),
+
+                        {
+                            Method.Method: Constants.Request.Method.Get,
+                            RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription1.ResourceGroup3.Resources
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscription1.ResourceGroup3.Resources),
+
+                        {
+                            Method.Method: Constants.Request.Method.Get,
+                            RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription2.ResourceGroup1.Resources
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscription2.ResourceGroup1.Resources),
 
                         _ => new HttpResponseMessage
                         {

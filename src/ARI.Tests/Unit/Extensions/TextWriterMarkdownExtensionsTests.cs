@@ -104,4 +104,66 @@ public class TextWriterMarkdownExtensionsTests
         // Then
         await Verify(sw);
     }
+
+    [Test]
+    public async Task AddResourceOverview()
+    {
+        // Given
+        var sw = new StringWriter();
+        var resource = MocksFixture.Resource;
+
+        // When
+        await sw.AddResourceOverview(
+            resource
+            );
+
+        // Then
+        await Verify(sw);
+    }
+
+    [TestCase("2023-10-15 23:08+0")]
+    public async Task AddNameDescriptionRow(DateTimeOffset? description)
+    {
+        // Given
+        var sw = new StringWriter();
+
+        // When
+        await sw.AddNameDescriptionRow(
+            description
+            );
+
+        // Then
+        await Verify(sw);
+    }
+
+    [TestCase(0)]
+    public async Task AddNameDescriptionRow(int? description)
+    {
+        // Given
+        var sw = new StringWriter();
+
+        // When
+        await sw.AddNameDescriptionRow(
+            description
+            );
+
+        // Then
+        await Verify(sw);
+    }
+
+    [TestCase("string")]
+    [TestCase(null)]
+    public async Task AddNameDescriptionRow(string? description)
+    {
+        // Given
+        var sw = new StringWriter();
+
+        // When
+        await sw.AddNameDescriptionRow(
+            description
+            );
+
+        // Then
+        await Verify(sw);
+    }
 }
