@@ -25,7 +25,9 @@ public static class StringMarkdownExtensions
     public static string Link(this string description, string? href = default)
         => string.IsNullOrWhiteSpace(description)
             ? string.Empty
-            : $"[{description}]({href ?? description})";
+#pragma warning disable SYSLIB0013 // Type or member is obsolete
+            : $"[{description}]({Uri.EscapeUriString(href ?? description)})";
+#pragma warning restore SYSLIB0013 // Type or member is obsolete
 
     public static string LastPart(this string? value, char separator)
         => value?.Split(separator, StringSplitOptions.TrimEntries) 
