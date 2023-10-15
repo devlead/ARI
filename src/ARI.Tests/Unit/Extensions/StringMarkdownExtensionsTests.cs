@@ -1,4 +1,7 @@
-﻿namespace ARI.Tests.Unit.Extensions;
+﻿using ARI.Extensions;
+using ARI.Models.Tenant.Subscription.ResourceGroup.Resource;
+
+namespace ARI.Tests.Unit.Extensions;
 
 [TestFixture]
 public class StringMarkdownExtensionsTests
@@ -50,6 +53,18 @@ public class StringMarkdownExtensionsTests
     {
         // Given / When
         var result = description.Link(href);
+
+        // Then
+        await Verify(result);
+    }
+
+    [TestCase("Resource")]
+    [TestCase("Resource.SKU")]
+    [TestCase("Resource.SKU.Tier")]
+    public async Task LastPart(string value)
+    {
+        // Given / When
+        var result = value.LastPart('.');
 
         // Then
         await Verify(result);

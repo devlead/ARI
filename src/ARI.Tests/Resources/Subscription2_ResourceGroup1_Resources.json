@@ -1,0 +1,31 @@
+{
+  "value": [
+    {
+      "changedTime": "2023-06-05T12:24:07.2383891Z",
+      "createdTime": "2022-11-18T09:20:38.5591848Z",
+      "id": "/subscriptions/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/resourceGroups/common-dev/providers/Microsoft.ContainerRegistry/registries/commonacrdevecdo",
+      "location": "westeurope",
+      "name": "commonacrdevecdo",
+      "provisioningState": "Succeeded",
+      "sku": {
+        "name": "Standard",
+        "tier": "Standard"
+      },
+      "systemData": {
+        "createdAt": "2022-11-18T09:20:38.6007791Z",
+        "createdBy": "d4710250-3c7b-4d59-ad71-ee54523a28d9",
+        "createdByType": "Application",
+        "lastModifiedAt": "2023-06-05T12:13:55.9517218Z",
+        "lastModifiedBy": "d4710250-3c7b-4d59-ad71-ee54523a28d9",
+        "lastModifiedByType": "Application"
+      },
+      "tags": {
+        "BillingDimension": "common",
+        "Creator": "Bicep-common",
+        "Dimension": "common",
+        "Environment": "dev"
+      },
+      "type": "Microsoft.ContainerRegistry/registries"
+    }
+  ]
+}

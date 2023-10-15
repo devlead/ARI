@@ -9,13 +9,21 @@
 
   <ItemGroup>
     <None Remove="Resources\GraphOrg.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup1_Resources.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup2_Resources.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup3_Resources.json" />
     <None Remove="Resources\Subscription1_ResourceGroups.json" />
+    <None Remove="Resources\Subscription2_ResourceGroup1_Resources.json" />
     <None Remove="Resources\Subscription2_ResourceGroups.json" />
     <None Remove="Resources\Subscriptions.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\GraphOrg.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Resources.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Resources.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Resources.json" />
+    <EmbeddedResource Include="Resources\Subscription2_ResourceGroup1_Resources.json" />
     <EmbeddedResource Include="Resources\Subscription2_ResourceGroups.json" />
     <EmbeddedResource Include="Resources\Subscriptions.json" />
     <EmbeddedResource Include="Resources\TenantsServicePrinciple.json" />
@@ -48,7 +56,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Verify.NUnit" Version="22.1.1" />
+    <PackageReference Include="Verify.NUnit" Version="22.1.3" />
     <PackageReference Include="Verify.Http" Version="4.3.2" />
     <PackageReference Include="Cake.Testing" Version="3.1.0" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />

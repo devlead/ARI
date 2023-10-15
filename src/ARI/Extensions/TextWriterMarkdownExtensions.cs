@@ -1,9 +1,11 @@
 ﻿using ARI.Models.Tenant.Subscription.ResourceGroup;
+using ARI.Models.Tenant.Subscription.ResourceGroup.Resource;
+using Newtonsoft.Json.Linq;
 using System.Runtime.CompilerServices;
 
 namespace ARI.Extensions;
 
-public static  class TextWriterMarkdownExtensions
+public static class TextWriterMarkdownExtensions
 {
     public const int NameColumnWidth = 35;
     public const int TypeColumnWidth = 55;
@@ -108,12 +110,12 @@ public static  class TextWriterMarkdownExtensions
                )
            );
 
-        if (tags == null )
+        if (tags == null)
         {
             return;
         }
 
-        foreach ( var (key, value) in tags )
+        foreach (var (key, value) in tags)
         {
             await writer.WriteLineAsync(
                 FormattableString.Invariant(
@@ -127,14 +129,15 @@ public static  class TextWriterMarkdownExtensions
         this TextWriter writer,
         IEnumerable<AzureResourceBase> children,
         string? headline = null,
-        [CallerArgumentExpression("children")] string headlineFallback = ""
+        [CallerArgumentExpression(nameof(children))]
+        string headlineFallback = ""
         )
     {
         await writer.WriteLineAsync(
            FormattableString.Invariant(
                    $$"""
 
-                   ## {{ headline ?? CultureInfo.InvariantCulture.TextInfo.ToTitleCase(headlineFallback) }}
+                   ## {{headline ?? CultureInfo.InvariantCulture.TextInfo.ToTitleCase(headlineFallback)}}
                    
                    |                                                                                                 |                                                                                                 |
                    |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -151,4 +154,86 @@ public static  class TextWriterMarkdownExtensions
             );
         }
     }
+
+    public static async Task AddResourceOverview(
+        this TextWriter writer,
+        Resource resource
+        )
+    {
+        await writer.WriteLineAsync(
+            FormattableString.Invariant(
+                    $$"""
+                    # Overview
+                   
+                    |                                     |                                                                                                 |
+                    |-------------------------------------|-------------------------------------------------------------------------------------------------|
+                    | **Name**                            | {{resource.Name.CodeLine(),-DescriptionColumnWidth}} |
+                    | **Id**                              | {{resource.Id.CodeLine(),-DescriptionColumnWidth}} |
+                    | **Location**                        | {{resource.Location.CodeLine(),-DescriptionColumnWidth}} |
+                    | **ProvisioningState**               | {{resource.ProvisioningState.CodeLine(),-DescriptionColumnWidth}} |
+                    | **CreatedTime**                     | {{resource.CreatedTime.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture).CodeLine(),-DescriptionColumnWidth}} |
+                    | **ChangedTime**                     | {{resource.ChangedTime.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture).CodeLine(),-DescriptionColumnWidth}} |
+                    | **Type**                            | {{resource.Type.CodeLine(),-DescriptionColumnWidth}} |
+                    """
+                )
+            );
+
+        if (resource.SKU != null)
+        {
+            await writer.WriteLineAsync(
+                FormattableString.Invariant(
+                        $$"""
+
+                        ## SKU
+                        
+                        |                                     |                                                                                                 |
+                        |-------------------------------------|-------------------------------------------------------------------------------------------------|
+                        """
+                    )
+            );
+            await writer.AddNameDescriptionRow(resource.SKU.Capacity);
+            await writer.AddNameDescriptionRow(resource.SKU.Family);
+            await writer.AddNameDescriptionRow(resource.SKU.Model);
+            await writer.AddNameDescriptionRow(resource.SKU.Name);
+            await writer.AddNameDescriptionRow(resource.SKU.Size);
+            await writer.AddNameDescriptionRow(resource.SKU.Tier);
+
+        }
+    }
+
+    public static Task AddNameDescriptionRow(
+        this TextWriter writer,
+        DateTimeOffset? description,
+        [CallerArgumentExpression(nameof(description))]
+        string name = ""
+    )
+        => writer.AddNameDescriptionRow(
+            description?.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
+            name
+            );
+
+    public static Task AddNameDescriptionRow(
+        this TextWriter writer,
+        int? description,
+        [CallerArgumentExpression(nameof(description))]
+        string name = ""
+    )
+        => writer.AddNameDescriptionRow(
+            description?.ToString(CultureInfo.InvariantCulture),
+            name
+            );
+
+    public static Task AddNameDescriptionRow(
+            this TextWriter writer,
+            string? description,
+            [CallerArgumentExpression(nameof(description))]
+            string name = ""
+        )
+        => string.IsNullOrWhiteSpace(description)
+        ? Task.CompletedTask
+        : writer.WriteLineAsync(
+                FormattableString.Invariant(
+                    $"| {name.LastPart('.').Bold(),-NameColumnWidth} | {description.CodeLine(),-DescriptionColumnWidth} |"
+                )
+            );
 }

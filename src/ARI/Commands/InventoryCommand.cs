@@ -10,6 +10,7 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
     private TenantService TenantService { get; }
     private SubscriptionService SubscriptionService { get; }
     private ResourceGroupService ResourceGroupService { get; }
+    private ResourceService ResourceService { get; }
 
     public override async Task<int> ExecuteAsync(CommandContext context, InventorySettings settings)
     {
@@ -89,15 +90,53 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
 
                         await writer.AddFrontmatter(
                             modified,
-                            $"Resource {resourceGroup.Name} ({subscription.SubscriptionId})",
+                            $"Resource Group {resourceGroup.Name} ({subscription.SubscriptionId})",
                             resourceGroup.Order
                             );
 
                         await writer.AddResourceGroupOverview(resourceGroup);
 
                         await writer.AddTags(resourceGroup.Tags);
+
+                        var resources = await ResourceService.GetResources(
+                            settings.TenantId,
+                            subscription.SubscriptionId,
+                            resourceGroup.Name
+                            );
+
+                        var resourcesByTypeLookup = resources.ToLookup(
+                                key => (key.Type.Split('/', count:2, options: StringSplitOptions.TrimEntries) is string[] { Length:>0} group)
+                                        ? group[0]
+                                        : key.Type,
+                                value => value,
+                                StringComparer.OrdinalIgnoreCase
+                            );
+
+                        foreach (var resourcesByType in resourcesByTypeLookup.OrderBy(key => key.Key, StringComparer.OrdinalIgnoreCase))
+                        {
+                            await writer.AddChildrenIndex(resourcesByType, resourcesByType.Key);
+                        }
+
+                        await Parallel.ForEachAsync(
+                            resources,
+                            async (resource, ct) =>
+                            {
+                                using var writer = CakeContext
+                                            .OpenIndexWrite(resourceGroupPath, resource, out var resourcePath);
+
+                                await writer.AddFrontmatter(
+                                    modified,
+                                    $"Resource {resource.Name} ({subscription.SubscriptionId})",
+                                    resource.Order
+                                    );
+
+                                await writer.AddResourceOverview(resource);
+
+                                await writer.AddTags(resource.Tags);
+                            }
+                        );
                     }
-                    );
+                );
             }
         );
 
@@ -112,7 +151,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
         ILogger<InventoryCommand> logger,
         TenantService tenantService,
         SubscriptionService subscriptionService,
-        ResourceGroupService resourceGroupService
+        ResourceGroupService resourceGroupService,
+        ResourceService resourceService
         )
     {
         CakeContext = cakeContext;
@@ -120,5 +160,6 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
         TenantService = tenantService;
         SubscriptionService = subscriptionService;
         ResourceGroupService = resourceGroupService;
+        ResourceService = resourceService;
     }
 }
