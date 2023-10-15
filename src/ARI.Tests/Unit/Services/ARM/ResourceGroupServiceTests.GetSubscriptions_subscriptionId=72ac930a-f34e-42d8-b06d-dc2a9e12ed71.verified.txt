@@ -1,0 +1,20 @@
+﻿[
+  {
+    Id: /subscriptions/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/resourceGroups/common-dev,
+    Location: westeurope,
+    Name: common-dev,
+    Properties: {
+      provisioningState: Succeeded
+    },
+    Type: Microsoft.Resources/resourceGroups,
+    PublicId: common-dev,
+    Description: common-dev,
+    Order: 1,
+    Tags: {
+      BillingDimension: common,
+      Creator: Bicep-common,
+      Dimension: common,
+      Environment: dev
+    }
+  }
+]

@@ -1,0 +1,56 @@
+﻿[
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev,
+    Location: westeurope,
+    Name: lab-dev,
+    Properties: {
+      provisioningState: Succeeded
+    },
+    Type: Microsoft.Resources/resourceGroups,
+    PublicId: lab-dev,
+    Description: lab-dev,
+    Order: 1,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd,
+    Location: westeurope,
+    Name: lab-prd,
+    Properties: {
+      provisioningState: Succeeded
+    },
+    Type: Microsoft.Resources/resourceGroups,
+    PublicId: lab-prd,
+    Description: lab-prd,
+    Order: 2,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: prd
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-stg,
+    Location: westeurope,
+    Name: lab-stg,
+    Properties: {
+      provisioningState: Succeeded
+    },
+    Type: Microsoft.Resources/resourceGroups,
+    PublicId: lab-stg,
+    Description: lab-stg,
+    Order: 3,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: stg
+    }
+  }
+]
