@@ -218,7 +218,7 @@ Task("Clean")
                 NoRestore = true,
                 WorkingDirectory = data.StatiqWebPath,
                 ArgumentCustomization = args => args
-                                                    .Append("--")
+                                                    .Append(context.Argument("preview", false) ? "-- preview --virtual-dir ARI/" : "--")
                                                     .AppendSwitchQuoted("--root", data.StatiqWebPath.FullPath)
                                                     .AppendSwitchQuoted("--input", data.IntegrationTestPath.FullPath)
                                                     .AppendSwitchQuoted("--output", data.StatiqWebOutputPath.FullPath)
