@@ -129,6 +129,7 @@ public static class TextWriterMarkdownExtensions
         this TextWriter writer,
         IEnumerable<AzureResourceBase> children,
         string? headline = null,
+        int level = 2,
         [CallerArgumentExpression(nameof(children))]
         string headlineFallback = ""
         )
@@ -137,7 +138,7 @@ public static class TextWriterMarkdownExtensions
            FormattableString.Invariant(
                    $$"""
 
-                   ## {{headline ?? CultureInfo.InvariantCulture.TextInfo.ToTitleCase(headlineFallback)}}
+                   {{string.Empty.PadLeft(level, '#')}} {{headline ?? CultureInfo.InvariantCulture.TextInfo.ToTitleCase(headlineFallback)}}
                    
                    |                                                                                                 |                                                                                                 |
                    |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|

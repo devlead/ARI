@@ -112,10 +112,27 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                                 StringComparer.OrdinalIgnoreCase
                             );
 
+                        await writer.WriteLineAsync(
+                            """
+                            ## Resources
+
+                            | | |
+                            |-|-|
+                            """
+                            );
+
                         foreach (var resourcesByType in resourcesByTypeLookup.OrderBy(key => key.Key, StringComparer.OrdinalIgnoreCase))
                         {
-                            await writer.AddChildrenIndex(resourcesByType, resourcesByType.Key);
+                            await writer.WriteLineAsync($"| **{resourcesByType.Key}** | |");
+
+                            foreach(var resource in resourcesByType.OrderBy(key => key.Description, StringComparer.OrdinalIgnoreCase))
+                            {
+                                await writer.WriteLineAsync($"| {resource.Description.Link(resource.PublicId)} | {resource.Location.Link(resource.PublicId)} |");
+                            }
+
+                            await writer.WriteLineAsync("| | |");
                         }
+
 
                         await Parallel.ForEachAsync(
                             resources,
