@@ -108,26 +108,32 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                                 key => (key.Type.Split('/', count:2, options: StringSplitOptions.TrimEntries) is string[] { Length:>0} group)
                                         ? group[0]
                                         : key.Type,
-                                value => value,
+                                value => (
+                                SubType: (value.Type.Split('/', count: 2, options: StringSplitOptions.TrimEntries) is string[] { Length: > 1 } group)
+                                        ? group[1]
+                                        : value.Type,
+                                Resource: value
+                                ),
                                 StringComparer.OrdinalIgnoreCase
                             );
 
                         await writer.WriteLineAsync(
                             """
+
                             ## Resources
 
-                            | | |
-                            |-|-|
+                            | | | |
+                            |-|-|-|
                             """
                             );
 
                         foreach (var resourcesByType in resourcesByTypeLookup.OrderBy(key => key.Key, StringComparer.OrdinalIgnoreCase))
                         {
-                            await writer.WriteLineAsync($"| **{resourcesByType.Key}** | |");
+                            await writer.WriteLineAsync($"| **{resourcesByType.Key}** | | |");
 
-                            foreach(var resource in resourcesByType.OrderBy(key => key.Description, StringComparer.OrdinalIgnoreCase))
+                            foreach(var (subType, resource) in resourcesByType.OrderBy(key => key.Resource.Description, StringComparer.OrdinalIgnoreCase))
                             {
-                                await writer.WriteLineAsync($"| {resource.Description.Link(resource.PublicId)} | {resource.Location.Link(resource.PublicId)} |");
+                                await writer.WriteLineAsync($"| {resource.Description.Link(resource.PublicId)} | {subType.Link(resource.PublicId)} | {resource.Location.Link(resource.PublicId)} |");
                             }
 
                             await writer.WriteLineAsync("| | |");
