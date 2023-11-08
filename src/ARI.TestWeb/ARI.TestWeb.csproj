@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Devlead.Statiq" Version="0.20.0" />
+    <PackageReference Include="Devlead.Statiq" Version="0.20.1" />
   </ItemGroup>
 
   <ItemGroup>
