@@ -20,7 +20,10 @@ public static class CakeContextExtension
         DirectoryPath targetPath
         )
     {
-        cakeContext.EnsureDirectoryExists(targetPath);
+        lock (cakeContext.FileSystem)
+        {
+            cakeContext.EnsureDirectoryExists(targetPath);
+        }
 
         var stream = cakeContext
                         .FileSystem
