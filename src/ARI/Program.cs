@@ -54,6 +54,7 @@ var app = new CommandApp(registrar);
 app.Configure(
     config =>
     {
+        config.SetApplicationName("ari");
         config.ValidateExamples();
 
         config.AddCommand<InventoryCommand>("inventory")

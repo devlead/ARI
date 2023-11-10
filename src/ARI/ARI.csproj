@@ -10,6 +10,7 @@
     <PackAsTool>true</PackAsTool>
     <PackageId>ARI</PackageId>
     <ToolCommandName>ari</ToolCommandName>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -52,6 +53,7 @@
   <ItemGroup>
      <None Include="../../icon/LICENSE.md" Pack="true" PackagePath="icon" />
      <None Include="../../icon/ari.png" Pack="true" PackagePath="icon" />
+     <None Include="../../README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
