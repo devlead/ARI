@@ -7,17 +7,19 @@ public static class CakeContextExtension
         this ICakeContext cakeContext,
         DirectoryPath parentPath,
         AzureResourceBase azureResource,
+        string markDownFileName,
         out DirectoryPath targetPath
         )
     {
         targetPath = parentPath.Combine(azureResource.PublicId);
 
-        return cakeContext.OpenIndexWrite(targetPath);
+        return cakeContext.OpenIndexWrite(targetPath, markDownFileName);
     }
 
     public static TextWriter OpenIndexWrite(
         this ICakeContext cakeContext,
-        DirectoryPath targetPath
+        DirectoryPath targetPath,
+        string markDownFileName
         )
     {
         lock (cakeContext.FileSystem)
@@ -27,7 +29,7 @@ public static class CakeContextExtension
 
         var stream = cakeContext
                         .FileSystem
-                        .GetFile(targetPath.CombineWithFilePath("index.md"))
+                        .GetFile(targetPath.CombineWithFilePath(markDownFileName))
                         .OpenWrite();
 
         var writer = new StreamWriter(
