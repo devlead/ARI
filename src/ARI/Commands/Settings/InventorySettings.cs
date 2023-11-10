@@ -16,4 +16,10 @@ public class InventorySettings : CommandSettings
 
     [CommandOption("--skip-tenant-overview")]
     public bool SkipTenantOverview { get; set; }
+
+    [CommandOption("--run-in-parallel")]
+    public bool RunInParallel { get; set; }
+
+    [CommandOption("--markdown-name")]
+    public string MarkdownName { get; set; } = "index";
 }

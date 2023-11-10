@@ -1,4 +1,5 @@
 using ARI.Extensions;
+using ARI.Models.Tenant.Subscription.ResourceGroup.Resource;
 using Cake.Common.IO;
 
 namespace ARI.Commands;
@@ -16,21 +17,24 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
     {
         var sw = System.Diagnostics.Stopwatch.StartNew();
         var modified = DateTimeOffset.UtcNow;
+        var markDownFileName = settings.MarkdownName + ".md";
+
         Logger.LogInformation("TenantId: {TenantId}", settings.TenantId);
         Logger.LogInformation("OutputPath: {OutputPath}", settings.OutputPath);
+        Logger.LogInformation("Generate report in parallel: {GenerateInParallel}", settings.SkipTenantOverview);
+        Logger.LogInformation("Using markdown filename: {MarkDownFileName}", markDownFileName);
 
         var tenant = await TenantService.GetTenant(settings.TenantId);
 
         var targetPath = (!settings.SkipTenantOverview)
                             ? settings.OutputPath.Combine(tenant.DefaultDomain)
                             : settings.OutputPath;
-
         Logger.LogInformation("Cleaning directory {TargetPath}...", targetPath);
         CakeContext.CleanDirectory(targetPath);
         Logger.LogInformation("Done cleaning directory {TargetPath}.", targetPath);
 
         using var writer = CakeContext
-                          .OpenIndexWrite(targetPath);
+                          .OpenIndexWrite(targetPath, markDownFileName);
 
         if (!settings.SkipTenantOverview)
         {
@@ -57,12 +61,13 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
 
         await writer.AddChildrenIndex(subscriptions);
 
-        await Parallel.ForEachAsync(
+        await ForEachAsync(
+            settings,
             subscriptions,
             async (subscription, ct) =>
             {
                 using var writer = CakeContext
-                                    .OpenIndexWrite(targetPath, subscription, out var subscriptionPath);
+                                    .OpenIndexWrite(targetPath, subscription, markDownFileName, out var subscriptionPath);
 
                 await writer.AddFrontmatter(
                     modified,
@@ -81,12 +86,13 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
 
                 await writer.AddChildrenIndex(resourceGroups);
 
-                await Parallel.ForEachAsync(
+                await ForEachAsync(
+                    settings,
                     resourceGroups,
                     async (resourceGroup, ct) =>
                     {
                         using var writer = CakeContext
-                                            .OpenIndexWrite(subscriptionPath, resourceGroup, out var resourceGroupPath);
+                                            .OpenIndexWrite(subscriptionPath, resourceGroup, markDownFileName, out var resourceGroupPath);
 
                         await writer.AddFrontmatter(
                             modified,
@@ -140,12 +146,13 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                         }
 
 
-                        await Parallel.ForEachAsync(
+                        await ForEachAsync(
+                            settings,
                             resources,
                             async (resource, ct) =>
                             {
                                 using var writer = CakeContext
-                                            .OpenIndexWrite(resourceGroupPath, resource, out var resourcePath);
+                                            .OpenIndexWrite(resourceGroupPath, resource, markDownFileName, out var resourcePath);
 
                                 await writer.AddFrontmatter(
                                     modified,
@@ -165,10 +172,35 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
 
         sw.Stop();
         Logger.LogInformation("Processed {SubscriptionCount} in {Elapsed}", subscriptions.Count, sw.Elapsed);
-
         return 0;
     }
 
+    async Task ForEachAsync<TSource>(
+        InventorySettings settings,
+        IEnumerable<TSource> source, 
+        Func<TSource, CancellationToken, ValueTask> body)
+    {
+        if (settings.RunInParallel)
+        {
+            await Parallel.ForEachAsync(source, body);
+        }
+        else
+        {
+            using var cts = new CancellationTokenSource();
+            var ct = cts.Token;
+            foreach (var v in source)
+            {
+                await body(v, ct);
+                if (ct.IsCancellationRequested)
+                {
+                    return;
+                }
+            }
+
+            return;
+        }
+        
+    }
     public InventoryCommand(
         ICakeContext cakeContext,
         ILogger<InventoryCommand> logger,
