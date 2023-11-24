@@ -115,7 +115,7 @@ public static class TextWriterMarkdownExtensions
             return;
         }
 
-        foreach (var (key, value) in tags)
+        foreach (var (key, value) in tags.OrderBy(kv => kv.Key, StringComparer.OrdinalIgnoreCase))
         {
             await writer.WriteLineAsync(
                 FormattableString.Invariant(
@@ -146,7 +146,7 @@ public static class TextWriterMarkdownExtensions
                )
            );
 
-        foreach (var (key, value) in children)
+        foreach (var (key, value) in children.OrderBy(v => v.PublicId, StringComparer.OrdinalIgnoreCase))
         {
             await writer.WriteLineAsync(
                 FormattableString.Invariant(
