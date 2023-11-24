@@ -22,4 +22,10 @@ public class InventorySettings : CommandSettings
 
     [CommandOption("--markdown-name")]
     public string MarkdownName { get; set; } = "index";
+
+    [CommandOption("--avoid-generating-diffs")]
+    public bool AvoidGeneratingDiffs { get; set; }
+
+
+
 }
