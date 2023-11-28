@@ -32,10 +32,12 @@ public static class MocksFixture
                                                             "AuthorizationSource",
                                                             Array.Empty<ManagedByTenant>()
                                                         );
-    public static IDictionary<string, string> Tags { get; } = new Dictionary<string, string>
+    public static IDictionary<string, string> Tags { get; } = new AzureResourceTags
                                 {
+                                    { "Tag3", "Value4" },
                                     { "Tag1", "Value1" },
-                                    { "Tag2", "Value2" }
+                                    { "Tag2", "Value2" },
+                                    { "Tag0", "Value3" }
                                 }.AsReadOnly();
 
     public static ResourceGroup ResourceGroup { get; } = new(
@@ -43,7 +45,7 @@ public static class MocksFixture
                                                                 "Location",
                                                                 "ManagedBy",
                                                                 "Name",
-                                                                new Dictionary<string, string>
+                                                                new AzureResourceProperties
                                                                 {
                                                                     { "provisioningState", "Succeeded" }
                                                                 },
@@ -62,7 +64,11 @@ public static class MocksFixture
                                                 "Name",
                                                 DateTimeOffset.MinValue,
                                                 DateTimeOffset.MaxValue,
-                                                new Dictionary<string, string>(),
+                                                new AzureResourceProperties
+                                                {
+                                                    {"Property1", "Value1" },
+                                                    {"Property0", "Value2" }
+                                                },
                                                 "ProvisioningState",
                                                 "Type",
                                                 new SKU(

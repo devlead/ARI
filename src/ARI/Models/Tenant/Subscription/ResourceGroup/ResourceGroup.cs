@@ -10,7 +10,7 @@ public record ResourceGroup(
     [property: JsonPropertyName("name")]
     string Name,
     [property: JsonPropertyName("properties")]
-    Dictionary<string,string> Properties,
+    AzureResourceProperties Properties,
     [property: JsonPropertyName("type")]
     string Type
     ) : AzureResourceBase
