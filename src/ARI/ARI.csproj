@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameWork Condition="$(TargetFrameworks) == ''">net7.0</TargetFrameWork>
+    <TargetFrameWorks>net7.0;net8.0</TargetFrameWorks>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <ImplicitUsings>enable</ImplicitUsings>
