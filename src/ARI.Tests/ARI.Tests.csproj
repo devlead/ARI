@@ -56,7 +56,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Verify.NUnit" Version="22.1.4" />
+    <PackageReference Include="Verify.NUnit" Version="22.6.0" />
     <PackageReference Include="Verify.Http" Version="5.0.1" />
     <PackageReference Include="Cake.Testing" Version="4.0.0" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />
