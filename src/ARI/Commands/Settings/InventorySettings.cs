@@ -22,4 +22,16 @@ public class InventorySettings : CommandSettings
 
     [CommandOption("--markdown-name")]
     public string MarkdownName { get; set; } = "index";
+
+    [CommandOption("--skip-frontmatter")]
+    public bool SkipFrontmatter { get; set; }
+
+    [CommandOption("--skip-frontmatter-summary")]
+    public bool SkipFrontmatterSummary { get; set; }
+
+    [CommandOption("--skip-frontmatter-modifed")]
+    public bool SkipFrontmatterModified { get; set; }
+
+    [CommandOption("--skip-frontmatter-order")]
+    public bool SkipFrontmatterOrder { get; set; }
 }

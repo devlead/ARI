@@ -15,20 +15,35 @@ public static class TextWriterMarkdownExtensions
         this TextWriter writer,
         DateTimeOffset lastUpdateTime,
         string summary,
-        int order)
+        int order,
+        InventorySettings settings
+        )
     {
-        await writer.WriteLineAsync(
-            FormattableString.Invariant(
-                    $$"""
-                    ---
-                    summary: {{summary}}
-                    modifiedby: ARI
-                    modified: {{lastUpdateTime:yyyy-MM-dd HH:mm}}
-                    order: {{order}}
-                    ---
-                    """
-                )
-            );
+        if (settings.SkipFrontmatter)
+        {
+            return;
+        }
+
+        await writer.WriteLineAsync("---");
+
+        if (!settings.SkipFrontmatterSummary)
+        {
+            await writer.WriteLineAsync(FormattableString.Invariant($"summary: {summary}"));
+        }
+
+        await writer.WriteLineAsync(FormattableString.Invariant($"modifiedby: ARI"));
+
+        if (!settings.SkipFrontmatterModified)
+        {
+            await writer.WriteLineAsync(FormattableString.Invariant($"modified: {lastUpdateTime:yyyy-MM-dd HH:mm}"));
+        }
+
+        if (!settings.SkipFrontmatterOrder)
+        {
+            await writer.WriteLineAsync(FormattableString.Invariant($"order: {order}"));
+        }
+
+        await writer.WriteLineAsync("---");
     }
 
     public static async Task AddTenantOverview(

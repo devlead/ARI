@@ -14,7 +14,7 @@ public record Resource(
     [property: JsonPropertyName("changedTime")]
     DateTimeOffset ChangedTime,
     [property: JsonPropertyName("properties")]
-    Dictionary<string,string> Properties,
+    AzureResourceProperties Properties,
     [property: JsonPropertyName("provisioningState")]
     string ProvisioningState,
     [property: JsonPropertyName("type")]

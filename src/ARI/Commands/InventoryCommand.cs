@@ -41,7 +41,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
             await writer.AddFrontmatter(
                 modified,
                 $"Tenant {tenant.DisplayName} ({tenant.TenantId})",
-                1
+                1,
+                settings
             );
 
             await writer.AddTenantOverview(tenant);
@@ -51,7 +52,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
             await writer.AddFrontmatter(
                 modified,
                 "Azure Inventory",
-                1
+                1,
+                settings
             );
         }
 
@@ -72,7 +74,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                 await writer.AddFrontmatter(
                     modified,
                     $"Subscription {subscription.DisplayName} ({subscription.TenantId})",
-                    subscription.Order
+                    subscription.Order,
+                    settings
                     );
 
                 await writer.AddSubscriptionOverview(subscription);
@@ -97,7 +100,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                         await writer.AddFrontmatter(
                             modified,
                             $"Resource Group {resourceGroup.Name} ({subscription.SubscriptionId})",
-                            resourceGroup.Order
+                            resourceGroup.Order,
+                            settings
                             );
 
                         await writer.AddResourceGroupOverview(resourceGroup);
@@ -157,7 +161,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                                 await writer.AddFrontmatter(
                                     modified,
                                     $"Resource {resource.Name} ({subscription.SubscriptionId})",
-                                    resource.Order
+                                    resource.Order,
+                                    settings
                                     );
 
                                 await writer.AddResourceOverview(resource);
