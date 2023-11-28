@@ -48,6 +48,7 @@
     <PackageReference Include="Spectre.Console" Version="0.48.0" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.48.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
+    <PackageReference Include="Spectre.Console.Analyzer" Version="0.48.0" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
