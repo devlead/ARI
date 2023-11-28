@@ -1,14 +1,24 @@
 ﻿using ARI.Models.Tenant;
 using ARI.Models.Tenant.Subscription;
 using ARI.Models.Tenant.Subscription.ResourceGroup;
+using Spectre.Console.Cli;
 
 namespace ARI.Tests.Unit.Extensions;
 
 [TestFixture]
 public class TextWriterMarkdownExtensionsTests
 {
-    [Test]
-    public async Task AddFrontmatter()
+    [TestCase(false, false, false, false)]
+    [TestCase(true, false, false, false)]
+    [TestCase(false, true, false, false)]
+    [TestCase(false, false, true, false)]
+    [TestCase(false, false, false, true)]
+    public async Task AddFrontmatter(
+        bool skipFrontmatter,
+        bool skipFrontmatterSummary,
+        bool skipFrontmatterModified,
+        bool skipFrontmatterOrder
+        )
     {
         // Given
         var sw = new StringWriter();
@@ -16,11 +26,19 @@ public class TextWriterMarkdownExtensionsTests
         var summary = "Summary";
         var order = 0;
 
+        var settings = new ARI.Commands.Settings.InventorySettings
+        { 
+            SkipFrontmatter = skipFrontmatter,
+            SkipFrontmatterSummary = skipFrontmatterSummary,
+            SkipFrontmatterModified = skipFrontmatterModified,
+            SkipFrontmatterOrder = skipFrontmatterOrder
+        };
         // When
         await sw.AddFrontmatter(
             lastUpdateTime,
             summary,
-            order
+            order,
+            settings
             );
 
         // Then
