@@ -2,14 +2,14 @@
 using ARI.Models.Tenant.Subscription;
 using ARI.Models.Tenant.Subscription.ResourceGroup;
 using ARI.Models.Tenant.Subscription.ResourceGroup.Resource;
-using System.Reflection;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace ARI.Tests.Fixture;
 public static class MocksFixture
 {
-    public static AzureTenant AzureTenant { get; } = new (
+    public static AzureTenant AzureTenant { get; } = new AzureTenant(
                                                         "Id",
-                                                        "TenantId",
                                                         "CountryCode",
                                                         "DisplayName",
                                                         new[] { "Domain1", "Domain2" },
@@ -17,11 +17,11 @@ public static class MocksFixture
                                                         "DefaultDomain",
                                                         "TenantType",
                                                         "TenantBrandingLogoUrl"
-                                                    );
-    public static Subscription Subscription { get; } = new(
+                                                    ) with {
+                                                        TenantId = "TenantId"
+                                                    };
+    public static Subscription Subscription { get; } = new Subscription(
                                                             "Id",
-                                                            "SubscriptionId",
-                                                            "TenantId",
                                                             "DisplayName",
                                                             "State",
                                                             new SubscriptionPolicies(
@@ -31,7 +31,11 @@ public static class MocksFixture
                                                                 ),
                                                             "AuthorizationSource",
                                                             Array.Empty<ManagedByTenant>()
-                                                        );
+                                                        ) with
+                                                        {
+                                                            TenantId = "TenantId",
+                                                            SubscriptionId = "SubscriptionId"
+                                                        };
     public static IDictionary<string, string> Tags { get; } = new AzureResourceTags
                                 {
                                     { "Tag3", "Value4" },
@@ -40,7 +44,7 @@ public static class MocksFixture
                                     { "Tag0", "Value3" }
                                 }.AsReadOnly();
 
-    public static ResourceGroup ResourceGroup { get; } = new(
+    public static ResourceGroup ResourceGroup { get; } = new ResourceGroup(
                                                                 "Id",
                                                                 "Location",
                                                                 "ManagedBy",
@@ -50,7 +54,11 @@ public static class MocksFixture
                                                                     { "provisioningState", "Succeeded" }
                                                                 },
                                                                 "Type"
-                                                            );
+                                                            ) with
+                                                            {
+                                                                TenantId = "TenantId",
+                                                                SubscriptionId = "SubscriptionId"
+                                                            };
     public static ICollection<AzureResourceBase> Children { get; } = new AzureResourceBase[]
                                                                         {
                                                                             AzureTenant,
@@ -80,4 +88,44 @@ public static class MocksFixture
                                                     "Tier"
                                                     )
                                                 );
+#pragma warning disable CS8601 // Possible null reference assignment.
+    public static IDictionary<string, JsonValue> Properties { get; } = JsonSerializer.Deserialize<SortedDictionary<string, JsonValue>>(
+        """
+        {
+            "alwaysOn": false,
+            "http20Enabled": false,
+            "loadBalancing": "LeastRequests",
+            "minTlsVersion": "1.2",
+            "numberOfWorkers": 1,
+            "use32BitWorkerProcess": true,
+            "vnetName": "",
+            "webSocketsEnabled": false,
+            "requestTracingEnabled": false,
+            "remoteDebuggingEnabled": false,
+            "remoteDebuggingVersion": "VS2019",
+            "httpLoggingEnabled": false,
+            "azureMonitorLogCategories": null,
+            "acrUseManagedIdentityCreds": false,
+            "acrUserManagedIdentityID": null,
+            "logsDirectorySizeLimit": 35,
+            "detailedErrorLoggingEnabled": false,
+            "publishingUsername": "$lab-web-web-dev",
+            "defaultDocuments": [
+                "Default.htm",
+                "Default.html",
+                "Default.asp",
+                "index.htm",
+                "index.html",
+                "iisstart.htm",
+                "default.aspx",
+                "index.php",
+                "hostingstart.html"
+            ],
+            "experiments": {
+                "rampUpRules": []
+            }
+        }
+        """
+        );
+#pragma warning restore CS8601 // Possible null reference assignment.
 }

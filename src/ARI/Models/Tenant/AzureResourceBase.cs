@@ -7,7 +7,14 @@ public abstract record AzureResourceBase
 {
     public abstract string PublicId { get; }
     public abstract string Description { get; }
-    
+
+    [JsonPropertyName("tenantId")]
+    public string TenantId { get; init; } = string.Empty;
+
+    [JsonPropertyName("subscriptionId")]
+    public string SubscriptionId { get; init; } = string.Empty;
+
+    public string ResourceGroupName { get; init; } = string.Empty;
     public int Order { get; init; } = 0;
     
     [JsonPropertyName("tags")]

@@ -1,0 +1,14 @@
+﻿
+## Properties
+
+| Key                                 | Value                                                                                           |
+|-------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Always On**                       | `false`                                                                                         |
+| **Default Documents**               | `[<br>  "Default.htm",<br>  "Default.html",<br>  "Default.asp",<br>  "index.htm",<br>  "index.html",<br>  "iisstart.htm",<br>  "default.aspx",<br>  "index.php",<br>  "hostingstart.html"<br>]` |
+| **Http20 Enabled**                  | `false`                                                                                         |
+| **Load Balancing**                  | `"LeastRequests"`                                                                               |
+| **Min Tls Version**                 | `"1.2"`                                                                                         |
+| **Number Of Workers**               | `1`                                                                                             |
+| **Use32 Bit Worker Process**        | `true`                                                                                          |
+| **Vnet Name**                       | `""`                                                                                            |
+| **Web Sockets Enabled**             | `false`                                                                                         |

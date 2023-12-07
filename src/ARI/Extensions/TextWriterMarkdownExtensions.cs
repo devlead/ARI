@@ -2,6 +2,7 @@
 using ARI.Models.Tenant.Subscription.ResourceGroup.Resource;
 using Newtonsoft.Json.Linq;
 using System.Runtime.CompilerServices;
+using System.Text.Json.Nodes;
 
 namespace ARI.Extensions;
 
@@ -252,4 +253,43 @@ public static class TextWriterMarkdownExtensions
                     $"| {name.LastPart('.').Bold(),-NameColumnWidth} | {description.CodeLine(),-DescriptionColumnWidth} |"
                 )
             );
+
+    private static readonly JsonSerializerOptions PropertiesValueOptions = new() { WriteIndented = true };
+    public static async Task AddProperties(
+        this TextWriter writer,
+        IDictionary<string, JsonValue> properties,
+        InventorySettings settings
+        )
+    {
+        await writer.WriteLineAsync(
+           FormattableString.Invariant(
+                   $$"""
+
+                   ## Properties
+                   
+                   | Key                                 | Value                                                                                           |
+                   |-------------------------------------|-------------------------------------------------------------------------------------------------|
+                   """
+               )
+           );
+
+        if (properties == null)
+        {
+            return;
+        }
+
+        foreach (var (key, value) in properties)
+        {
+            if (!settings.AllowedSiteProperties.Contains(key))
+            {
+                continue;
+            }
+
+            await writer.WriteLineAsync(
+                FormattableString.Invariant(
+                    $"| {key.SeparateByCase().Bold(),-NameColumnWidth} | {value?.ToJsonString(PropertiesValueOptions).CodeLine(),-DescriptionColumnWidth} |"
+                )
+            );
+        }
+    }
 }

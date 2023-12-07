@@ -10,8 +10,11 @@
   <ItemGroup>
     <None Remove="Resources\GraphOrg.json" />
     <None Remove="Resources\Subscription1_ResourceGroup1_Resources.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup1_Site_Config.json" />
     <None Remove="Resources\Subscription1_ResourceGroup2_Resources.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup2_Site_Config.json" />
     <None Remove="Resources\Subscription1_ResourceGroup3_Resources.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup3_Site_Config.json" />
     <None Remove="Resources\Subscription1_ResourceGroups.json" />
     <None Remove="Resources\Subscription2_ResourceGroup1_Resources.json" />
     <None Remove="Resources\Subscription2_ResourceGroups.json" />
@@ -20,9 +23,12 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\GraphOrg.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Site_Config.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Site_Config.json" />
     <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Resources.json" />
     <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Resources.json" />
     <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Resources.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Site_Config.json" />
     <EmbeddedResource Include="Resources\Subscription2_ResourceGroup1_Resources.json" />
     <EmbeddedResource Include="Resources\Subscription2_ResourceGroups.json" />
     <EmbeddedResource Include="Resources\Subscriptions.json" />
@@ -41,6 +47,7 @@
     <Using Include="ARI.Tests.Extensions" />
     <Using Include="ARI.Services" />
     <Using Include="ARI.Services.ARM" />
+    <Using Include="ARI.Services.Markdown" />
     <Using Include="ARI.Extensions" />
   </ItemGroup>
 

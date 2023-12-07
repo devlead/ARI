@@ -1,0 +1,334 @@
+﻿{
+  Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev/providers/Microsoft.Web/sites/lab-web-web-dev/config/web,
+  Name: lab-web-web-dev,
+  Type: Microsoft.Web/sites/config,
+  Location: West Europe,
+  Properties: {
+    acrUseManagedIdentityCreds: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    acrUserManagedIdentityID: null,
+    alwaysOn: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    antivirusScanEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    apiDefinition: null,
+    apiManagementConfig: null,
+    appCommandLine: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    appSettings: null,
+    autoHealEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    autoHealRules: null,
+    autoSwapSlotName: null,
+    azureMonitorLogCategories: null,
+    azureStorageAccounts: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    connectionStrings: null,
+    cors: null,
+    customAppPoolIdentityAdminState: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    customAppPoolIdentityTenantState: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    defaultDocuments: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    detailedErrorLoggingEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    documentRoot: null,
+    elasticWebAppScaleLimit: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    experiments: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    fileChangeAuditEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    ftpsState: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    functionAppScaleLimit: null,
+    functionsRuntimeScaleMonitoringEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    handlerMappings: null,
+    healthCheckPath: null,
+    http20Enabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    http20ProxyFlag: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    httpLoggingEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    ipSecurityRestrictions: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    ipSecurityRestrictionsDefaultAction: null,
+    javaContainer: null,
+    javaContainerVersion: null,
+    javaVersion: null,
+    keyVaultReferenceIdentity: null,
+    limits: null,
+    linuxFxVersion: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    loadBalancing: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    localMySqlEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    logsDirectorySizeLimit: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    machineKey: null,
+    managedPipelineMode: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    managedServiceIdentityId: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    metadata: null,
+    minimumElasticInstanceCount: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    minTlsCipherSuite: null,
+    minTlsVersion: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    netFrameworkVersion: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    nodeVersion: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    numberOfWorkers: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    phpVersion: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    powerShellVersion: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    preWarmedInstanceCount: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    publicNetworkAccess: null,
+    publishingPassword: null,
+    publishingUsername: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    push: null,
+    pythonVersion: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    remoteDebuggingEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    remoteDebuggingVersion: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    requestTracingEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    routingRules: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    runtimeADUser: null,
+    runtimeADUserPassword: null,
+    scmIpSecurityRestrictions: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    scmIpSecurityRestrictionsDefaultAction: null,
+    scmIpSecurityRestrictionsUseMain: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    scmMinTlsVersion: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    scmType: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    siteAuthEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    siteAuthSettings: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    sitePort: null,
+    sitePrivateLinkHostEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    storageType: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    supportedTlsCipherSuites: null,
+    tracingOptions: null,
+    use32BitWorkerProcess: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    virtualApplications: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    vnetName: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    vnetPrivatePortsCount: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    vnetRouteAllEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    websiteTimeZone: null,
+    webSocketsEnabled: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    winAuthAdminState: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    winAuthTenantState: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    windowsConfiguredStacks: {
+      Options: {
+        PropertyNameCaseInsensitive: true
+      }
+    },
+    windowsFxVersion: null,
+    xManagedServiceIdentityId: null
+  },
+  PublicId: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev/providers/Microsoft.Web/sites/lab-web-web-dev/config/web,
+  Description: lab-web-web-dev,
+  TenantId: Guid_1,
+  SubscriptionId: Guid_2,
+  ResourceGroupName: lab-dev,
+  Order: 1,
+  Tags: {
+    BillingDimension: lab,
+    Creator: Bicep-lab,
+    Dimension: lab,
+    Environment: dev
+  }
+}

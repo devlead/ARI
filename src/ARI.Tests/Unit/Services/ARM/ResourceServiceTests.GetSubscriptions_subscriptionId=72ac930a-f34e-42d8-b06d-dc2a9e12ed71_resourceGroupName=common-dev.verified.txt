@@ -1,0 +1,27 @@
+﻿[
+  {
+    Id: /subscriptions/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/resourceGroups/common-dev/providers/Microsoft.ContainerRegistry/registries/commonacrdevecdo,
+    Location: westeurope,
+    Name: commonacrdevecdo,
+    CreatedTime: DateTimeOffset_1,
+    ChangedTime: DateTimeOffset_2,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.ContainerRegistry/registries,
+    SKU: {
+      Name: Standard,
+      Tier: Standard
+    },
+    PublicId: commonacrdevecdo,
+    Description: commonacrdevecdo,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: common-dev,
+    Order: 1,
+    Tags: {
+      BillingDimension: common,
+      Creator: Bicep-common,
+      Dimension: common,
+      Environment: dev
+    }
+  }
+]

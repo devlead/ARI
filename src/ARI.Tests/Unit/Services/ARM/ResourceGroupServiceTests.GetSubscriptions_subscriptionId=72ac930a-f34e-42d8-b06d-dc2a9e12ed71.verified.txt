@@ -9,6 +9,9 @@
     Type: Microsoft.Resources/resourceGroups,
     PublicId: common-dev,
     Description: common-dev,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_1,
+    ResourceGroupName: common-dev,
     Order: 1,
     Tags: {
       BillingDimension: common,

@@ -4,6 +4,22 @@ namespace ARI.Commands.Settings;
 
 public class InventorySettings : CommandSettings
 {
+    private static readonly string[] defaultAllowedSiteProperties = new [] {
+                                                                        "alwaysOn",
+                                                                        "defaultDocuments",
+                                                                        "http20Enabled",
+                                                                        "loadBalancing",
+                                                                        "minTlsVersion",
+                                                                        "numberOfWorkers",
+                                                                        "use32BitWorkerProcess",
+                                                                        "vnetName",
+                                                                        "webSocketsEnabled"
+                                                                    };
+    private SortedSet<string> allowedSiteProperties = new(
+                                                        defaultAllowedSiteProperties,
+                                                        StringComparer.OrdinalIgnoreCase
+                                                    );
+
     [CommandArgument(0, "<tenantId>")]
     [ValidateString]
     [Description("Azure Tenant Id")]
@@ -12,7 +28,7 @@ public class InventorySettings : CommandSettings
     [CommandArgument(1, "<outputpath>")]
     [ValidatePath]
     [Description("Output path")]
-    public DirectoryPath OutputPath { get; set; } = System.Environment.CurrentDirectory;
+    public DirectoryPath OutputPath { get; set; } = Environment.CurrentDirectory;
 
     [CommandOption("--skip-tenant-overview")]
     [Description("Skip tenant information in overview")]
@@ -41,4 +57,14 @@ public class InventorySettings : CommandSettings
     [CommandOption("--skip-frontmatter-order")]
     [Description("Exclude order from frontmatter")]
     public bool SkipFrontmatterOrder { get; set; }
+
+    [CommandOption("--allowed-site-properties")]
+    [Description("Web Site properties allowed to be documented")]
+    public ICollection<string> AllowedSiteProperties { 
+        get => allowedSiteProperties;
+        set => allowedSiteProperties = new SortedSet<string>(
+        value,
+        StringComparer.OrdinalIgnoreCase
+        );
+    }
 }

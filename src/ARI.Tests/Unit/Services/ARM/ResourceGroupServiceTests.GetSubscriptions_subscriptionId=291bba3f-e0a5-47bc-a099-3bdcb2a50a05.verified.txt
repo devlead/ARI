@@ -9,6 +9,9 @@
     Type: Microsoft.Resources/resourceGroups,
     PublicId: lab-dev,
     Description: lab-dev,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_1,
+    ResourceGroupName: lab-dev,
     Order: 1,
     Tags: {
       BillingDimension: lab,
@@ -27,6 +30,9 @@
     Type: Microsoft.Resources/resourceGroups,
     PublicId: lab-prd,
     Description: lab-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_1,
+    ResourceGroupName: lab-prd,
     Order: 2,
     Tags: {
       BillingDimension: lab,
@@ -45,6 +51,9 @@
     Type: Microsoft.Resources/resourceGroups,
     PublicId: lab-stg,
     Description: lab-stg,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_1,
+    ResourceGroupName: lab-stg,
     Order: 3,
     Tags: {
       BillingDimension: lab,

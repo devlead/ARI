@@ -1,6 +1,5 @@
 ﻿{
   Id: /tenants/daea2e9b-847b-4c93-850d-2aa6f2d7af33,
-  TenantId: Guid_1,
   CountryCode: US,
   DisplayName: TEST_TEST_RDV,
   Domains: [
@@ -11,5 +10,8 @@
   DefaultDomain: rdvmohoro.mail.ccsctp.net,
   TenantType: AAD,
   PublicId: rdvmohoro.mail.ccsctp.net,
-  Description: TEST_TEST_RDV
+  Description: TEST_TEST_RDV,
+  TenantId: Guid_1,
+  SubscriptionId: ,
+  ResourceGroupName: 
 }

@@ -2,6 +2,7 @@
 using ARI.Commands;
 using Cake.Core;
 using Spectre.Console.Cli;
+using ARI.Services.Markdown;
 
 namespace ARI.Tests.Unit.Commands;
 
@@ -30,8 +31,9 @@ public class InventoryCommandTests
             tenantService,
             subscriptionService,
             resourceGroupService,
-            resourceService
-            ) = ARIServiceProviderFixture.GetRequiredService<ICakeContext, ILogger<InventoryCommand>, TenantService, SubscriptionService, ResourceGroupService, ResourceService>(
+            resourceService,
+            markdownServices
+            ) = ARIServiceProviderFixture.GetRequiredService<ICakeContext, ILogger<InventoryCommand>, TenantService, SubscriptionService, ResourceGroupService, ResourceService, IEnumerable<MarkdownServiceBase>>(
                 services => services
                                 .AddCakeFakes(
                                     fileSystem => fileSystem.CreateDirectory(settings.OutputPath)
@@ -44,7 +46,8 @@ public class InventoryCommandTests
             tenantService,
             subscriptionService,
             resourceGroupService,
-            resourceService
+            resourceService,
+            markdownServices
             );
 
         // When
