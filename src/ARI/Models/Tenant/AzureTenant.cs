@@ -3,8 +3,6 @@
 public record AzureTenant(
     [property: JsonPropertyName("id")]
     string Id,
-    [property: JsonPropertyName("tenantId")]
-    string TenantId,
     // Only available for users
     [property: JsonPropertyName("countryCode")]
     string CountryCode,

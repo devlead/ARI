@@ -28,9 +28,11 @@
     <Using Include="ARI.Models.Tenant.Subscription" />
     <Using Include="ARI.Models.Tenant.Subscription.ResourceGroup" />
     <Using Include="ARI.Models.Tenant.Subscription.ResourceGroup.Resource" />
+    <Using Include="ARI.Models.Tenant.Subscription.ResourceGroup.Resource.Web.Site" />
     <Using Include="ARI.Extensions" />
     <Using Include="ARI.Services" />
     <Using Include="ARI.Services.ARM" />
+    <Using Include="ARI.Services.Markdown" />
     <Using Include="Spectre.Console" />
     <Using Include="Spectre.Console.Cli" />
   </ItemGroup>

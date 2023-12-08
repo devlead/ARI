@@ -1,0 +1,432 @@
+﻿[
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/microsoft.insights/actiongroups/Application Insights Smart Detection,
+    Location: global,
+    Name: Application Insights Smart Detection,
+    CreatedTime: DateTimeOffset_1,
+    ChangedTime: DateTimeOffset_2,
+    ProvisioningState: Succeeded,
+    Type: microsoft.insights/actiongroups,
+    PublicId: Application Insights Smart Detection,
+    Description: Application Insights Smart Detection,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 1
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Network/privateEndpoints/devops-azuresql-private-endpoint,
+    Location: westeurope,
+    Name: devops-azuresql-private-endpoint,
+    CreatedTime: DateTimeOffset_3,
+    ChangedTime: DateTimeOffset_4,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Network/privateEndpoints,
+    PublicId: devops-azuresql-private-endpoint,
+    Description: devops-azuresql-private-endpoint,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 2,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Network/networkInterfaces/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634,
+    Location: westeurope,
+    Name: devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634,
+    CreatedTime: DateTimeOffset_5,
+    ChangedTime: DateTimeOffset_6,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Network/networkInterfaces,
+    PublicId: devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634,
+    Description: devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 3,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/microsoft.alertsmanagement/smartDetectorAlertRules/Failure Anomalies - lab-appi-prd,
+    Location: global,
+    Name: Failure Anomalies - lab-appi-prd,
+    CreatedTime: DateTimeOffset_7,
+    ChangedTime: DateTimeOffset_8,
+    ProvisioningState: Succeeded,
+    Type: microsoft.alertsmanagement/smartDetectorAlertRules,
+    PublicId: Failure Anomalies - lab-appi-prd,
+    Description: Failure Anomalies - lab-appi-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 4
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Insights/components/lab-appi-prd,
+    Location: westeurope,
+    Name: lab-appi-prd,
+    CreatedTime: DateTimeOffset_9,
+    ChangedTime: DateTimeOffset_10,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Insights/components,
+    PublicId: lab-appi-prd,
+    Description: lab-appi-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 5,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Web/serverFarms/lab-asp-prd,
+    Location: westeurope,
+    Name: lab-asp-prd,
+    CreatedTime: DateTimeOffset_11,
+    ChangedTime: DateTimeOffset_12,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Web/serverFarms,
+    SKU: {
+      Capacity: 1,
+      Family: B,
+      Name: B1,
+      Size: B1,
+      Tier: Basic
+    },
+    PublicId: lab-asp-prd,
+    Description: lab-asp-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 6,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Web/staticSites/lab-docs-stapp-prd,
+    Location: westeurope,
+    Name: lab-docs-stapp-prd,
+    CreatedTime: DateTimeOffset_13,
+    ChangedTime: DateTimeOffset_14,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Web/staticSites,
+    SKU: {
+      Name: Free,
+      Tier: Free
+    },
+    PublicId: lab-docs-stapp-prd,
+    Description: lab-docs-stapp-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 7,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.KeyVault/vaults/lab-kv-prd,
+    Location: westeurope,
+    Name: lab-kv-prd,
+    CreatedTime: DateTimeOffset_15,
+    ChangedTime: DateTimeOffset_16,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.KeyVault/vaults,
+    PublicId: lab-kv-prd,
+    Description: lab-kv-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 8,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.OperationalInsights/workspaces/lab-log-prd,
+    Location: westeurope,
+    Name: lab-log-prd,
+    CreatedTime: DateTimeOffset_17,
+    ChangedTime: DateTimeOffset_18,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.OperationalInsights/workspaces,
+    PublicId: lab-log-prd,
+    Description: lab-log-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 9,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Sql/servers/lab-prdops-sql-prd,
+    Location: westeurope,
+    Name: lab-prdops-sql-prd,
+    CreatedTime: DateTimeOffset_19,
+    ChangedTime: DateTimeOffset_20,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Sql/servers,
+    PublicId: lab-prdops-sql-prd,
+    Description: lab-prdops-sql-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 10,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Sql/servers/lab-prdops-sql-prd/databases/DevOps,
+    Location: westeurope,
+    Name: lab-prdops-sql-prd/DevOps,
+    CreatedTime: DateTimeOffset_21,
+    ChangedTime: DateTimeOffset_22,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Sql/servers/databases,
+    SKU: {
+      Capacity: 10,
+      Name: Standard,
+      Tier: Standard
+    },
+    PublicId: lab-prdops-sql-prd/DevOps,
+    Description: lab-prdops-sql-prd/DevOps,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 11,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Sql/servers/lab-prdops-sql-prd/databases/master,
+    Location: westeurope,
+    ManagedBy: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Sql/servers/lab-prdops-sql-prd,
+    Name: lab-prdops-sql-prd/master,
+    CreatedTime: DateTimeOffset_23,
+    ChangedTime: DateTimeOffset_24,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Sql/servers/databases,
+    SKU: {
+      Capacity: 0,
+      Name: System,
+      Tier: System
+    },
+    PublicId: lab-prdops-sql-prd/master,
+    Description: lab-prdops-sql-prd/master,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 12
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Sql/servers/lab-prdops-sql-prd/databases/SecondDatabase,
+    Location: westeurope,
+    Name: lab-prdops-sql-prd/SecondDatabase,
+    CreatedTime: DateTimeOffset_25,
+    ChangedTime: DateTimeOffset_26,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Sql/servers/databases,
+    SKU: {
+      Capacity: 10,
+      Name: Standard,
+      Tier: Standard
+    },
+    PublicId: lab-prdops-sql-prd/SecondDatabase,
+    Description: lab-prdops-sql-prd/SecondDatabase,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 13,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Search/searchServices/lab-srch-prd,
+    Location: westeurope,
+    Name: lab-srch-prd,
+    CreatedTime: DateTimeOffset_27,
+    ChangedTime: DateTimeOffset_28,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Search/searchServices,
+    SKU: {
+      Name: free
+    },
+    PublicId: lab-srch-prd,
+    Description: lab-srch-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 14,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Network/virtualNetworks/lab-vnet-prd,
+    Location: westeurope,
+    Name: lab-vnet-prd,
+    CreatedTime: DateTimeOffset_29,
+    ChangedTime: DateTimeOffset_30,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Network/virtualNetworks,
+    PublicId: lab-vnet-prd,
+    Description: lab-vnet-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 15,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Web/sites/lab-web-web-prd,
+    Location: westeurope,
+    Name: lab-web-web-prd,
+    CreatedTime: DateTimeOffset_31,
+    ChangedTime: DateTimeOffset_32,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Web/sites,
+    PublicId: lab-web-web-prd,
+    Description: lab-web-web-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 16,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Storage/storageAccounts/labdevecdo,
+    Location: westeurope,
+    Name: labdevecdo,
+    CreatedTime: DateTimeOffset_33,
+    ChangedTime: DateTimeOffset_34,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Storage/storageAccounts,
+    SKU: {
+      Name: Standard_LRS,
+      Tier: Standard
+    },
+    PublicId: labdevecdo,
+    Description: labdevecdo,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 17,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net,
+    Location: global,
+    Name: privatelink.database.windows.net,
+    CreatedTime: DateTimeOffset_35,
+    ChangedTime: DateTimeOffset_36,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Network/privateDnsZones,
+    PublicId: privatelink.database.windows.net,
+    Description: privatelink.database.windows.net,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 18,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net/virtualNetworkLinks/privatelink.database.windows.net-link,
+    Location: global,
+    Name: privatelink.database.windows.net/privatelink.database.windows.net-link,
+    CreatedTime: DateTimeOffset_37,
+    ChangedTime: DateTimeOffset_38,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Network/privateDnsZones/virtualNetworkLinks,
+    PublicId: privatelink.database.windows.net/privatelink.database.windows.net-link,
+    Description: privatelink.database.windows.net/privatelink.database.windows.net-link,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 19,
+    Tags: {
+      BillingDimension: lab,
+      Creator: Bicep-lab,
+      Dimension: lab,
+      Environment: dev
+    }
+  },
+  {
+    Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Web/certificates/web.dev.ecdo.azurevoodoo.net-lab-asp-prd,
+    Location: westeurope,
+    Name: web.dev.ecdo.azurevoodoo.net-lab-asp-prd,
+    CreatedTime: DateTimeOffset_39,
+    ChangedTime: DateTimeOffset_40,
+    ProvisioningState: Succeeded,
+    Type: Microsoft.Web/certificates,
+    PublicId: web.dev.ecdo.azurevoodoo.net-lab-asp-prd,
+    Description: web.dev.ecdo.azurevoodoo.net-lab-asp-prd,
+    TenantId: Guid_1,
+    SubscriptionId: Guid_2,
+    ResourceGroupName: lab-prd,
+    Order: 20
+  }
+]

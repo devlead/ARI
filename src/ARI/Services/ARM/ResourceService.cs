@@ -1,4 +1,6 @@
-﻿namespace ARI.Services.ARM;
+﻿using System.Text.Json.Nodes;
+
+namespace ARI.Services.ARM;
 
 public record ResourceService(
     ILogger<ResourceService> Logger,
@@ -20,6 +22,10 @@ public record ResourceService(
 
         return resources
                 .Value
-                .Index();
+                .Index(
+                    _ => tenantId,
+                    _ => subscriptionId,
+                    _ => resourceGroupName
+                 );
     }
 }

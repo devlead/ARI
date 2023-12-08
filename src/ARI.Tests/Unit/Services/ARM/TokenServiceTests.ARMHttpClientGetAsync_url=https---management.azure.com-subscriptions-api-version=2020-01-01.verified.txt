@@ -2,8 +2,6 @@
   Value: [
     {
       Id: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05,
-      SubscriptionId: Guid_1,
-      TenantId: Guid_2,
       DisplayName: Example Subscription,
       State: Enabled,
       SubscriptionPolicies: {
@@ -14,11 +12,14 @@
       AuthorizationSource: RoleBased,
       ManagedByTenants: [
         {
-          TenantId: Guid_3
+          TenantId: Guid_1
         }
       ],
-      PublicId: Guid_1,
+      PublicId: Guid_2,
       Description: Example Subscription,
+      TenantId: Guid_3,
+      SubscriptionId: Guid_2,
+      ResourceGroupName: ,
       Tags: {
         tagKey1: tagValue1,
         tagKey2: tagValue2
@@ -26,8 +27,6 @@
     },
     {
       Id: /subscriptions/72ac930a-f34e-42d8-b06d-dc2a9e12ed71,
-      SubscriptionId: Guid_4,
-      TenantId: Guid_2,
       DisplayName: Example Subscription2,
       State: Enabled,
       SubscriptionPolicies: {
@@ -38,14 +37,17 @@
       AuthorizationSource: RoleBased,
       ManagedByTenants: [
         {
-          TenantId: Guid_3
+          TenantId: Guid_1
         },
         {
-          TenantId: Guid_5
+          TenantId: Guid_4
         }
       ],
-      PublicId: Guid_4,
+      PublicId: Guid_5,
       Description: Example Subscription2,
+      TenantId: Guid_3,
+      SubscriptionId: Guid_5,
+      ResourceGroupName: ,
       Tags: {
         tagKey1: tagValue1,
         tagKey2: tagValue2

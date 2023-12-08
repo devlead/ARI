@@ -12,6 +12,7 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
     private SubscriptionService SubscriptionService { get; }
     private ResourceGroupService ResourceGroupService { get; }
     private ResourceService ResourceService { get; }
+    public ILookup<string, MarkdownServiceBase> MarkdownServices { get; }
 
     public override async Task<int> ExecuteAsync(CommandContext context, InventorySettings settings)
     {
@@ -168,6 +169,11 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                                 await writer.AddResourceOverview(resource);
 
                                 await writer.AddTags(resource.Tags);
+
+                                foreach (var renderer in MarkdownServices[resource.Type])
+                                {
+                                    await renderer.Render(writer, resource, settings);
+                                }
                             }
                         );
                     }
@@ -212,7 +218,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
         TenantService tenantService,
         SubscriptionService subscriptionService,
         ResourceGroupService resourceGroupService,
-        ResourceService resourceService
+        ResourceService resourceService,
+        IEnumerable<MarkdownServiceBase> markdownServices
         )
     {
         CakeContext = cakeContext;
@@ -221,5 +228,10 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
         SubscriptionService = subscriptionService;
         ResourceGroupService = resourceGroupService;
         ResourceService = resourceService;
+        MarkdownServices = markdownServices.ToLookup(
+            key => key.Type,
+            value => value,
+            StringComparer.OrdinalIgnoreCase
+            );
     }
 }

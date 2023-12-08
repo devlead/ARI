@@ -34,4 +34,29 @@ public static class StringMarkdownExtensions
             is string[] parts
                 ? parts[^1]
                 : string.Empty;
+
+    public static string SeparateByCase(this string? value, char separator = ' ')
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return string.Empty;
+        }
+
+
+        var sb = new StringBuilder(value[..1].ToUpperInvariant());
+        
+        for (var i = 1; i < value.Length; i++)
+        {
+            var c = value[i];
+            var c2 = value[i-1];
+            if (char.IsUpper(c) && !(c2=='I' && c=='D'))
+            {
+                sb.Append(separator);
+            }
+
+            sb.Append(c);
+        }
+
+        return sb.ToString();
+    }
 }

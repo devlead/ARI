@@ -16,7 +16,7 @@ public record SubscriptionService(
  
         return subscriptions
                 .Value
-                .Index(subscription => subscription.TenantId == tenantId)
+                .Index()
                 .ToArray();
     }
 }

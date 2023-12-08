@@ -44,7 +44,10 @@ var serviceCollection = new ServiceCollection()
     .AddSingleton<TenantService>()
     .AddSingleton<SubscriptionService>()
     .AddSingleton<ResourceGroupService>()
-    .AddSingleton<ResourceService>();
+    .AddSingleton<ResourceService>()
+    .AddSingleton<WebAppConfigService>()
+    .AddSingleton<WebAppConfigService>()
+    .AddSingleton<MarkdownServiceBase, WebAppConfigServiceMarkdownService>();
 
 serviceCollection.AddHttpClient();
 

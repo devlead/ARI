@@ -16,6 +16,10 @@ public record ResourceGroupService(
 
         return resourceGroups
                 .Value
-                .Index();
+                .Index(
+                    _ => tenantId,
+                    _ => tenantId,
+                    resourceGroup => resourceGroup.Name
+                    );
     }
 }

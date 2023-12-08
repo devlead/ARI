@@ -13,14 +13,26 @@ public static class Constants
             public static class ResourceGroup1
             {
                 public const string Name = "lab-dev";
+                public static class Site
+                {
+                    public const string Name = "lab-web-web-dev";
+                }
             }
             public static class ResourceGroup2
             {
                 public const string Name = "lab-stg";
+                public static class Site
+                {
+                    public const string Name = "lab-web-web-stg";
+                }
             }
             public static class ResourceGroup3
             {
                 public const string Name = "lab-prd";
+                public static class Site
+                {
+                    public const string Name = "lab-web-web-prd";
+                }
             }
         }
         public static class Subscription2
@@ -55,14 +67,26 @@ public static class Constants
                 public static class ResourceGroup1
                 {
                     public const string Resources = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup1.Name}/resources?$expand=createdTime,changedTime,provisioningState&api-version=2021-04-01";
+                    public static class Site
+                    {
+                        public const string Config = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup1.Name}/providers/Microsoft.Web/sites/{Tenant.Subscription1.ResourceGroup1.Site.Name}/config?api-version=2022-03-01";
+                    }
                 }
                 public static class ResourceGroup2
                 {
                     public const string Resources = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup2.Name}/resources?$expand=createdTime,changedTime,provisioningState&api-version=2021-04-01";
+                    public static class Site
+                    {
+                        public const string Config = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup2.Name}/providers/Microsoft.Web/sites/{Tenant.Subscription1.ResourceGroup2.Site.Name}/config?api-version=2022-03-01";
+                    }
                 }
                 public static class ResourceGroup3
                 {
                     public const string Resources = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup3.Name}/resources?$expand=createdTime,changedTime,provisioningState&api-version=2021-04-01";
+                    public static class Site
+                    {
+                        public const string Config = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup3.Name}/providers/Microsoft.Web/sites/{Tenant.Subscription1.ResourceGroup3.Site.Name}/config?api-version=2022-03-01";
+                    }
                 }
             }
 
@@ -92,14 +116,26 @@ public static class Constants
                 public static class ResourceGroup1
                 {
                     public static string Resources { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup1)}_{nameof(Resources)}.json");
+                    public static class Site
+                    {
+                        public static string Config { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup1)}_{nameof(Site)}_{nameof(Config)}.json");
+                    }
                 }
                 public static class ResourceGroup2
                 {
                     public static string Resources { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup2)}_{nameof(Resources)}.json");
+                    public static class Site
+                    {
+                        public static string Config { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup2)}_{nameof(Site)}_{nameof(Config)}.json");
+                    }
                 }
                 public static class ResourceGroup3
                 {
                     public static string Resources { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup3)}_{nameof(Resources)}.json");
+                    public static class Site
+                    {
+                        public static string Config { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup3)}_{nameof(Site)}_{nameof(Config)}.json");
+                    }
                 }
             }
 
@@ -108,7 +144,7 @@ public static class Constants
                 public static string ResourceGroups { get; } = GetResourceString($"{nameof(Subscription2)}_{nameof(ResourceGroups)}.json");
                 public static class ResourceGroup1
                 {
-                    public static string Resources { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup1)}_{nameof(Resources)}.json");
+                    public static string Resources { get; } = GetResourceString($"{nameof(Subscription2)}_{nameof(ResourceGroup1)}_{nameof(Resources)}.json");
                 }
             }
         }
