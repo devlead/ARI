@@ -181,7 +181,8 @@ Task("Clean")
                                                         .Append("inventory")
                                                         .AppendQuotedSecret(data.AzureTenantId)
                                                         .AppendQuoted(data.IntegrationTestPath.FullPath)
-                                                        .Append("--skip-tenant-overview"),
+                                                        .Append("--skip-tenant-overview")
+                                                        .Append("--include-site-application-settings"),
                     WorkingDirectory = data.IntegrationTestPath
                 }
             )

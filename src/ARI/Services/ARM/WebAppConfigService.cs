@@ -12,14 +12,14 @@ public record WebAppConfigService(
         string webAppName
         )
     {
-        var resources = await TokenService.ARMHttpClientGetAsync<ArmResult<WebConfig>>(
+        var config = await TokenService.ARMHttpClientGetAsync<ArmResult<WebConfig>>(
             tenantId,
             $"https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{webAppName}/config?api-version=2022-03-01"
             );
 
-        ArgumentNullException.ThrowIfNull(resources.Value);
+        ArgumentNullException.ThrowIfNull(config.Value);
 
-        return resources
+        return config
                 .Value
                 .Index(
                     _ => tenantId,

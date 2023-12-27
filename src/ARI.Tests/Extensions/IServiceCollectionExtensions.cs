@@ -117,6 +117,21 @@ public static class IServiceCollectionExtensions
                             RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription1.ResourceGroup3.Site.Config
                         } => GetMockJsonResponse(Constants.Response.Json.Subscription1.ResourceGroup3.Site.Config),
 
+                        {
+                            Method.Method: Constants.Request.Method.Post,
+                            RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription1.ResourceGroup1.Site.Settings
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscription1.ResourceGroup1.Site.Settings),
+
+                        {
+                            Method.Method: Constants.Request.Method.Post,
+                            RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription1.ResourceGroup2.Site.Settings
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscription1.ResourceGroup2.Site.Settings),
+
+                        {
+                            Method.Method: Constants.Request.Method.Post,
+                            RequestUri.AbsoluteUri: Constants.Request.Uri.Subscription1.ResourceGroup3.Site.Settings
+                        } => GetMockJsonResponse(Constants.Response.Json.Subscription1.ResourceGroup3.Site.Settings),
+
                         _ => new HttpResponseMessage
                         {
                             StatusCode = System.Net.HttpStatusCode.NotFound

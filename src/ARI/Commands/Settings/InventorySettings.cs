@@ -20,6 +20,21 @@ public class InventorySettings : CommandSettings
                                                         StringComparer.OrdinalIgnoreCase
                                                     );
 
+    private static readonly string[] defaultAllowedSiteSettingValues = new [] {
+                                                                        "true",
+                                                                        "false",
+                                                                        "1",
+                                                                        "0"
+                                                                    };
+    private SortedSet<string> allowedSiteSettingValues = new(
+                                                        defaultAllowedSiteSettingValues,
+                                                        StringComparer.OrdinalIgnoreCase
+                                                    );
+
+    private SortedSet<string> allowedSiteSettingValueKeys = new(
+                                                        StringComparer.OrdinalIgnoreCase
+                                                    );
+
     [CommandArgument(0, "<tenantId>")]
     [ValidateString]
     [Description("Azure Tenant Id")]
@@ -63,6 +78,33 @@ public class InventorySettings : CommandSettings
     public ICollection<string> AllowedSiteProperties { 
         get => allowedSiteProperties;
         set => allowedSiteProperties = new SortedSet<string>(
+        value,
+        StringComparer.OrdinalIgnoreCase
+        );
+    }
+
+    [Description("Flag for if app setting keys should be documented (requires at least Website Contributor role)")]
+    [CommandOption("--include-site-application-settings")]
+    public bool IncludeSiteApplicationsettings { get; set; }
+
+
+    [CommandOption("--allowed-site-setting-values")]
+    [Description("Web Site setting values allowed to be documented")]
+    public ICollection<string> AllowedSiteSettingValues
+    {
+        get => allowedSiteSettingValues;
+        set => allowedSiteSettingValues = new SortedSet<string>(
+            defaultAllowedSiteSettingValues.Union(value, StringComparer.OrdinalIgnoreCase),
+            StringComparer.OrdinalIgnoreCase
+        );
+    }
+
+    [CommandOption("--allowed-site-setting-value-keys")]
+    [Description("Web Site setting keys where values are allowed to be documented")]
+    public ICollection<string> AllowedSiteSettingValueKeys
+    {
+        get => allowedSiteSettingValueKeys;
+        set => allowedSiteSettingValueKeys = new SortedSet<string>(
         value,
         StringComparer.OrdinalIgnoreCase
         );
