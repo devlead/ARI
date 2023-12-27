@@ -2,15 +2,18 @@
 using ARI.Commands;
 using Cake.Core;
 using Spectre.Console.Cli;
+using ARI.Services.Markdown;
 
 namespace ARI.Tests.Unit.Commands;
 
 [TestFixture]
 public class InventoryCommandTests
 {
-    [TestCase(false)]
-    [TestCase(true)]
-    public async Task ExecuteAsync(bool skipTenantOverview)
+    [TestCase(false, false)]
+    [TestCase(true, false)]
+    [TestCase(false, true)]
+    [TestCase(true, true)]
+    public async Task ExecuteAsync(bool skipTenantOverview, bool includeSiteApplicationsettings)
     {
         // Given
         var context = new CommandContext(
@@ -22,7 +25,8 @@ public class InventoryCommandTests
         {
             TenantId = Constants.Tenant.Id,
             OutputPath = "/home/docs",
-            SkipTenantOverview = skipTenantOverview
+            SkipTenantOverview = skipTenantOverview,
+            IncludeSiteApplicationsettings = includeSiteApplicationsettings
         };
         var (
             cakeContext,
@@ -30,8 +34,9 @@ public class InventoryCommandTests
             tenantService,
             subscriptionService,
             resourceGroupService,
-            resourceService
-            ) = ARIServiceProviderFixture.GetRequiredService<ICakeContext, ILogger<InventoryCommand>, TenantService, SubscriptionService, ResourceGroupService, ResourceService>(
+            resourceService,
+            markdownServices
+            ) = ARIServiceProviderFixture.GetRequiredService<ICakeContext, ILogger<InventoryCommand>, TenantService, SubscriptionService, ResourceGroupService, ResourceService, IEnumerable<MarkdownServiceBase>>(
                 services => services
                                 .AddCakeFakes(
                                     fileSystem => fileSystem.CreateDirectory(settings.OutputPath)
@@ -44,7 +49,8 @@ public class InventoryCommandTests
             tenantService,
             subscriptionService,
             resourceGroupService,
-            resourceService
+            resourceService,
+            markdownServices
             );
 
         // When

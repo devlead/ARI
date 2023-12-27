@@ -68,6 +68,23 @@ public record TokenService(
 
         return await GetFromJsonAsync<T>(repoHttpClient, url);
     }
+
+    public async Task<TResult> ARMHttpClientPostAsync<TParam, TResult>(
+        string tenantId,
+        string url,
+        string? accept = "application/json",
+        TParam? value = default
+        )
+    {
+        using var repoHttpClient = GetBearerTokenHttpClient(
+            await GetAzureToken(tenantId),
+            accept,
+            null
+            );
+
+        return await PostAsAndGetFromJsonAsync<TParam?, TResult>(repoHttpClient, url, value);
+    }
+
     public async Task<T> GraphHttpClientGetAsync<T>(
        string tenantId,
        string url,
@@ -86,6 +103,21 @@ public record TokenService(
     private static async Task<T> GetFromJsonAsync<T>(HttpClient httpClient, string url)
     {
         var result = await httpClient.GetFromJsonAsync<T>(url);
+
+        ArgumentNullException.ThrowIfNull(result);
+
+        return result;
+    }
+
+    private static async Task<TResult> PostAsAndGetFromJsonAsync<TParam, TResult>(
+        HttpClient httpClient,
+        string url,
+        TParam value
+        )
+    {
+        var response = await httpClient.PostAsJsonAsync(url, value);
+
+        var result = await response.Content.ReadAsAsync<TResult>();
 
         ArgumentNullException.ThrowIfNull(result);
 

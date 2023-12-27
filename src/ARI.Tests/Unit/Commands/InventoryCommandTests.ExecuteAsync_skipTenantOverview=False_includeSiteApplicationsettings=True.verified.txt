@@ -225,7 +225,7 @@
                         Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-web-web-dev/index.md,
                         Exists: true,
                         Hidden: false,
-                        Length: 2227
+                        Length: 4976
                       }
                     ]
                   },
@@ -504,7 +504,7 @@
                         Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-web-web-prd/index.md,
                         Exists: true,
                         Hidden: false,
-                        Length: 2227
+                        Length: 4976
                       }
                     ]
                   },
@@ -783,7 +783,7 @@
                         Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-web-web-stg/index.md,
                         Exists: true,
                         Hidden: false,
-                        Length: 2227
+                        Length: 4976
                       }
                     ]
                   },
@@ -872,266 +872,15 @@
                 Hidden: false,
                 Directories: [
                   {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/Application Insights Smart Detection,
+                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/commonacrdevecdo,
                     Exists: true,
                     Hidden: false,
                     Files: [
                       {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/Application Insights Smart Detection/index.md,
+                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/commonacrdevecdo/index.md,
                         Exists: true,
                         Hidden: false,
-                        Length: 1732
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/devops-azuresql-private-endpoint,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/devops-azuresql-private-endpoint/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2275
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/devops-azuresql-private-endpoint.nic.c26f32ea-6270-47e3-815f-231edbca1634/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2358
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/Failure Anomalies - lab-appi-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/Failure Anomalies - lab-appi-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 1743
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-appi-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-appi-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2230
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-asp-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-asp-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 3189
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Directories: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/DevOps,
-                        Exists: true,
-                        Hidden: false,
-                        Files: [
-                          {
-                            Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/DevOps/index.md,
-                            Exists: true,
-                            Hidden: false,
-                            Length: 2949
-                          }
-                        ]
-                      },
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/master,
-                        Exists: true,
-                        Hidden: false,
-                        Files: [
-                          {
-                            Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/master/index.md,
-                            Exists: true,
-                            Hidden: false,
-                            Length: 2401
-                          }
-                        ]
-                      },
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/SecondDatabase,
-                        Exists: true,
-                        Hidden: false,
-                        Files: [
-                          {
-                            Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/SecondDatabase/index.md,
-                            Exists: true,
-                            Hidden: false,
-                            Length: 2966
-                          }
-                        ]
-                      }
-                    ],
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-devops-sql-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2234
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-docs-stapp-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-docs-stapp-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2793
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-kv-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-kv-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2223
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-log-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-log-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2240
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-srch-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-srch-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2650
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-vnet-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-vnet-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2235
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-web-web-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/lab-web-web-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2227
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/labdevecdo,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/labdevecdo/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2785
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/privatelink.database.windows.net,
-                    Exists: true,
-                    Hidden: false,
-                    Directories: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/privatelink.database.windows.net/privatelink.database.windows.net-link,
-                        Exists: true,
-                        Hidden: false,
-                        Files: [
-                          {
-                            Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/privatelink.database.windows.net/privatelink.database.windows.net-link/index.md,
-                            Exists: true,
-                            Hidden: false,
-                            Length: 2371
-                          }
-                        ]
-                      }
-                    ],
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/privatelink.database.windows.net/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 2275
-                      }
-                    ]
-                  },
-                  {
-                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/web.dev.ecdo.azurevoodoo.net-lab-asp-dev,
-                    Exists: true,
-                    Hidden: false,
-                    Files: [
-                      {
-                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/web.dev.ecdo.azurevoodoo.net-lab-asp-dev/index.md,
-                        Exists: true,
-                        Hidden: false,
-                        Length: 1736
+                        Length: 2804
                       }
                     ]
                   }
@@ -1141,7 +890,7 @@
                     Path: /home/docs/rdvmohoro.mail.ccsctp.net/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/common-dev/index.md,
                     Exists: true,
                     Hidden: false,
-                    Length: 5051
+                    Length: 1828
                   }
                 ]
               }

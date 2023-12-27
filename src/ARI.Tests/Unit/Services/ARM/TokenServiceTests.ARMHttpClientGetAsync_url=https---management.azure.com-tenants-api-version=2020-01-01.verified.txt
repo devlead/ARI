@@ -2,15 +2,21 @@
   Value: [
     {
       Id: /tenants/a70a1586-9c4a-4373-b907-1d310660dbd1,
-      TenantId: Guid_1
+      TenantId: Guid_1,
+      SubscriptionId: ,
+      ResourceGroupName: 
     },
     {
       Id: /tenants/83abe5cd-bcc3-441a-bd86-e6a75360cecc,
-      TenantId: Guid_2
+      TenantId: Guid_2,
+      SubscriptionId: ,
+      ResourceGroupName: 
     },
     {
       Id: /tenants/daea2e9b-847b-4c93-850d-2aa6f2d7af33,
-      TenantId: Guid_3
+      TenantId: Guid_3,
+      SubscriptionId: ,
+      ResourceGroupName: 
     }
   ],
   NextLink: ...

@@ -1,0 +1,18 @@
+{
+  "id": "/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev/providers/Microsoft.Web/sites/lab-web-web-dev/config/appsettings",
+  "name": "appsettings",
+  "type": "Microsoft.Web/sites/config",
+  "location": "West Europe",
+  "tags": {
+    "Creator": "Bicep-lab",
+    "Dimension": "lab",
+    "BillingDimension": "lab",
+    "Environment": "dev"
+  },
+  "properties": {
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "00000000-0000-0000-0000-000000000000",
+    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=00000000-0000-0000-0000-000000000000;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/",
+    "WEBSITE_RUN_FROM_PACKAGE": "1",
+    "SECRET_GREETING": "@Microsoft.KeyVault(SecretUri=https://lab-kv-dev.vault.azure.net/secrets/secret-greeting/)"
+  }
+}

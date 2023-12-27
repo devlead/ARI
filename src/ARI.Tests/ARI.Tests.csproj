@@ -10,8 +10,14 @@
   <ItemGroup>
     <None Remove="Resources\GraphOrg.json" />
     <None Remove="Resources\Subscription1_ResourceGroup1_Resources.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup1_Site_Config.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup1_Site_Settings.json" />
     <None Remove="Resources\Subscription1_ResourceGroup2_Resources.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup2_Site_Config.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup2_Site_Settings.json" />
     <None Remove="Resources\Subscription1_ResourceGroup3_Resources.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup3_Site_Config.json" />
+    <None Remove="Resources\Subscription1_ResourceGroup3_Site_Settings.json" />
     <None Remove="Resources\Subscription1_ResourceGroups.json" />
     <None Remove="Resources\Subscription2_ResourceGroup1_Resources.json" />
     <None Remove="Resources\Subscription2_ResourceGroups.json" />
@@ -20,9 +26,15 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\GraphOrg.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Site_Settings.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Site_Config.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Site_Settings.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Site_Config.json" />
     <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Resources.json" />
     <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Resources.json" />
     <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Resources.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Site_Settings.json" />
+    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Site_Config.json" />
     <EmbeddedResource Include="Resources\Subscription2_ResourceGroup1_Resources.json" />
     <EmbeddedResource Include="Resources\Subscription2_ResourceGroups.json" />
     <EmbeddedResource Include="Resources\Subscriptions.json" />
@@ -41,12 +53,13 @@
     <Using Include="ARI.Tests.Extensions" />
     <Using Include="ARI.Services" />
     <Using Include="ARI.Services.ARM" />
+    <Using Include="ARI.Services.Markdown" />
     <Using Include="ARI.Extensions" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="NUnit" Version="4.0.0" />
+    <PackageReference Include="NUnit" Version="4.0.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageReference Include="NUnit.Analyzers" Version="3.10.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -56,7 +69,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Verify.NUnit" Version="22.6.0" />
+    <PackageReference Include="Verify.NUnit" Version="22.7.1" />
     <PackageReference Include="Verify.Http" Version="5.0.1" />
     <PackageReference Include="Cake.Testing" Version="4.0.0" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />
