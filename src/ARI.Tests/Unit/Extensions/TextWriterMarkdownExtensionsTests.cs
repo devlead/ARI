@@ -200,4 +200,41 @@ public class TextWriterMarkdownExtensionsTests
         // Then
         await Verify(sw);
     }
+
+
+
+    [TestCase(false, true)]
+    [TestCase(false, true, "00000000-0000-0000-0000-000000000000")]
+    [TestCase(false, false, "APPINSIGHTS_INSTRUMENTATIONKEY")]
+    [TestCase(true, true)]
+    [TestCase(true, true, "00000000-0000-0000-0000-000000000000")]
+    [TestCase(true, false, "APPINSIGHTS_INSTRUMENTATIONKEY")]
+    public async Task AddSettings(bool includeSiteApplicationsettings, bool isValue, params string[] allowedSiteSettingValues)
+    {
+        // Given
+        var sw = new StringWriter();
+        var Settings = MocksFixture.Settings;
+        var settings = allowedSiteSettingValues.Any()
+            ? isValue
+                ? new ARI.Commands.Settings.InventorySettings
+                    {
+                        IncludeSiteApplicationsettings = includeSiteApplicationsettings,
+                        AllowedSiteSettingValues = allowedSiteSettingValues
+                    }
+                : new ARI.Commands.Settings.InventorySettings
+                    {
+                        IncludeSiteApplicationsettings = includeSiteApplicationsettings,
+                        AllowedSiteSettingValueKeys = allowedSiteSettingValues
+                    }
+            : new ARI.Commands.Settings.InventorySettings
+                {
+                    IncludeSiteApplicationsettings = includeSiteApplicationsettings
+            };
+
+        // When
+        await sw.AddSettings(Settings, settings);
+
+        // Then
+        await Verify(sw);
+    }
 }

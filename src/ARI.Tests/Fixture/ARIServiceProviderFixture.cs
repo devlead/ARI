@@ -128,7 +128,9 @@ public static class ARIServiceProviderFixture
             .AddSingleton<ResourceGroupService>()
             .AddSingleton<ResourceService>()
             .AddSingleton<WebAppConfigService>()
-            .AddSingleton<MarkdownServiceBase, WebAppConfigServiceMarkdownService>()
+            .AddSingleton<MarkdownServiceBase, WebAppConfigurationServiceMarkdownService>()
+            .AddSingleton<WebAppSettingsService>()
+            .AddSingleton<MarkdownServiceBase, WebAppSettingsServiceMarkdownService>()
             .AddMockHttpClient();
 
             return (configure?.Invoke(serviceCollection) ?? serviceCollection).BuildServiceProvider();

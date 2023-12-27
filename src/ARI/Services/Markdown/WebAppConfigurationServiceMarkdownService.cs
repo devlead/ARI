@@ -1,13 +1,8 @@
 ﻿namespace ARI.Services.Markdown;
 
-public abstract record WebAppServiceBase()
-    : MarkdownServiceBase("Microsoft.Web/sites")
-{
-}
-
-public record WebAppConfigServiceMarkdownService(
+public record WebAppConfigurationServiceMarkdownService(
     WebAppConfigService WebAppConfigurationService,
-    ILogger<WebAppConfigServiceMarkdownService> Logger
+    ILogger<WebAppConfigurationServiceMarkdownService> Logger
     ) : WebAppServiceBase
 {
     public override async Task Render(

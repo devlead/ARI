@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Nodes;
+﻿namespace ARI.Models.Tenant.Subscription.ResourceGroup.Resource.Web.Site;
 
-namespace ARI.Models.Tenant.Subscription.ResourceGroup.Resource.Web.Site;
-
-public record WebConfig(
+public record WebSettings(
     [property: JsonPropertyName("id")]
     string Id,
     [property: JsonPropertyName("name")]
@@ -12,7 +10,7 @@ public record WebConfig(
     [property: JsonPropertyName("location")]
     string Location,
     [property: JsonPropertyName("properties")]
-    SortedDictionary<string, JsonValue> Properties
+    SortedDictionary<string, string> Properties
     ) : AzureResourceBase
 {
     public override string PublicId => Id;

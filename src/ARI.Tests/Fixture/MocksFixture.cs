@@ -128,4 +128,12 @@ public static class MocksFixture
         """
         );
 #pragma warning restore CS8601 // Possible null reference assignment.
+
+    public static IDictionary<string, string> Settings { get; } = new SortedDictionary<string, string>
+    {
+        { "APPINSIGHTS_INSTRUMENTATIONKEY", "00000000-0000-0000-0000-000000000000"},
+        { "APPLICATIONINSIGHTS_CONNECTION_STRING", "InstrumentationKey=00000000-0000-0000-0000-000000000000;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/"},
+        { "WEBSITE_RUN_FROM_PACKAGE", "1"},
+        { "SECRET_GREETING", "@Microsoft.KeyVault(SecretUri=https://lab-kv-prd.vault.azure.net/secrets/secret-greeting/)" }
+    };
 }

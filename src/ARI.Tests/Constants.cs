@@ -70,6 +70,7 @@ public static class Constants
                     public static class Site
                     {
                         public const string Config = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup1.Name}/providers/Microsoft.Web/sites/{Tenant.Subscription1.ResourceGroup1.Site.Name}/config?api-version=2022-03-01";
+                        public const string Settings = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup1.Name}/providers/Microsoft.Web/sites/{Tenant.Subscription1.ResourceGroup1.Site.Name}/config/appsettings/list?api-version=2022-03-01";
                     }
                 }
                 public static class ResourceGroup2
@@ -78,6 +79,7 @@ public static class Constants
                     public static class Site
                     {
                         public const string Config = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup2.Name}/providers/Microsoft.Web/sites/{Tenant.Subscription1.ResourceGroup2.Site.Name}/config?api-version=2022-03-01";
+                        public const string Settings = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup2.Name}/providers/Microsoft.Web/sites/{Tenant.Subscription1.ResourceGroup2.Site.Name}/config/appsettings/list?api-version=2022-03-01";
                     }
                 }
                 public static class ResourceGroup3
@@ -86,6 +88,7 @@ public static class Constants
                     public static class Site
                     {
                         public const string Config = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup3.Name}/providers/Microsoft.Web/sites/{Tenant.Subscription1.ResourceGroup3.Site.Name}/config?api-version=2022-03-01";
+                        public const string Settings = $"https://management.azure.com/subscriptions/{Tenant.Subscription1.Id}/resourceGroups/{Tenant.Subscription1.ResourceGroup3.Name}/providers/Microsoft.Web/sites/{Tenant.Subscription1.ResourceGroup3.Site.Name}/config/appsettings/list?api-version=2022-03-01";
                     }
                 }
             }
@@ -119,6 +122,7 @@ public static class Constants
                     public static class Site
                     {
                         public static string Config { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup1)}_{nameof(Site)}_{nameof(Config)}.json");
+                        public static string Settings { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup1)}_{nameof(Site)}_{nameof(Settings)}.json");
                     }
                 }
                 public static class ResourceGroup2
@@ -127,6 +131,7 @@ public static class Constants
                     public static class Site
                     {
                         public static string Config { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup2)}_{nameof(Site)}_{nameof(Config)}.json");
+                        public static string Settings { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup2)}_{nameof(Site)}_{nameof(Settings)}.json");
                     }
                 }
                 public static class ResourceGroup3
@@ -135,6 +140,7 @@ public static class Constants
                     public static class Site
                     {
                         public static string Config { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup3)}_{nameof(Site)}_{nameof(Config)}.json");
+                        public static string Settings { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup3)}_{nameof(Site)}_{nameof(Settings)}.json");
                     }
                 }
             }
