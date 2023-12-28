@@ -284,6 +284,7 @@ public static class TextWriterMarkdownExtensions
         {
             if (!settings.AllowedSiteProperties.Contains(key))
             {
+                settings.SkippedSiteProperties.Add(key);
                 continue;
             }
 
@@ -334,7 +335,7 @@ public static class TextWriterMarkdownExtensions
 
             await writer.WriteLineAsync(
                 FormattableString.Invariant(
-                    $"| {key.Bold(),-SettingKeyColumnWidth} | {displayValue?.CodeLine(),-SettingValueColumnWidth} |"
+                    $"| {key.Bold(),-SettingKeyColumnWidth} | {displayValue?.PreLine(),-SettingValueColumnWidth} |"
                 )
             );
         }

@@ -183,6 +183,18 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
 
         sw.Stop();
         Logger.LogInformation("Processed {SubscriptionCount} in {Elapsed}", subscriptions.Count, sw.Elapsed);
+
+        if (settings.OutputSkippedSiteProperties && settings.SkippedSiteProperties.Any())
+        {
+            Logger.LogInformation(
+                $"Skipped site properties:{Environment.NewLine}{{SkippedSiteProperties}}",
+                string.Join(
+                    Environment.NewLine,
+                    settings.SkippedSiteProperties
+                )
+                );
+        }
+
         return 0;
     }
 
