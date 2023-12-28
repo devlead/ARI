@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 
 namespace ARI.Commands.Settings;
@@ -109,4 +110,11 @@ public class InventorySettings : CommandSettings
         StringComparer.OrdinalIgnoreCase
         );
     }
+
+
+    [Description("Flag for if name of skipped properities should be outputed.")]
+    [CommandOption("--output-skipped-site-properties")]
+    public bool OutputSkippedSiteProperties { get; set; }
+
+    public ICollection<string> SkippedSiteProperties { get; } = new SortedSet<string>(StringComparer.OrdinalIgnoreCase);
 }

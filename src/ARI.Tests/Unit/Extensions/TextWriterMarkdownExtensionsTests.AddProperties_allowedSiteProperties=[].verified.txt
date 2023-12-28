@@ -3,12 +3,12 @@
 
 | Key                                 | Value                                                                                           |
 |-------------------------------------|-------------------------------------------------------------------------------------------------|
-| **Always On**                       | `false`                                                                                         |
-| **Default Documents**               | `[<br>  "Default.htm",<br>  "Default.html",<br>  "Default.asp",<br>  "index.htm",<br>  "index.html",<br>  "iisstart.htm",<br>  "default.aspx",<br>  "index.php",<br>  "hostingstart.html"<br>]` |
-| **Http20 Enabled**                  | `false`                                                                                         |
-| **Load Balancing**                  | `"LeastRequests"`                                                                               |
-| **Min Tls Version**                 | `"1.2"`                                                                                         |
-| **Number Of Workers**               | `1`                                                                                             |
-| **Use32 Bit Worker Process**        | `true`                                                                                          |
-| **Vnet Name**                       | `""`                                                                                            |
-| **Web Sockets Enabled**             | `false`                                                                                         |
+| **Always On**                       | <pre style="white-space: pre-wrap;">false</pre>                                                 |
+| **Default Documents**               | <pre style="white-space: pre-wrap;">[<br>  "Default.htm",<br>  "Default.html",<br>  "Default.asp",<br>  "index.htm",<br>  "index.html",<br>  "iisstart.htm",<br>  "default.aspx",<br>  "index.php",<br>  "hostingstart.html"<br>]</pre> |
+| **Http20 Enabled**                  | <pre style="white-space: pre-wrap;">false</pre>                                                 |
+| **Load Balancing**                  | <pre style="white-space: pre-wrap;">"LeastRequests"</pre>                                       |
+| **Min Tls Version**                 | <pre style="white-space: pre-wrap;">"1.2"</pre>                                                 |
+| **Number Of Workers**               | <pre style="white-space: pre-wrap;">1</pre>                                                     |
+| **Use32 Bit Worker Process**        | <pre style="white-space: pre-wrap;">true</pre>                                                  |
+| **Vnet Name**                       | <pre style="white-space: pre-wrap;">""</pre>                                                    |
+| **Web Sockets Enabled**             | <pre style="white-space: pre-wrap;">false</pre>                                                 |

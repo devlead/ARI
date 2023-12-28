@@ -3,7 +3,7 @@
 
 | Key                                                          | Value                                                                                                                    |
 |--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| **APPINSIGHTS_INSTRUMENTATIONKEY**                           | `******************`                                                                                                     |
-| **APPLICATIONINSIGHTS_CONNECTION_STRING**                    | `************************************************************`                                                           |
-| **SECRET_GREETING**                                          | `*********************************************`                                                                          |
-| **WEBSITE_RUN_FROM_PACKAGE**                                 | `1`                                                                                                                      |
+| **APPINSIGHTS_INSTRUMENTATIONKEY**                           | <pre style="white-space: pre-wrap;">******************</pre>                                                             |
+| **APPLICATIONINSIGHTS_CONNECTION_STRING**                    | <pre style="white-space: pre-wrap;">************************************************************</pre>                   |
+| **SECRET_GREETING**                                          | <pre style="white-space: pre-wrap;">*********************************************</pre>                                  |
+| **WEBSITE_RUN_FROM_PACKAGE**                                 | <pre style="white-space: pre-wrap;">1</pre>                                                                              |
