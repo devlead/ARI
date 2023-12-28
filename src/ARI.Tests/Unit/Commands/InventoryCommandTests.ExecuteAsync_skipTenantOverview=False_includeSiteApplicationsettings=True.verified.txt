@@ -225,7 +225,7 @@
                         Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-web-web-dev/index.md,
                         Exists: true,
                         Hidden: false,
-                        Length: 4976
+                        Length: 5016
                       }
                     ]
                   },
@@ -504,7 +504,7 @@
                         Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-prd/lab-web-web-prd/index.md,
                         Exists: true,
                         Hidden: false,
-                        Length: 4976
+                        Length: 5016
                       }
                     ]
                   },
@@ -783,7 +783,7 @@
                         Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-stg/lab-web-web-stg/index.md,
                         Exists: true,
                         Hidden: false,
-                        Length: 4976
+                        Length: 5016
                       }
                     ]
                   },

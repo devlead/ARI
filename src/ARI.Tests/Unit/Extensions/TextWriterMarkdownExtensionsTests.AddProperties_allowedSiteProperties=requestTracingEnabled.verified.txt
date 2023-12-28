@@ -3,4 +3,4 @@
 
 | Key                                 | Value                                                                                           |
 |-------------------------------------|-------------------------------------------------------------------------------------------------|
-| **Request Tracing Enabled**         | `false`                                                                                         |
+| **Request Tracing Enabled**         | <pre style="white-space: pre-wrap;">false</pre>                                                 |

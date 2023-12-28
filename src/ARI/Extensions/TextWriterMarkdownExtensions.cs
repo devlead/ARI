@@ -290,7 +290,7 @@ public static class TextWriterMarkdownExtensions
 
             await writer.WriteLineAsync(
                 FormattableString.Invariant(
-                    $"| {key.SeparateByCase().Bold(),-NameColumnWidth} | {value?.ToJsonString(PropertiesValueOptions).CodeLine(),-DescriptionColumnWidth} |"
+                    $"| {key.SeparateByCase().Bold(),-NameColumnWidth} | {value?.ToJsonString(PropertiesValueOptions).PreLine(),-DescriptionColumnWidth} |"
                 )
             );
         }
