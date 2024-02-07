@@ -13,10 +13,11 @@ public record ResourceGroup(
     AzureResourceProperties Properties,
     [property: JsonPropertyName("type")]
     string Type
-    ) : AzureResourceBase
+    ) : AzureResourceBase, IResource
 {
     public override string PublicId => Name;
     public override string Description => Name;
+    string IResource.Type => nameof(ResourceGroup);
     public override void Deconstruct(out string key, out string value)
     {
         key = Name;

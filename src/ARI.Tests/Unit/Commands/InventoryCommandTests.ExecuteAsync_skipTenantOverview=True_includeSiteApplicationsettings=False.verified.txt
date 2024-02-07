@@ -898,6 +898,280 @@
             Length: 2132
           }
         ]
+      },
+      {
+        Path: /home/docs/billingdimension,
+        Exists: true,
+        Hidden: false,
+        Directories: [
+          {
+            Path: /home/docs/billingdimension/common,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/billingdimension/common/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 671
+              }
+            ]
+          },
+          {
+            Path: /home/docs/billingdimension/lab,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/billingdimension/lab/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 15272
+              }
+            ]
+          }
+        ],
+        Files: [
+          {
+            Path: /home/docs/billingdimension/index.md,
+            Exists: true,
+            Hidden: false,
+            Length: 339
+          }
+        ]
+      },
+      {
+        Path: /home/docs/creator,
+        Exists: true,
+        Hidden: false,
+        Directories: [
+          {
+            Path: /home/docs/creator/Bicep-common,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/creator/Bicep-common/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 668
+              }
+            ]
+          },
+          {
+            Path: /home/docs/creator/Bicep-lab,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/creator/Bicep-lab/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 15269
+              }
+            ]
+          }
+        ],
+        Files: [
+          {
+            Path: /home/docs/creator/index.md,
+            Exists: true,
+            Hidden: false,
+            Length: 354
+          }
+        ]
+      },
+      {
+        Path: /home/docs/dimension,
+        Exists: true,
+        Hidden: false,
+        Directories: [
+          {
+            Path: /home/docs/dimension/common,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/dimension/common/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 664
+              }
+            ]
+          },
+          {
+            Path: /home/docs/dimension/lab,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/dimension/lab/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 15265
+              }
+            ]
+          }
+        ],
+        Files: [
+          {
+            Path: /home/docs/dimension/index.md,
+            Exists: true,
+            Hidden: false,
+            Length: 332
+          }
+        ]
+      },
+      {
+        Path: /home/docs/environment,
+        Exists: true,
+        Hidden: false,
+        Directories: [
+          {
+            Path: /home/docs/environment/dev,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/environment/dev/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 15389
+              }
+            ]
+          },
+          {
+            Path: /home/docs/environment/prd,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/environment/prd/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 339
+              }
+            ]
+          },
+          {
+            Path: /home/docs/environment/stg,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/environment/stg/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 339
+              }
+            ]
+          }
+        ],
+        Files: [
+          {
+            Path: /home/docs/environment/index.md,
+            Exists: true,
+            Hidden: false,
+            Length: 342
+          }
+        ]
+      },
+      {
+        Path: /home/docs/has-tags,
+        Exists: true,
+        Hidden: false,
+        Directories: [
+          {
+            Path: /home/docs/has-tags/false,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/has-tags/false/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 4336
+              }
+            ]
+          },
+          {
+            Path: /home/docs/has-tags/true,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/has-tags/true/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 16193
+              }
+            ]
+          }
+        ],
+        Files: [
+          {
+            Path: /home/docs/has-tags/index.md,
+            Exists: true,
+            Hidden: false,
+            Length: 331
+          }
+        ]
+      },
+      {
+        Path: /home/docs/tagkey1,
+        Exists: true,
+        Hidden: false,
+        Directories: [
+          {
+            Path: /home/docs/tagkey1/tagValue1,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/tagkey1/tagValue1/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 511
+              }
+            ]
+          }
+        ],
+        Files: [
+          {
+            Path: /home/docs/tagkey1/index.md,
+            Exists: true,
+            Hidden: false,
+            Length: 322
+          }
+        ]
+      },
+      {
+        Path: /home/docs/tagkey2,
+        Exists: true,
+        Hidden: false,
+        Directories: [
+          {
+            Path: /home/docs/tagkey2/tagValue2,
+            Exists: true,
+            Hidden: false,
+            Files: [
+              {
+                Path: /home/docs/tagkey2/tagValue2/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 511
+              }
+            ]
+          }
+        ],
+        Files: [
+          {
+            Path: /home/docs/tagkey2/index.md,
+            Exists: true,
+            Hidden: false,
+            Length: 322
+          }
+        ]
       }
     ],
     Files: [
@@ -905,7 +1179,7 @@
         Path: /home/docs/index.md,
         Exists: true,
         Hidden: false,
-        Length: 883
+        Length: 2663
       }
     ]
   }

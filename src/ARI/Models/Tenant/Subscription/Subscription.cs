@@ -13,8 +13,10 @@ public record Subscription(
     string AuthorizationSource,
     [property:JsonPropertyName("managedByTenants")]
     ManagedByTenant[] ManagedByTenants
-) : AzureResourceBase
+) : AzureResourceBase, IResource
 {
     public override string PublicId => SubscriptionId;
     public override string Description => DisplayName;
+    string IResource.Location => "Global";
+    string IResource.Type => nameof(Subscription);
 }
