@@ -1,0 +1,11 @@
+﻿
+## Resources
+
+| | | |
+|-|-|-|
+| **ResourceGroup** | | |
+| [Name](../../Name) | [ResourceGroup](../../Name) | [Location](../../Name) |
+| | |
+| **Type** | | |
+| [Name](../../Name) | [Type](../../Name) | [Location](../../Name) |
+| | |

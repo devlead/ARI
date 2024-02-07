@@ -355,3 +355,5 @@ launchSettings.json
 !src/**/[Aa][Rr][Mm]/
 
 src/ARI.TestWeb/theme/
+src/ARI.TestWeb/cache/
+src/ARI.TestWeb/output/

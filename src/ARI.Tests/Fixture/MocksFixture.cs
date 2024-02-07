@@ -53,7 +53,7 @@ public static class MocksFixture
                                                                 {
                                                                     { "provisioningState", "Succeeded" }
                                                                 },
-                                                                "Type"
+                                                                "Microsoft.Resources/resourceGroups"
                                                             ) with
                                                             {
                                                                 TenantId = "TenantId",

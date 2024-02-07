@@ -10,8 +10,18 @@ public static class CakeContextExtension
         string markDownFileName,
         out DirectoryPath targetPath
         )
+        => cakeContext.OpenIndexWrite(parentPath, azureResource.PublicId, markDownFileName, out targetPath);
+    
+
+    public static TextWriter OpenIndexWrite(
+        this ICakeContext cakeContext,
+        DirectoryPath parentPath,
+        string publicId,
+        string markDownFileName,
+        out DirectoryPath targetPath
+        )
     {
-        targetPath = parentPath.Combine(azureResource.PublicId);
+        targetPath = parentPath.Combine(publicId);
 
         return cakeContext.OpenIndexWrite(targetPath, markDownFileName);
     }

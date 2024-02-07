@@ -1,6 +1,5 @@
-using ARI.Extensions;
-using ARI.Models.Tenant.Subscription.ResourceGroup.Resource;
 using Cake.Common.IO;
+using System.Collections.Concurrent;
 
 namespace ARI.Commands;
 
@@ -13,12 +12,21 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
     private ResourceGroupService ResourceGroupService { get; }
     private ResourceService ResourceService { get; }
     public ILookup<string, MarkdownServiceBase> MarkdownServices { get; }
+    private static AzureResourceTags HasTags { get; } = new AzureResourceTags
+    {
+        { "Has-tags", "true" }
+    };
+    private static AzureResourceTags NoTags { get; } = new AzureResourceTags
+    {
+        { "Has-tags", "false" }
+    };
 
     public override async Task<int> ExecuteAsync(CommandContext context, InventorySettings settings)
     {
         var sw = System.Diagnostics.Stopwatch.StartNew();
         var modified = DateTimeOffset.UtcNow;
         var markDownFileName = settings.MarkdownName + ".md";
+        var resourcesBag = new ConcurrentBag<(IResource Resource, DirectoryPath? Path)>();
 
         Logger.LogInformation("TenantId: {TenantId}", settings.TenantId);
         Logger.LogInformation("OutputPath: {OutputPath}", settings.OutputPath);
@@ -72,6 +80,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                 using var writer = CakeContext
                                     .OpenIndexWrite(targetPath, subscription, markDownFileName, out var subscriptionPath);
 
+                resourcesBag.Add((subscription, subscriptionPath));
+
                 await writer.AddFrontmatter(
                     modified,
                     $"Subscription {subscription.DisplayName} ({subscription.TenantId})",
@@ -98,6 +108,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                         using var writer = CakeContext
                                             .OpenIndexWrite(subscriptionPath, resourceGroup, markDownFileName, out var resourceGroupPath);
 
+                        resourcesBag.Add((resourceGroup, resourceGroupPath));
+
                         await writer.AddFrontmatter(
                             modified,
                             $"Resource Group {resourceGroup.Name} ({subscription.SubscriptionId})",
@@ -115,41 +127,7 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                             resourceGroup.Name
                             );
 
-                        var resourcesByTypeLookup = resources.ToLookup(
-                                key => (key.Type.Split('/', count:2, options: StringSplitOptions.TrimEntries) is string[] { Length:>0} group)
-                                        ? group[0]
-                                        : key.Type,
-                                value => (
-                                SubType: (value.Type.Split('/', count: 2, options: StringSplitOptions.TrimEntries) is string[] { Length: > 1 } group)
-                                        ? group[1]
-                                        : value.Type,
-                                Resource: value
-                                ),
-                                StringComparer.OrdinalIgnoreCase
-                            );
-
-                        await writer.WriteLineAsync(
-                            """
-
-                            ## Resources
-
-                            | | | |
-                            |-|-|-|
-                            """
-                            );
-
-                        foreach (var resourcesByType in resourcesByTypeLookup.OrderBy(key => key.Key, StringComparer.OrdinalIgnoreCase))
-                        {
-                            await writer.WriteLineAsync($"| **{resourcesByType.Key}** | | |");
-
-                            foreach(var (subType, resource) in resourcesByType.OrderBy(key => key.Resource.Description, StringComparer.OrdinalIgnoreCase))
-                            {
-                                await writer.WriteLineAsync($"| {resource.Description.Link(resource.PublicId)} | {subType.Link(resource.PublicId)} | {resource.Location.Link(resource.PublicId)} |");
-                            }
-
-                            await writer.WriteLineAsync("| | |");
-                        }
-
+                        await writer.AddResourcesIndex(resources);
 
                         await ForEachAsync(
                             settings,
@@ -158,6 +136,8 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                             {
                                 using var writer = CakeContext
                                             .OpenIndexWrite(resourceGroupPath, resource, markDownFileName, out var resourcePath);
+
+                                resourcesBag.Add((resource, resourcePath));
 
                                 await writer.AddFrontmatter(
                                     modified,
@@ -180,6 +160,86 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                 );
             }
         );
+
+        var tags = (
+                from resource in resourcesBag
+                from tag in resource.Resource.Tags.Concat(resource.Resource.Tags.Count == 0 ? NoTags : HasTags)
+                group (tag, resource) by tag.Key into taggroup
+                select (
+                    Tag: taggroup.Key.ToLowerInvariant(),
+                    Resources: taggroup.ToArray()
+                )
+            )
+            .ToLookup(
+                key => key.Tag.ToLowerInvariant(),
+                value => value,
+                StringComparer.OrdinalIgnoreCase
+            )
+            .Select(
+                tags=> new AzureResourceTag(
+                    tags.Key,
+                    tags
+                    .SelectMany(value=>value.Resources)
+                    .ToLookup(
+                        key => key.tag.Value,
+                        value => value.resource,
+                        StringComparer.OrdinalIgnoreCase
+                        )
+                    )
+            )
+            .Index(
+                tenantIdFunc => tenant.TenantId
+            )
+            .ToArray();
+
+
+        await writer.AddChildrenIndex(tags);
+        await ForEachAsync(
+            settings,
+            tags,
+            async (tag, ct) =>
+            {
+                //var tagPath = tagsPath.Combine(tag.Tag);
+                using var writer = CakeContext
+                                   .OpenIndexWrite(targetPath, tag, markDownFileName, out var tagPath);
+
+                await writer.AddFrontmatter(
+                    modified,
+                    $"Resources for tag {tag.Tag}",
+                    tag.Order,
+                    settings
+                    );
+
+                await writer.WriteLineAsync(
+                       FormattableString.Invariant(
+                               $$"""
+
+                                ## Values
+                        
+                                |                                                                                                 |
+                                |-------------------------------------------------------------------------------------------------|
+                                """
+                           )
+                   );
+                var order = 0;
+                foreach (var resources in tag.Resources)
+                {
+                    await writer.WriteLineAsync($"| {resources.Key.Link()} |");
+
+                    using var valueWriter = CakeContext
+                                                .OpenIndexWrite(tagPath, resources.Key, markDownFileName, out var tagValuePath);
+
+                    await valueWriter.AddFrontmatter(
+                        modified,
+                        $"{tag.PublicId} = {resources.Key}",
+                        Interlocked.Increment(ref order),
+                        settings
+                        );
+
+                    await valueWriter.AddResourcesIndex(resources, tagValuePath);
+                }
+            }
+            );
 
         sw.Stop();
         Logger.LogInformation("Processed {SubscriptionCount} in {Elapsed}", subscriptions.Count, sw.Elapsed);
