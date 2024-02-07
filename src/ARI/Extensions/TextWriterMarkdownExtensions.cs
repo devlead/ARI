@@ -1,7 +1,4 @@
-﻿using ARI.Models.Tenant.Subscription.ResourceGroup;
-using ARI.Models.Tenant.Subscription.ResourceGroup.Resource;
-using Newtonsoft.Json.Linq;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Text.Json.Nodes;
 
 namespace ARI.Extensions;
@@ -338,6 +335,69 @@ public static class TextWriterMarkdownExtensions
                     $"| {key.Bold(),-SettingKeyColumnWidth} | {displayValue?.PreLine(),-SettingValueColumnWidth} |"
                 )
             );
+        }
+    }
+
+    public static async Task AddResourcesIndex(
+        this TextWriter writer,
+        IEnumerable<IResource> resources,
+        DirectoryPath? path = null
+        )
+        => await writer.AddResourcesIndex(
+            resources.Select(
+                resoruce => (resoruce, default(DirectoryPath))
+                ),
+            path
+            );
+
+    public static async Task AddResourcesIndex(
+        this TextWriter writer,
+        IEnumerable<(IResource Resource, DirectoryPath? Path)> resources,
+        DirectoryPath? path = null
+        )
+    {
+        var resourcesByTypeLookup = resources.ToLookup(
+                               key => (key.Resource.Type.Split('/', count: 2, options: StringSplitOptions.TrimEntries) is string[] { Length: > 0 } group)
+                                       ? group[0]
+                                       : key.Resource.Type,
+                               value => (
+                               SubType: (value.Resource.Type.Split('/', count: 2, options: StringSplitOptions.TrimEntries) is string[] { Length: > 1 } group)
+                                       ? group[1]
+                                       : value.Resource.Type,
+                               Resource: value.Resource,
+                               Path: value.Path
+                               ),
+                               StringComparer.OrdinalIgnoreCase
+                           );
+
+        await writer.WriteLineAsync(
+                """
+
+                ## Resources
+
+                | | | |
+                |-|-|-|
+                """
+            );
+
+        foreach (var resourcesByType in resourcesByTypeLookup.OrderBy(key => key.Key, StringComparer.OrdinalIgnoreCase))
+        {
+            await writer.WriteLineAsync($"| **{resourcesByType.Key}** | | |");
+
+            foreach (var (subType, resource, resourcePath) in resourcesByType.OrderBy(key => key.Resource.Description, StringComparer.OrdinalIgnoreCase))
+            {
+                var href = path == null
+                    ? resource.PublicId
+                    : resourcePath != null
+                        ? path.GetRelativePath(resourcePath).FullPath
+                        :   path
+                                .CombineWithFilePath(resource.PublicId)
+                                .FullPath;
+
+                await writer.WriteLineAsync($"| {resource.Description.Link(href)} | {subType.Link(href)} | {resource.Location.Link(href)} |");
+            }
+
+            await writer.WriteLineAsync("| | |");
         }
     }
 }

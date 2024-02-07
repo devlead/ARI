@@ -1,4 +1,6 @@
-﻿namespace ARI.Tests.Unit.Extensions;
+﻿using ARI.Models.Tenant.Subscription.ResourceGroup.Resource;
+
+namespace ARI.Tests.Unit.Extensions;
 
 [TestFixture]
 public class TextWriterMarkdownExtensionsTests
@@ -233,6 +235,26 @@ public class TextWriterMarkdownExtensionsTests
 
         // When
         await sw.AddSettings(Settings, settings);
+
+        // Then
+        await Verify(sw);
+    }
+
+    [TestCase()]
+    [TestCase("../../")]
+    public async Task AddResourcesIndex(string? path = null)
+    {
+        // Given
+        var sw = new StringWriter();
+        var resources = new IResource[]
+        {
+            MocksFixture.ResourceGroup,
+            MocksFixture.Resource
+        };
+
+        // When
+        await sw.AddResourcesIndex(resources, path);
+
 
         // Then
         await Verify(sw);

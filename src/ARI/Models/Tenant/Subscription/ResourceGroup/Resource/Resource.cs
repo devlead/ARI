@@ -21,7 +21,7 @@ public record Resource(
     string Type,
     [property: JsonPropertyName("sku")]
     SKU? SKU
-    ) : AzureResourceBase
+    ) : AzureResourceBase, IResource
 {
     public override string PublicId => Name;
     public override string Description => Name;
@@ -31,18 +31,3 @@ public record Resource(
         value = Location;
     }
 }
-
-public record SKU(
-    [property: JsonPropertyName("capacity")]
-    int? Capacity,
-    [property: JsonPropertyName("family")]
-    string? Family,
-    [property: JsonPropertyName("model")]
-    string? Model,
-    [property: JsonPropertyName("name")]
-    string? Name,
-    [property: JsonPropertyName("size")]
-    string? Size,
-    [property: JsonPropertyName("tier")]
-    string? Tier
-    );
