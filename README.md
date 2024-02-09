@@ -44,7 +44,7 @@ By default it'll try authenticate using the [DefaultAzureCredential](https://lea
 
 #### Setup Azure App Registration
 
-The recommended way is using a service principle with only the access required for it to document, you can do this by creating an app registration.
+The recommended way is using a service principal with only the access required for it to document, you can do this by creating an app registration.
 
 1. Begin by creating an `App Registration` in Azure Entra for the report generator. This ensures that the report generator has precisely the required access, such as organization-wide read permissions or access to a limited set of subscriptions.
 1. Assign the API permission `https://graph.microsoft.com/Organization.Read.All` to the created `App Registration`.
