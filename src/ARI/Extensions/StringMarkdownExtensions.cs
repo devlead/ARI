@@ -1,13 +1,14 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json.Linq;
 
 namespace ARI.Extensions;
 
 public static class StringMarkdownExtensions
 {
     public static string CodeLine(this string? value)
-        => string.IsNullOrWhiteSpace(value)
-            ? string.Empty
-            : $"`{value.SingleLine()}`";
+            => string.IsNullOrWhiteSpace(value)
+                ? string.Empty
+                : $"`{value.SingleLine()}`";
 
     public static string PreLine(this string? value)
       => string.IsNullOrWhiteSpace(value)
@@ -26,7 +27,21 @@ public static class StringMarkdownExtensions
         => string.IsNullOrWhiteSpace(description)
             ? string.Empty
 #pragma warning disable SYSLIB0013 // Type or member is obsolete
-            : $"[{description}]({Uri.EscapeUriString(href ?? description)})";
+            : $"[{description}]({PathEscapeUriString(href ?? description)})";
+
+    public static string PathEscapeUriString(this string path)
+        => path.Aggregate(
+                new StringBuilder(),
+                (sb, c) => 
+                            !char.IsAsciiLetterOrDigit(c)
+                            && c != '/'
+                            && c!='-'
+                            && c != '_'
+                            && c != '.' 
+                                ? sb.Append("0x").Append(Convert.ToHexString(Encoding.UTF8.GetBytes(new[] { c })))
+                                : sb.Append(c),
+                sb => sb.ToString()
+            );
 #pragma warning restore SYSLIB0013 // Type or member is obsolete
 
     public static string LastPart(this string? value, char separator)

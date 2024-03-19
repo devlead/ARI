@@ -21,7 +21,7 @@ public static class CakeContextExtension
         out DirectoryPath targetPath
         )
     {
-        targetPath = parentPath.Combine(publicId);
+        targetPath = parentPath.Combine(publicId.PathEscapeUriString());
 
         return cakeContext.OpenIndexWrite(targetPath, markDownFileName);
     }
