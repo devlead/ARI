@@ -58,19 +58,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="NUnit" Version="4.0.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="NUnit" Version="4.1.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
-    <PackageReference Include="NUnit.Analyzers" Version="3.10.0">
+    <PackageReference Include="NUnit.Analyzers" Version="4.1.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="6.0.0">
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Verify.NUnit" Version="22.7.1" />
-    <PackageReference Include="Verify.Http" Version="5.0.1" />
+    <PackageReference Include="Verify.NUnit" Version="23.5.2" />
+    <PackageReference Condition=" '$(TargetFramework)' == 'net7.0' " Include="Verify.Http" Version="5.0.1" />
+    <PackageReference Condition=" '$(TargetFramework)' != 'net7.0' " Include="Verify.Http" Version="6.2.0" />
     <PackageReference Include="Cake.Testing" Version="4.0.0" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />
   </ItemGroup>
