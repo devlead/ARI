@@ -30,7 +30,9 @@ public static class StringMarkdownExtensions
             : $"[{description}]({PathEscapeUriString(href ?? description)})";
 
     public static string PathEscapeUriString(this string path)
-        => path.Aggregate(
+        => path
+        .TrimStart('/', '\\')
+        .Aggregate(
                 new StringBuilder(),
                 (sb, c) => 
                             !char.IsAsciiLetterOrDigit(c)
