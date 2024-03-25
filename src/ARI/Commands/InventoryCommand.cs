@@ -1,4 +1,5 @@
 using Cake.Common.IO;
+using Microsoft.Identity.Client;
 using System.Collections.Concurrent;
 
 namespace ARI.Commands;
@@ -27,7 +28,11 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
         var modified = DateTimeOffset.UtcNow;
         var markDownFileName = settings.MarkdownName + ".md";
         var resourcesBag = new ConcurrentBag<(IResource Resource, DirectoryPath? Path)>();
-        settings.OutputPath = settings.OutputPath.MakeAbsolute(CakeContext.Environment);
+        if (settings.OutputPath.IsRelative)
+        {
+            Logger.LogInformation("Relative outputpath {outputpath} making absolute...", settings.OutputPath);
+            settings.OutputPath = settings.OutputPath.MakeAbsolute(CakeContext.Environment);
+        }
         Logger.LogInformation("TenantId: {TenantId}", settings.TenantId);
         Logger.LogInformation("OutputPath: {OutputPath}", settings.OutputPath);
         Logger.LogInformation("Generate report in parallel: {GenerateInParallel}", settings.SkipTenantOverview);
