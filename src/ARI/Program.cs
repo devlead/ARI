@@ -64,6 +64,10 @@ app.Configure(
         config.AddCommand<InventoryCommand>("inventory")
                 .WithDescription("Example inventory command.")
                 .WithExample(new[] { "inventory", "00000000-0000-0000-0000-000000000000", "outputpath" });
+
+        config.SetExceptionHandler(
+            ex => AnsiConsole.WriteException(ex, ExceptionFormats.ShowLinks)
+            );
     });
 
 return await app.RunAsync(args);
