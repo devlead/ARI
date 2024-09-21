@@ -8,8 +8,8 @@ namespace ARI.Tests.Unit.Services.ARM;
 [TestFixture]
 public class TokenServiceTests
 {
-    [TestCase<ArmResult<AzureTenant>>(Constants.Request.Uri.Tenants)]
-    [TestCase<ArmResult<Subscription>>(Constants.Request.Uri.Subscriptions)]
+    [NUnit.Framework.Extensions.TestCase<ArmResult<AzureTenant>>(Constants.Request.Uri.Tenants)]
+    [NUnit.Framework.Extensions.TestCase<ArmResult<Subscription>>(Constants.Request.Uri.Subscriptions)]
     public async Task ARMHttpClientGetAsync<T>(string url)
     {
         // Given
@@ -26,7 +26,7 @@ public class TokenServiceTests
         await Verify(result);
     }
 
-    [TestCase<GraphOrg>(Constants.Request.Uri.GraphOrg)]
+    [NUnit.Framework.Extensions.TestCase<GraphOrg>(Constants.Request.Uri.GraphOrg)]
     public async Task GraphHttpClientGetAsync<T>(string url)
     {
         // Given

@@ -9,7 +9,7 @@ using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal.Builders;
 using NUnit.Framework.Internal;
 
-namespace NUnit.Framework;
+namespace NUnit.Framework.Extensions;
 
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
 public class TestCaseGenericAttribute : TestCaseAttribute, ITestBuilder

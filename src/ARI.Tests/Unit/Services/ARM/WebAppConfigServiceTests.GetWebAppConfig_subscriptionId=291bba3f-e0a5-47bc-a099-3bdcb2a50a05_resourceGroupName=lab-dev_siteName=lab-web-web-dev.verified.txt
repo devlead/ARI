@@ -5,319 +5,275 @@
   Location: West Europe,
   Properties: {
     acrUseManagedIdentityCreds: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
-    acrUserManagedIdentityID: null,
+    acrUserManagedIdentityID: {
+      ValueKind: Null
+    },
     alwaysOn: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     antivirusScanEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
-    apiDefinition: null,
-    apiManagementConfig: null,
+    apiDefinition: {
+      ValueKind: Null
+    },
+    apiManagementConfig: {
+      ValueKind: Null
+    },
     appCommandLine: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
-    appSettings: null,
+    appSettings: {
+      ValueKind: Null
+    },
     autoHealEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
-    autoHealRules: null,
-    autoSwapSlotName: null,
-    azureMonitorLogCategories: null,
+    autoHealRules: {
+      ValueKind: Null
+    },
+    autoSwapSlotName: {
+      ValueKind: Null
+    },
+    azureMonitorLogCategories: {
+      ValueKind: Null
+    },
     azureStorageAccounts: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Object
     },
-    connectionStrings: null,
-    cors: null,
+    connectionStrings: {
+      ValueKind: Null
+    },
+    cors: {
+      ValueKind: Null
+    },
     customAppPoolIdentityAdminState: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     customAppPoolIdentityTenantState: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     defaultDocuments: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Array
     },
     detailedErrorLoggingEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
-    documentRoot: null,
+    documentRoot: {
+      ValueKind: Null
+    },
     elasticWebAppScaleLimit: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
     experiments: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Object
     },
     fileChangeAuditEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     ftpsState: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
-    functionAppScaleLimit: null,
+    functionAppScaleLimit: {
+      ValueKind: Null
+    },
     functionsRuntimeScaleMonitoringEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
-    handlerMappings: null,
-    healthCheckPath: null,
+    handlerMappings: {
+      ValueKind: Null
+    },
+    healthCheckPath: {
+      ValueKind: Null
+    },
     http20Enabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     http20ProxyFlag: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
     httpLoggingEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     ipSecurityRestrictions: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Array
     },
-    ipSecurityRestrictionsDefaultAction: null,
-    javaContainer: null,
-    javaContainerVersion: null,
-    javaVersion: null,
-    keyVaultReferenceIdentity: null,
-    limits: null,
+    ipSecurityRestrictionsDefaultAction: {
+      ValueKind: Null
+    },
+    javaContainer: {
+      ValueKind: Null
+    },
+    javaContainerVersion: {
+      ValueKind: Null
+    },
+    javaVersion: {
+      ValueKind: Null
+    },
+    keyVaultReferenceIdentity: {
+      ValueKind: Null
+    },
+    limits: {
+      ValueKind: Null
+    },
     linuxFxVersion: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     loadBalancing: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     localMySqlEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     logsDirectorySizeLimit: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
-    machineKey: null,
+    machineKey: {
+      ValueKind: Null
+    },
     managedPipelineMode: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     managedServiceIdentityId: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
-    metadata: null,
+    metadata: {
+      ValueKind: Null
+    },
     minimumElasticInstanceCount: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
-    minTlsCipherSuite: null,
+    minTlsCipherSuite: {
+      ValueKind: Null
+    },
     minTlsVersion: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     netFrameworkVersion: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     nodeVersion: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     numberOfWorkers: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
     phpVersion: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     powerShellVersion: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     preWarmedInstanceCount: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
-    publicNetworkAccess: null,
-    publishingPassword: null,
+    publicNetworkAccess: {
+      ValueKind: Null
+    },
+    publishingPassword: {
+      ValueKind: Null
+    },
     publishingUsername: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
-    push: null,
+    push: {
+      ValueKind: Null
+    },
     pythonVersion: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     remoteDebuggingEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     remoteDebuggingVersion: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     requestTracingEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     routingRules: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Array
     },
-    runtimeADUser: null,
-    runtimeADUserPassword: null,
+    runtimeADUser: {
+      ValueKind: Null
+    },
+    runtimeADUserPassword: {
+      ValueKind: Null
+    },
     scmIpSecurityRestrictions: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Array
     },
-    scmIpSecurityRestrictionsDefaultAction: null,
+    scmIpSecurityRestrictionsDefaultAction: {
+      ValueKind: Null
+    },
     scmIpSecurityRestrictionsUseMain: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     scmMinTlsVersion: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     scmType: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     siteAuthEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     siteAuthSettings: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Object
     },
-    sitePort: null,
+    sitePort: {
+      ValueKind: Null
+    },
     sitePrivateLinkHostEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     storageType: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
-    supportedTlsCipherSuites: null,
-    tracingOptions: null,
+    supportedTlsCipherSuites: {
+      ValueKind: Null
+    },
+    tracingOptions: {
+      ValueKind: Null
+    },
     use32BitWorkerProcess: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: True
     },
     virtualApplications: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Array
     },
     vnetName: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: String
     },
     vnetPrivatePortsCount: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
     vnetRouteAllEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
-    websiteTimeZone: null,
+    websiteTimeZone: {
+      ValueKind: Null
+    },
     webSocketsEnabled: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: False
     },
     winAuthAdminState: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
     winAuthTenantState: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Number
     },
     windowsConfiguredStacks: {
-      Options: {
-        PropertyNameCaseInsensitive: true
-      }
+      ValueKind: Array
     },
-    windowsFxVersion: null,
-    xManagedServiceIdentityId: null
+    windowsFxVersion: {
+      ValueKind: Null
+    },
+    xManagedServiceIdentityId: {
+      ValueKind: Null
+    }
   },
   PublicId: /subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev/providers/Microsoft.Web/sites/lab-web-web-dev/config/web,
   Description: lab-web-web-dev,

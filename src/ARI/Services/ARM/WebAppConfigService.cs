@@ -21,7 +21,7 @@ public record WebAppConfigService(
 
         return config
                 .Value
-                .Index(
+                .IndexResources(
                     _ => tenantId,
                     _ => subscriptionId,
                     _ => resourceGroupName

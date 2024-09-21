@@ -2,7 +2,7 @@
 
 public static class AzureResourceExtensions
 {
-    public static ICollection<TSource> Index<TSource>(
+    public static ICollection<TSource> IndexResources<TSource>(
         this IEnumerable<TSource> values,
         Func<TSource, string>? tenantIdFunc = default,
         Func<TSource, string>? subscriptionIdFunc = default,
@@ -15,7 +15,7 @@ public static class AzureResourceExtensions
         return values
             .Where(value => predicate?.Invoke(value) ?? true)
             .OrderBy(resource => resource.Description, StringComparer.OrdinalIgnoreCase)
-            .Select(resource => resource.Index(
+            .Select(resource => resource.IndexResource(
                 tenantIdFunc,
                 subscriptionIdFunc,
                 resourceGroupNameFunc,
@@ -24,7 +24,7 @@ public static class AzureResourceExtensions
             .ToArray();
     }
 
-    public static TSource Index<TSource>(
+    public static TSource IndexResource<TSource>(
         this TSource resource,
         Func<TSource, string>? tenantIdFunc = default,
         Func<TSource, string>? subscriptionIdFunc = default,

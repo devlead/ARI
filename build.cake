@@ -210,6 +210,7 @@ Task("Clean")
 .Then("Integration-Tests")
 .Then("Generate-Statiq-Web")
     .WithCriteria<BuildData>((context, data) => data.ShouldRunIntegrationTests(), "ShouldRunIntegrationTests")
+    .WithCriteria<BuildData>((context, data) => !context.IsRunningOnMacOs(), "Not IsRunningOnMacOS")
     .Does<BuildData>(static (context, data) => {
         context.DotNetRun(
             data.ProjectRoot.CombineWithFilePath("ARI.TestWeb/ARI.TestWeb.csproj").FullPath,

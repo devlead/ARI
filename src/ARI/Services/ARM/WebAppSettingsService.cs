@@ -20,7 +20,7 @@ public record WebAppSettingsService(
         ArgumentNullException.ThrowIfNull(settings.Properties);
 
         return settings
-                .Index(
+                .IndexResource(
                     _ => tenantId,
                     _ => subscriptionId,
                     _ => resourceGroupName
