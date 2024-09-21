@@ -16,7 +16,7 @@ public record ResourceGroupService(
 
         return resourceGroups
                 .Value
-                .Index(
+                .IndexResources(
                     _ => tenantId,
                     _ => tenantId,
                     resourceGroup => resourceGroup.Name

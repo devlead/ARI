@@ -12,7 +12,7 @@ public record WebConfig(
     [property: JsonPropertyName("location")]
     string Location,
     [property: JsonPropertyName("properties")]
-    SortedDictionary<string, JsonValue> Properties
+    SortedDictionary<string, JsonElement> Properties
     ) : AzureResourceBase
 {
     public override string PublicId => Id;

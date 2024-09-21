@@ -89,7 +89,7 @@ public static class MocksFixture
                                                     )
                                                 );
 #pragma warning disable CS8601 // Possible null reference assignment.
-    public static IDictionary<string, JsonValue> Properties { get; } = JsonSerializer.Deserialize<SortedDictionary<string, JsonValue>>(
+    public static IDictionary<string, JsonElement> Properties { get; } = JsonSerializer.Deserialize<SortedDictionary<string, JsonElement>>(
         """
         {
             "alwaysOn": false,

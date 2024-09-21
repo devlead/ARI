@@ -22,7 +22,7 @@ public record ResourceService(
 
         return resources
                 .Value
-                .Index(
+                .IndexResources(
                     _ => tenantId,
                     _ => subscriptionId,
                     _ => resourceGroupName

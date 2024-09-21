@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.Json.Nodes;
 
 namespace ARI.Extensions;
@@ -256,7 +257,7 @@ public static class TextWriterMarkdownExtensions
     private static readonly JsonSerializerOptions PropertiesValueOptions = new() { WriteIndented = true };
     public static async Task AddProperties(
         this TextWriter writer,
-        IDictionary<string, JsonValue> properties,
+        IDictionary<string, JsonElement> properties,
         InventorySettings settings
         )
     {
@@ -287,11 +288,19 @@ public static class TextWriterMarkdownExtensions
 
             await writer.WriteLineAsync(
                 FormattableString.Invariant(
-                    $"| {key.SeparateByCase().Bold(),-NameColumnWidth} | {value?.ToJsonString(PropertiesValueOptions).PreLine(),-DescriptionColumnWidth} |"
+                    $"| {key.SeparateByCase().Bold(),-NameColumnWidth} | {value.ToJsonString().PreLine(),-DescriptionColumnWidth} |"
                 )
             );
         }
     }
+
+    private static string ToJsonString(this JsonElement jsonElement)
+     => jsonElement.ValueKind switch
+     {
+         JsonValueKind.Array => $"[{Environment.NewLine}{string.Join($",{Environment.NewLine}", jsonElement.EnumerateArray().Select(element => $"  {element.ToJsonString()}"))}{Environment.NewLine}]",
+         JsonValueKind.Object => string.Join(Environment.NewLine, jsonElement.EnumerateObject().Select(property => $"{property.Name}: {property.Value.ToJsonString()}")),
+         _ => jsonElement.Deserialize<JsonValue>()?.ToJsonString(PropertiesValueOptions) ?? ""
+     };
 
     public static async Task AddSettings(
         this TextWriter writer,

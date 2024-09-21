@@ -192,7 +192,7 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                         )
                     )
             )
-            .Index(
+            .IndexResources(
                 tenantIdFunc => tenant.TenantId
             )
             .ToArray();

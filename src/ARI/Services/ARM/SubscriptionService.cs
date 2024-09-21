@@ -14,9 +14,8 @@ public record SubscriptionService(
 
         ArgumentNullException.ThrowIfNull(subscriptions.Value);
  
-        return subscriptions
+        return [.. subscriptions
                 .Value
-                .Index()
-                .ToArray();
+                .IndexResources()];
     }
 }
