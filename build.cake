@@ -196,7 +196,7 @@ Task("Clean")
             var resultPath = data.IntegrationTestPath;
             await GitHubActions.Commands.UploadArtifact(
                 resultPath,
-                data.AzureDomain
+                $"{data.AzureDomain}_{GitHubActions.Environment.Runner.ImageOS ?? GitHubActions.Environment.Runner.OS}_{context.Environment.Runtime.BuiltFramework.Identifier}_{context.Environment.Runtime.BuiltFramework.Version}"
             );
             GitHubActions.Commands.SetStepSummary(
                 string.Join(
