@@ -1,4 +1,5 @@
 ﻿{
   Token: AccessToken,
-  ExpiresOn: DateTimeOffset_1
+  ExpiresOn: DateTimeOffset_1,
+  TokenType: Bearer
 }
