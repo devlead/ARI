@@ -139,9 +139,10 @@ Task("Clean")
     .WithCriteria(BuildSystem.IsRunningOnGitHubActions, nameof(BuildSystem.IsRunningOnGitHubActions))
     .Does<BuildData>(
         static (context, data) => context
-            .GitHubActions()
-            .Commands
-            .UploadArtifact(data.ArtifactsPath, "artifacts")
+            .GitHubActions() is var gh && gh != null
+                ?   gh.Commands
+                    .UploadArtifact(data.ArtifactsPath,  $"Artifact_{gh.Environment.Runner.ImageOS ?? gh.Environment.Runner.OS}_{context.Environment.Runtime.BuiltFramework.Identifier}_{context.Environment.Runtime.BuiltFramework.Version}")
+                : throw new Exception("GitHubActions not available")
     )
 .Then("Integration-Tests-Tool-Manifest")
     .Does<BuildData>(
