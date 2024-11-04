@@ -71,7 +71,7 @@
     </PackageReference>
     <PackageReference Include="Verify.NUnit" Version="26.6.0" />
     <PackageReference Condition=" '$(TargetFramework)' == 'net7.0' " Include="Verify.Http" Version="5.0.1" />
-    <PackageReference Condition=" '$(TargetFramework)' != 'net7.0' " Include="Verify.Http" Version="6.3.0" />
+    <PackageReference Condition=" '$(TargetFramework)' != 'net7.0' " Include="Verify.Http" Version="6.4.1" />
     <PackageReference Include="Cake.Testing" Version="4.2.0" />
     <PackageReference Include="NSubstitute" Version="5.3.0" />
   </ItemGroup>
