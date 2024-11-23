@@ -3,14 +3,14 @@
   "isRoot": true,
   "tools": {
     "cake.tool": {
-      "version": "4.2.0",
+      "version": "5.0.0",
       "commands": [
         "dotnet-cake"
       ],
       "rollForward": false
     },
     "dpi": {
-      "version": "2024.9.25.81",
+      "version": "2024.11.23.86",
       "commands": [
         "dpi"
       ],
