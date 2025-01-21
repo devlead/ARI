@@ -42,7 +42,7 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.1" />
     <PackageReference Include="System.Linq.Async" Version="6.0.1" />
-    <PackageReference Include="Cake.Bridge.DependencyInjection" Version="0.15.0" />
+    <PackageReference Include="Cake.Bridge.DependencyInjection" Version="0.16.0" />
     <PackageReference Include="Cake.Common" Version="5.0.0" />
     <PackageReference Include="Devlead.Console" Version="2025.1.20.36" />
   </ItemGroup>
