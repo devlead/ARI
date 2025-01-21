@@ -1,4 +1,4 @@
-#addin "nuget:?package=xunit.assert&version=2.4.1"
+#addin "nuget:?package=xunit.assert&version=2.9.3"
 #load "records.cake"
 
 // Usings
