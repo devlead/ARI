@@ -38,7 +38,7 @@ jobs:
           global-json-file: global.json
 
       - name: Run Cake script
-        uses: cake-build/cake-action@5167c3f6a9e15c76f009de2acdfb9488552bc0b9
+        uses: cake-build/cake-action@v3
         env:
           NuGetReportSettings_SharedKey: ${{ secrets.NUGETREPORTSETTINGS_SHAREDKEY }}
           NuGetReportSettings_WorkspaceId: ${{ secrets.NUGETREPORTSETTINGS_WORKSPACEID }}
