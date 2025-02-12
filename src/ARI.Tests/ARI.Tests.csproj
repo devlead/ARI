@@ -58,9 +58,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
     <PackageReference Include="NUnit" Version="4.3.2" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
     <PackageReference Include="NUnit.Analyzers" Version="4.6.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -69,9 +69,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Verify.NUnit" Version="28.9.0" />
-    <PackageReference Condition=" '$(TargetFramework)' == 'net7.0' " Include="Verify.Http" Version="5.0.1" />
-    <PackageReference Condition=" '$(TargetFramework)' != 'net7.0' " Include="Verify.Http" Version="6.4.1" />
+    <PackageReference Include="Verify.NUnit" Version="28.10.1" />
+    <PackageReference Include="Verify.Http" Version="6.4.1" />
     <PackageReference Include="Cake.Testing" Version="5.0.0" />
     <PackageReference Include="NSubstitute" Version="5.3.0" />
   </ItemGroup>
