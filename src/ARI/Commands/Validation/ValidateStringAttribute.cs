@@ -1,15 +1,9 @@
 namespace ARI.Commands.Validation;
 
-public class ValidateStringAttribute : ParameterValidationAttribute
+public class ValidateStringAttribute() : ParameterValidationAttribute(errorMessage: null!)
 {
     public const int MinimumLength = 3;
     private static readonly (bool IsString, bool IsMinimumLength, string Value) InvalidStringValue = (false, false, string.Empty);
-
-#nullable disable
-    public ValidateStringAttribute() : base(errorMessage: null)
-    {
-    }
-#nullable enable
 
     public override ValidationResult Validate(CommandParameterContext context)
         => (
