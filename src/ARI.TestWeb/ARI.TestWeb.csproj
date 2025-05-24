@@ -13,7 +13,7 @@
     <PackageReference Include="Devlead.Statiq" Version="2025.5.14.118" />
     <PackageReference Include="Statiq.Web" Version="1.0.0-beta.60" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="9.0.5" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.10.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.11.0" />
     <PackageReference Include="System.Drawing.Common" Version="9.0.5" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
     <PackageReference Include="Azure.Identity" Version="1.14.0" />
