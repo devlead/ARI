@@ -40,7 +40,7 @@
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.14.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.6" />
     <PackageReference Include="System.Linq.Async" Version="6.0.1" />
     <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2025.5.16.136" />
     <PackageReference Include="Cake.Common" Version="5.0.0" />
