@@ -44,7 +44,7 @@
     <PackageReference Include="System.Linq.Async" Version="6.0.3" />
     <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2025.9.7.243" />
     <PackageReference Include="Cake.Common" Version="5.0.0" />
-    <PackageReference Include="Devlead.Console" Version="2025.9.7.305" />
+    <PackageReference Include="Devlead.Console" Version="2025.9.7.308" />
   </ItemGroup>
 
   <ItemGroup>
