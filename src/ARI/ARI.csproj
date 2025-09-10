@@ -38,13 +38,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.14.2" />
+    <PackageReference Include="Azure.Identity" Version="1.16.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.9" />
     <PackageReference Include="System.Linq.Async" Version="6.0.3" />
-    <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2025.8.6.206" />
+    <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2025.9.10.253" />
     <PackageReference Include="Cake.Common" Version="5.0.0" />
-    <PackageReference Include="Devlead.Console" Version="2025.8.6.269" />
+    <PackageReference Include="Devlead.Console" Version="2025.9.10.320" />
   </ItemGroup>
 
   <ItemGroup>
