@@ -22,7 +22,7 @@
     <PackageReference Include="System.Formats.Asn1" Version="9.0.10" />
     <PackageReference Include="System.DirectoryServices.Protocols" Version="9.0.10" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.24" />
-    <PackageReference Include="System.Text.Json" Version="9.0.9" />
+    <PackageReference Include="System.Text.Json" Version="9.0.10" />
   </ItemGroup>
 
   <ItemGroup>
