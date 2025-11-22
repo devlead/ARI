@@ -59,7 +59,8 @@ public class InventoryCommandTests
         {
             ExitCode = await command.ExecuteAsync(
                             context,
-                            settings
+                            settings,
+                            CancellationToken.None
                         ),
             Output = cakeContext.FileSystem.FromDirectoryPath(settings.OutputPath)
         };
