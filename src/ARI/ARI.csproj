@@ -41,10 +41,10 @@
     <PackageReference Include="Azure.Identity" Version="1.17.1" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.11" />
-    <PackageReference Include="System.Linq.Async" Version="6.0.3" />
+    <PackageReference Include="System.Linq.Async" Version="7.0.0" />
     <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2025.11.17.398" />
     <PackageReference Include="Cake.Common" Version="6.0.0" />
-    <PackageReference Include="Devlead.Console" Version="2025.10.15.396" />
+    <PackageReference Include="Devlead.Console" Version="2025.11.4.431" />
   </ItemGroup>
 
   <ItemGroup>
