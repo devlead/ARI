@@ -1,4 +1,4 @@
-#tool dotnet:?package=GitVersion.Tool&version=6.5.0
+#tool dotnet:?package=GitVersion.Tool&version=6.5.1
 #load "build/records.cake"
 #load "build/helpers.cake"
 
