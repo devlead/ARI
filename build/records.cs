@@ -1,4 +1,3 @@
-#load "helpers.cake"
 using System.Text.Json.Serialization;
 
 /*****************************
@@ -25,15 +24,15 @@ public record BuildData(
     public DirectoryPath StatiqWebPath { get; } = ArtifactsPath.Combine(Web);
     public DirectoryPath StatiqWebOutputPath { get; } = ArtifactsPath.Combine(Web).Combine(Output);
 
-    public string GitHubNuGetSource { get; } = System.Environment.GetEnvironmentVariable("GH_PACKAGES_NUGET_SOURCE");
-    public string GitHubNuGetApiKey { get; } = System.Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+    public string? GitHubNuGetSource { get; } = System.Environment.GetEnvironmentVariable("GH_PACKAGES_NUGET_SOURCE");
+    public string? GitHubNuGetApiKey { get; } = System.Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
     public bool ShouldPushGitHubPackages() =>   !ShouldNotPublish
                                                 && !string.IsNullOrWhiteSpace(GitHubNuGetSource)
                                                 && !string.IsNullOrWhiteSpace(GitHubNuGetApiKey);
 
-    public string NuGetSource { get; } = System.Environment.GetEnvironmentVariable("NUGET_SOURCE");
-    public string NuGetApiKey { get; } = System.Environment.GetEnvironmentVariable("NUGET_APIKEY");
+    public string? NuGetSource { get; } = System.Environment.GetEnvironmentVariable("NUGET_SOURCE");
+    public string? NuGetApiKey { get; } = System.Environment.GetEnvironmentVariable("NUGET_APIKEY");
     public bool ShouldPushNuGetPackages() =>    IsMainBranch &&
                                                 !ShouldNotPublish &&
                                                 !string.IsNullOrWhiteSpace(NuGetSource) &&
@@ -54,8 +53,8 @@ public record BuildData(
                                                             System.Environment.GetEnvironmentVariable("AZURE_AUTHORITY_HOST")
                                                         );
 
-    public string AzureTenantId { get; } = System.Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
-    public string AzureDomain { get; } = System.Environment.GetEnvironmentVariable("AZURE_DOMAIN");
+    public string? AzureTenantId { get; } = System.Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
+    public string? AzureDomain { get; } = System.Environment.GetEnvironmentVariable("AZURE_DOMAIN");
 
     public bool ShouldRunIntegrationTests() =>  !string.IsNullOrWhiteSpace(AzureDomain) &&
                                                 (
@@ -65,10 +64,10 @@ public record BuildData(
 }
 
 public record AzureCredentials(
-    string TenantId,
-    string ClientId,
-    string ClientSecret,
-    string AuthorityHost = "login.microsoftonline.com"
+    string? TenantId,
+    string? ClientId,
+    string? ClientSecret,
+    string? AuthorityHost = "login.microsoftonline.com"
 )
 {
     public bool AzureCredentialsSpecified { get; } = !string.IsNullOrWhiteSpace(TenantId) &&
@@ -76,4 +75,5 @@ public record AzureCredentials(
                                                      !string.IsNullOrWhiteSpace(ClientSecret) &&
                                                      !string.IsNullOrWhiteSpace(AuthorityHost);
 }
-private record ExtensionHelper(Func<string, CakeTaskBuilder> TaskCreate, Func<CakeReport> Run);
+
+internal record ExtensionHelper(Func<string, CakeTaskBuilder> TaskCreate, Func<CakeReport> Run);
