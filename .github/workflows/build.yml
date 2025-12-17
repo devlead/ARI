@@ -60,7 +60,7 @@ jobs:
           AZURE_AUTHORITY_HOST: "https://login.microsoftonline.com"
           AZURE_DOMAIN: ${{ secrets.AZURE_DOMAIN }}
         with:
-          cake-version: tool-manifest
+          file-path: cake.cs
           target: GitHub-Actions
 
       - name: Setup Pages
