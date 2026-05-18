@@ -44,7 +44,7 @@ public class InventoryCommandTests
                                 )
             );
 
-        var command = new InventoryCommand(
+        ICommand<InventorySettings> command = new InventoryCommand(
             cakeContext,
             logger,
             tenantService,
