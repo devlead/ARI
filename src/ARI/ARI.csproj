@@ -44,7 +44,7 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.17" Condition="'$(TargetFramework)' == 'net9.0'" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.9" Condition="'$(TargetFramework)' == 'net10.0'" />
     <PackageReference Include="System.Linq.Async" Version="7.0.1" Condition="'$(TargetFramework)' != 'net10.0'" />
-    <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2026.5.22.625" />
+    <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2026.6.10.661" />
     <PackageReference Include="Cake.Common" Version="6.2.0" />
     <PackageReference Include="Devlead.Console" Version="2026.5.15.709" />
   </ItemGroup>
