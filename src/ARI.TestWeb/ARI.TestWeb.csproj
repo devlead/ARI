@@ -19,7 +19,7 @@
     <PackageReference Include="Azure.Identity" Version="1.21.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageReference Include="System.Formats.Asn1" Version="10.0.9" />
+    <PackageReference Include="System.Formats.Asn1" Version="10.0.10" />
     <PackageReference Include="System.DirectoryServices.Protocols" Version="10.0.10" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.24" />
     <PackageReference Include="System.Text.Json" Version="10.0.9" />
