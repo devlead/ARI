@@ -46,7 +46,7 @@
     <PackageReference Include="System.Linq.Async" Version="7.0.1" Condition="'$(TargetFramework)' != 'net10.0'" />
     <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2026.6.10.661" />
     <PackageReference Include="Cake.Common" Version="6.2.0" />
-    <PackageReference Include="Devlead.Console" Version="2026.6.30.782" />
+    <PackageReference Include="Devlead.Console" Version="2026.7.15.820" />
   </ItemGroup>
 
   <ItemGroup>
