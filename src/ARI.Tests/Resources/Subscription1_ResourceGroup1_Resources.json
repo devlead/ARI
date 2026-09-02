@@ -323,6 +323,20 @@
         "Environment": "dev"
       },
       "type": "Microsoft.Web/staticSites"
+    },
+    {
+      "changedTime": "2022-11-21T12:03:51.6365323Z",
+      "createdTime": "2022-11-21T11:53:50.1716015Z",
+      "id": "/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev/providers/Microsoft.Storage/storageAccounts/emptytagstorage",
+      "location": "westeurope",
+      "managedBy": "",
+      "name": "emptytagstorage",
+      "properties": {},
+      "provisioningState": "Succeeded",
+      "tags": {
+        "test": ""
+      },
+      "type": "Microsoft.Storage/storageAccounts"
     }
   ]
 }

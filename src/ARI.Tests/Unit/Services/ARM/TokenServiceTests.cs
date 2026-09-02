@@ -1,4 +1,4 @@
-﻿using ARI.Models.Tenant.Subscription;
+using ARI.Models.Tenant.Subscription;
 using ARI.Models;
 using ARI.Models.Tenant;
 using ARI.Models.Graph;
@@ -13,7 +13,7 @@ public class TokenServiceTests
     public async Task ARMHttpClientGetAsync<T>(string url)
     {
         // Given
-        var tokenService = ARIServiceProviderFixture
+        var tokenService = ServiceProviderFixture
                                 .GetRequiredService<TokenService>();
 
         // When
@@ -30,7 +30,7 @@ public class TokenServiceTests
     public async Task GraphHttpClientGetAsync<T>(string url)
     {
         // Given
-        var tokenService = ARIServiceProviderFixture
+        var tokenService = ServiceProviderFixture
                                 .GetRequiredService<TokenService>();
 
         // When

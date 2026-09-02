@@ -229,14 +229,19 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
                 var order = 0;
                 foreach (var resources in tag.Resources)
                 {
-                    await writer.WriteLineAsync($"| {resources.Key.Link()} |");
+                    var key = resources.Key;
+                    if (string.IsNullOrWhiteSpace(key))
+                    {
+                        key = "NOKEY";
+                    }
+                    await writer.WriteLineAsync($"| {key.Link()} |");
 
                     using var valueWriter = CakeContext
-                                                .OpenIndexWrite(tagPath, resources.Key, markDownFileName, out var tagValuePath);
+                                                .OpenIndexWrite(tagPath, key, markDownFileName, out var tagValuePath);
 
                     await valueWriter.AddFrontmatter(
                         modified,
-                        $"{tag.PublicId} = {resources.Key}",
+                        $"{tag.PublicId} = {key}",
                         Interlocked.Increment(ref order),
                         settings
                         );

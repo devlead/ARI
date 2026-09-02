@@ -8,39 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\GraphOrg.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup1_Resources.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup1_Site_Config.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup1_Site_Settings.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup2_Resources.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup2_Site_Config.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup2_Site_Settings.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup3_Resources.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup3_Site_Config.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup3_Site_Settings.json" />
-    <None Remove="Resources\Subscription1_ResourceGroups.json" />
-    <None Remove="Resources\Subscription2_ResourceGroup1_Resources.json" />
-    <None Remove="Resources\Subscription2_ResourceGroups.json" />
-    <None Remove="Resources\Subscriptions.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\GraphOrg.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Site_Settings.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Site_Config.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Site_Settings.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Site_Config.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Resources.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Resources.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Resources.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Site_Settings.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Site_Config.json" />
-    <EmbeddedResource Include="Resources\Subscription2_ResourceGroup1_Resources.json" />
-    <EmbeddedResource Include="Resources\Subscription2_ResourceGroups.json" />
-    <EmbeddedResource Include="Resources\Subscriptions.json" />
-    <EmbeddedResource Include="Resources\TenantsServicePrinciple.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroups.json" />
-    <EmbeddedResource Include="Resources\TenantsUser.json" />
+    <EmbeddedResource Include="Resources\**\*.*" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,12 +23,13 @@
     <Using Include="ARI.Services.ARM" />
     <Using Include="ARI.Services.Markdown" />
     <Using Include="ARI.Extensions" />
+    <Using Include="Devlead.Testing.MockHttp" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.9.0" />
     <PackageReference Include="NUnit" Version="4.6.1" />
-    <PackageReference Include="NUnit3TestAdapter" Version="6.2.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="6.3.0" />
     <PackageReference Include="NUnit.Analyzers" Version="4.14.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -69,18 +38,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Verify.NUnit" Version="31.24.2" />
-    <PackageReference Include="Devlead.Testing.MockHttp" Version="2026.7.15.880" />
+    <PackageReference Include="Verify.NUnit" Version="32.0.0" />
+    <PackageReference Include="Devlead.Testing.MockHttp" Version="2026.8.14.900" />
     <PackageReference Include="Cake.Testing" Version="6.2.0" />
-    <PackageReference Include="NSubstitute" Version="6.0.0" />
+    <PackageReference Include="NSubstitute" Version="6.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ARI\ARI.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace ARI.Tests.Unit.Services.ARM;
+namespace ARI.Tests.Unit.Services.ARM;
 
 [TestFixture]
 public class TenantServiceTests
@@ -7,7 +7,7 @@ public class TenantServiceTests
     public async Task GetTenant()
     {
         // Given
-        var tenantService = ARIServiceProviderFixture
+        var tenantService = ServiceProviderFixture
                                 .GetRequiredService<TenantService>();
 
         // When

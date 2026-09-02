@@ -1,4 +1,4 @@
-﻿namespace ARI.Tests.Unit.Services;
+namespace ARI.Tests.Unit.Services;
 
 [TestFixture]
 public class AzureTokenServiceTests
@@ -7,7 +7,7 @@ public class AzureTokenServiceTests
     public async Task GetToken()
     {
         // Given
-        var azureTokenService = ARIServiceProviderFixture
+        var azureTokenService = ServiceProviderFixture
                                 .GetRequiredService<AzureTokenService>();
 
         // When
