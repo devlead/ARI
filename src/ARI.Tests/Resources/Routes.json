@@ -1,0 +1,362 @@
+[
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/tenants?api-version=2020-01-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "TenantsServicePrinciple.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://graph.microsoft.com/beta/organization/daea2e9b-847b-4c93-850d-2aa6f2d7af33"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "GraphOrg.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions?api-version=2020-01-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscriptions.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourcegroups?api-version=2021-04-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroups.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/resourcegroups?api-version=2021-04-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription2_ResourceGroups.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev/resources?$expand=createdTime,changedTime,provisioningState&api-version=2021-04-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroup1_Resources.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-stg/resources?$expand=createdTime,changedTime,provisioningState&api-version=2021-04-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroup2_Resources.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/resources?$expand=createdTime,changedTime,provisioningState&api-version=2021-04-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroup3_Resources.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/72ac930a-f34e-42d8-b06d-dc2a9e12ed71/resourceGroups/common-dev/resources?$expand=createdTime,changedTime,provisioningState&api-version=2021-04-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription2_ResourceGroup1_Resources.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev/providers/Microsoft.Web/sites/lab-web-web-dev/config?api-version=2022-03-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroup1_Site_Config.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-stg/providers/Microsoft.Web/sites/lab-web-web-stg/config?api-version=2022-03-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroup2_Site_Config.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "GET"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Web/sites/lab-web-web-prd/config?api-version=2022-03-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroup3_Site_Config.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "POST"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-dev/providers/Microsoft.Web/sites/lab-web-web-dev/config/appsettings/list?api-version=2022-03-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroup1_Site_Settings.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "POST"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-stg/providers/Microsoft.Web/sites/lab-web-web-stg/config/appsettings/list?api-version=2022-03-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroup2_Site_Settings.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  },
+  {
+    "Request": {
+      "Methods": [
+        {
+          "Method": "POST"
+        }
+      ],
+      "AbsoluteUri": "https://management.azure.com/subscriptions/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/resourceGroups/lab-prd/providers/Microsoft.Web/sites/lab-web-web-prd/config/appsettings/list?api-version=2022-03-01"
+    },
+    "Responses": [
+      {
+        "RequestHeaders": {},
+        "ContentResource": "Subscription1_ResourceGroup3_Site_Settings.json",
+        "ContentType": "application/json",
+        "ContentHeaders": {},
+        "StatusCode": 200
+      }
+    ],
+    "Authorization": {
+      "Authorization": [
+        "Bearer AccessToken"
+      ]
+    }
+  }
+]
