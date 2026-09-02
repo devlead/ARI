@@ -17,7 +17,7 @@ public class InventoryCommandTests
     {
         // Given
         var context = new CommandContext(
-            Array.Empty<string>(),
+            [],
             Substitute.For<IRemainingArguments>(),
             nameof(InventoryCommand),
             null
@@ -37,7 +37,68 @@ public class InventoryCommandTests
             resourceGroupService,
             resourceService,
             markdownServices
-            ) = ARIServiceProviderFixture.GetRequiredService<ICakeContext, ILogger<InventoryCommand>, TenantService, SubscriptionService, ResourceGroupService, ResourceService, IEnumerable<MarkdownServiceBase>>(
+            ) = ServiceProviderFixture.GetRequiredService<ICakeContext, ILogger<InventoryCommand>, TenantService, SubscriptionService, ResourceGroupService, ResourceService, IEnumerable<MarkdownServiceBase>>(
+                services => services
+                                .AddCakeFakes(
+                                    fileSystem => fileSystem.CreateDirectory(settings.OutputPath)
+                                )
+            );
+
+        ICommand<InventorySettings> command = new InventoryCommand(
+            cakeContext,
+            logger,
+            tenantService,
+            subscriptionService,
+            resourceGroupService,
+            resourceService,
+            markdownServices
+            );
+
+        // When
+        var result = new
+        {
+            ExitCode = await command.ExecuteAsync(
+                            context,
+                            settings,
+                            CancellationToken.None
+                        ),
+            Output = cakeContext.FileSystem.FromDirectoryPath(settings.OutputPath)
+        };
+
+        // Then
+        await Verify(result);
+    }
+
+    /// <summary>
+    /// Empty tag values previously resolved to the same path as the tag index page
+    /// (parentPath.Combine("")), which collided with the already-open writer.
+    /// Empty values must use the NOKEY directory fallback.
+    /// </summary>
+    [Test]
+    public async Task ExecuteAsync_EmptyTagValue_UsesNoKeyDirectory()
+    {
+        // Given
+        var context = new CommandContext(
+            [],
+            Substitute.For<IRemainingArguments>(),
+            nameof(InventoryCommand),
+            null
+            );
+        var settings = new InventorySettings
+        {
+            TenantId = Constants.Tenant.Id,
+            OutputPath = "/home/docs",
+            SkipTenantOverview = true
+        };
+        var (
+            cakeContext,
+            logger,
+            tenantService,
+            subscriptionService,
+            resourceGroupService,
+            resourceService,
+            markdownServices
+            ) = ServiceProviderFixture.GetRequiredService<ICakeContext, ILogger<InventoryCommand>, TenantService, SubscriptionService, ResourceGroupService, ResourceService, IEnumerable<MarkdownServiceBase>>(
                 services => services
                                 .AddCakeFakes(
                                     fileSystem => fileSystem.CreateDirectory(settings.OutputPath)
@@ -69,4 +130,3 @@ public class InventoryCommandTests
         await Verify(result);
     }
 }
-

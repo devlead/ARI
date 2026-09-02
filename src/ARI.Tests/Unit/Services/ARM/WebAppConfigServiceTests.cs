@@ -1,4 +1,4 @@
-﻿namespace ARI.Tests.Unit.Services.ARM;
+namespace ARI.Tests.Unit.Services.ARM;
 
 [TestFixture]
 public class WebAppConfigServiceTests
@@ -9,7 +9,7 @@ public class WebAppConfigServiceTests
     public async Task GetWebAppConfig(string subscriptionId, string resourceGroupName, string siteName)
     {
         // Given
-        var webAppConfigService = ARIServiceProviderFixture
+        var webAppConfigService = ServiceProviderFixture
                                     .GetRequiredService<WebAppConfigService>();
 
         // When

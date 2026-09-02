@@ -8,39 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\GraphOrg.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup1_Resources.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup1_Site_Config.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup1_Site_Settings.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup2_Resources.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup2_Site_Config.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup2_Site_Settings.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup3_Resources.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup3_Site_Config.json" />
-    <None Remove="Resources\Subscription1_ResourceGroup3_Site_Settings.json" />
-    <None Remove="Resources\Subscription1_ResourceGroups.json" />
-    <None Remove="Resources\Subscription2_ResourceGroup1_Resources.json" />
-    <None Remove="Resources\Subscription2_ResourceGroups.json" />
-    <None Remove="Resources\Subscriptions.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\GraphOrg.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Site_Settings.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Site_Config.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Site_Settings.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Site_Config.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Resources.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup2_Resources.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup1_Resources.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Site_Settings.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroup3_Site_Config.json" />
-    <EmbeddedResource Include="Resources\Subscription2_ResourceGroup1_Resources.json" />
-    <EmbeddedResource Include="Resources\Subscription2_ResourceGroups.json" />
-    <EmbeddedResource Include="Resources\Subscriptions.json" />
-    <EmbeddedResource Include="Resources\TenantsServicePrinciple.json" />
-    <EmbeddedResource Include="Resources\Subscription1_ResourceGroups.json" />
-    <EmbeddedResource Include="Resources\TenantsUser.json" />
+    <EmbeddedResource Include="Resources\**\*.*" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,6 +23,7 @@
     <Using Include="ARI.Services.ARM" />
     <Using Include="ARI.Services.Markdown" />
     <Using Include="ARI.Extensions" />
+    <Using Include="Devlead.Testing.MockHttp" />
   </ItemGroup>
 
   <ItemGroup>
@@ -77,10 +46,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ARI\ARI.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>

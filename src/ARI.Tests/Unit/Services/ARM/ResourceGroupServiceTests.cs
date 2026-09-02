@@ -1,4 +1,4 @@
-﻿namespace ARI.Tests.Unit.Services.ARM;
+namespace ARI.Tests.Unit.Services.ARM;
 
 [TestFixture]
 public class ResourceGroupServiceTests
@@ -8,7 +8,7 @@ public class ResourceGroupServiceTests
     public async Task GetSubscriptions(string subscriptionId)
     {
         // Given
-        var resourceGroupService = ARIServiceProviderFixture
+        var resourceGroupService = ServiceProviderFixture
                                     .GetRequiredService<ResourceGroupService>();
 
         // When

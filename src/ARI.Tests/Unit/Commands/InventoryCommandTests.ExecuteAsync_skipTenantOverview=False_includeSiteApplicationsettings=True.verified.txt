@@ -1,4 +1,4 @@
-﻿{
+{
   Output: {
     Path: /home/docs,
     Exists: true,
@@ -55,6 +55,19 @@
                         Exists: true,
                         Hidden: false,
                         Length: 2358
+                      }
+                    ]
+                  },
+                  {
+                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/emptytagstorage,
+                    Exists: true,
+                    Hidden: false,
+                    Files: [
+                      {
+                        Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/emptytagstorage/index.md,
+                        Exists: true,
+                        Hidden: false,
+                        Length: 1829
                       }
                     ]
                   },
@@ -124,7 +137,7 @@
                             Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/lab-devops-sql-dev/master/index.md,
                             Exists: true,
                             Hidden: false,
-                            Length: 2401
+                            Length: 2402
                           }
                         ]
                       },
@@ -289,7 +302,7 @@
                     Path: /home/docs/rdvmohoro.mail.ccsctp.net/291bba3f-e0a5-47bc-a099-3bdcb2a50a05/lab-dev/index.md,
                     Exists: true,
                     Hidden: false,
-                    Length: 5066
+                    Length: 5173
                   }
                 ]
               },
@@ -1108,7 +1121,7 @@
                     Path: /home/docs/rdvmohoro.mail.ccsctp.net/has-tags/true/index.md,
                     Exists: true,
                     Hidden: false,
-                    Length: 16193
+                    Length: 16453
                   }
                 ]
               }
@@ -1177,6 +1190,34 @@
                 Length: 322
               }
             ]
+          },
+          {
+            Path: /home/docs/rdvmohoro.mail.ccsctp.net/test,
+            Exists: true,
+            Hidden: false,
+            Directories: [
+              {
+                Path: /home/docs/rdvmohoro.mail.ccsctp.net/test/NOKEY,
+                Exists: true,
+                Hidden: false,
+                Files: [
+                  {
+                    Path: /home/docs/rdvmohoro.mail.ccsctp.net/test/NOKEY/index.md,
+                    Exists: true,
+                    Hidden: false,
+                    Length: 396
+                  }
+                ]
+              }
+            ],
+            Files: [
+              {
+                Path: /home/docs/rdvmohoro.mail.ccsctp.net/test/index.md,
+                Exists: true,
+                Hidden: false,
+                Length: 311
+              }
+            ]
           }
         ],
         Files: [
@@ -1184,7 +1225,7 @@
             Path: /home/docs/rdvmohoro.mail.ccsctp.net/index.md,
             Exists: true,
             Hidden: false,
-            Length: 3813
+            Length: 4010
           }
         ]
       }

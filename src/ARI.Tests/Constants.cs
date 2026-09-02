@@ -1,8 +1,6 @@
-﻿using static System.Net.WebRequestMethods;
+﻿namespace ARI.Tests;
 
-namespace ARI.Tests;
-
-public static class Constants
+public class Constants
 {
     public static class Tenant
     {
@@ -47,13 +45,6 @@ public static class Constants
 
     public static class Request
     {
-        public static class Method
-        {
-            public const string
-                Post = "POST",
-                Get = "GET";
-        }
-
         public static class Uri
         {
             public const string
@@ -102,80 +93,5 @@ public static class Constants
                 }
             }
         }
-    }
-
-    public static class Response
-    {
-        public static class Json
-        {
-            public static string TenantsServicePrinciple { get; } = GetResourceString($"{nameof(TenantsServicePrinciple)}.json");
-            public static string TenantsUser { get; } = GetResourceString($"{nameof(TenantsUser)}.json");
-            public static string GraphOrg { get; } = GetResourceString($"{nameof(GraphOrg)}.json");
-            public static string Subscriptions { get; } = GetResourceString($"{nameof(Subscriptions)}.json");
-
-            public static class Subscription1
-            {
-                public static string ResourceGroups { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroups)}.json");
-                public static class ResourceGroup1
-                {
-                    public static string Resources { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup1)}_{nameof(Resources)}.json");
-                    public static class Site
-                    {
-                        public static string Config { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup1)}_{nameof(Site)}_{nameof(Config)}.json");
-                        public static string Settings { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup1)}_{nameof(Site)}_{nameof(Settings)}.json");
-                    }
-                }
-                public static class ResourceGroup2
-                {
-                    public static string Resources { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup2)}_{nameof(Resources)}.json");
-                    public static class Site
-                    {
-                        public static string Config { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup2)}_{nameof(Site)}_{nameof(Config)}.json");
-                        public static string Settings { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup2)}_{nameof(Site)}_{nameof(Settings)}.json");
-                    }
-                }
-                public static class ResourceGroup3
-                {
-                    public static string Resources { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup3)}_{nameof(Resources)}.json");
-                    public static class Site
-                    {
-                        public static string Config { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup3)}_{nameof(Site)}_{nameof(Config)}.json");
-                        public static string Settings { get; } = GetResourceString($"{nameof(Subscription1)}_{nameof(ResourceGroup3)}_{nameof(Site)}_{nameof(Settings)}.json");
-                    }
-                }
-            }
-
-            public static class Subscription2
-            {
-                public static string ResourceGroups { get; } = GetResourceString($"{nameof(Subscription2)}_{nameof(ResourceGroups)}.json");
-                public static class ResourceGroup1
-                {
-                    public static string Resources { get; } = GetResourceString($"{nameof(Subscription2)}_{nameof(ResourceGroup1)}_{nameof(Resources)}.json");
-                }
-            }
-        }
-    }
-
-    public static class MediaType
-    {
-        public const string
-            Json = "application/json";
-    }
-
-    private static string GetResourceString(string filename, Encoding? encoding = null)
-    {
-        using var stream = GetResourceStream(filename);
-        using var reader = new StreamReader(stream, encoding ?? Encoding.UTF8);
-        return reader.ReadToEnd();
-    }
-
-    private static Stream GetResourceStream(string filename)
-    {
-        var resourceStream = typeof(ARIServiceProviderFixture)
-                                .Assembly
-                                .GetManifestResourceStream($"ARI.Tests.Resources.{filename}");
-
-        return resourceStream
-            ?? throw new Exception($"Failed to get stream for {filename}.");
     }
 }
