@@ -39,7 +39,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Verify.NUnit" Version="32.0.0" />
-    <PackageReference Include="Devlead.Testing.MockHttp" Version="2026.8.14.900" />
+    <PackageReference Include="Devlead.Testing.MockHttp" Version="2026.9.9.935" />
     <PackageReference Include="Cake.Testing" Version="6.2.0" />
     <PackageReference Include="NSubstitute" Version="6.2.0" />
   </ItemGroup>
