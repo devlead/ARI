@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+    <Verify_SponsorshipExemption>OpenSource</Verify_SponsorshipExemption>
+    <Verify_SponsorshipExemptionUntil>$([System.DateTime]::UtcNow.AddMonths(6).ToString('yyyy-MM'))</Verify_SponsorshipExemptionUntil>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,7 +40,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Verify.NUnit" Version="32.0.1" />
+    <PackageReference Include="Verify.NUnit" Version="33.0.0" />
     <PackageReference Include="Devlead.Testing.MockHttp" Version="2026.9.9.935" />
     <PackageReference Include="Cake.Testing" Version="6.2.0" />
     <PackageReference Include="NSubstitute" Version="6.2.0" />
