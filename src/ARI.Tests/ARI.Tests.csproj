@@ -40,7 +40,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Verify.NUnit" Version="33.1.1" />
+    <PackageReference Include="Verify.NUnit" Version="33.1.3" />
     <PackageReference Include="Devlead.Testing.MockHttp" Version="2026.9.9.935" />
     <PackageReference Include="Cake.Testing" Version="6.3.0" />
     <PackageReference Include="NSubstitute" Version="6.2.0" />
