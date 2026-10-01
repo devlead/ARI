@@ -22,7 +22,7 @@ public class InventoryCommand : AsyncCommand<InventorySettings>
         { "Has-tags", "false" }
     };
 
-    protected override async Task<int> ExecuteAsync(CommandContext context, InventorySettings settings, CancellationToken cancellationToken)
+    public override async Task<int> ExecuteAsync(CommandContext context, InventorySettings settings, CancellationToken cancellationToken)
     {
         var sw = System.Diagnostics.Stopwatch.StartNew();
         var modified = DateTimeOffset.UtcNow;
