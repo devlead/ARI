@@ -1,5 +1,7 @@
 # ARI
 
+[![NuGet](https://img.shields.io/nuget/v/ARI.svg)](https://www.nuget.org/packages/ARI)
+
 Azure Resource Inventory .NET Tool - Inventories and documents Azure Tenant resources to a set of markdown files for specified tenant to a specified folder.
 
 ## Obtain
