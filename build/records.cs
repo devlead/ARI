@@ -48,6 +48,11 @@ public record BuildData(
                                                 !string.IsNullOrWhiteSpace(NuGetSource) &&
                                                 !string.IsNullOrWhiteSpace(NuGetApiKey);
 
+    public bool ShouldReportDPI() =>
+        !string.IsNullOrWhiteSpace(System.Environment.GetEnvironmentVariable("NuGetReportSettings_Endpoint"))
+        && !string.IsNullOrWhiteSpace(System.Environment.GetEnvironmentVariable("NuGetReportSettings_RuleId"));
+
+
     public ICollection<DirectoryPath> DirectoryPathsToClean = new []{
         ArtifactsPath,
         ArtifactsPath.Combine(Web),
