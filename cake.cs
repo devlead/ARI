@@ -94,13 +94,22 @@ Task("NuGet-Login")
 .Then("DPI")
     .Does<BuildData>(
         static async (context, data) => {
-            if (data.ShouldReportDPI())
-            {
-                await context.PrepareAzureWorkloadIdentity(data);
-            }
+            var workload = data.ShouldReportDPI() && data.ShouldPrepareAzureWorkloadIdentity()
+                            ? await GitHubActions.Commands.AzurePrepareWorkloadIdentity(data.AzureCredentials.TenantId!, data.AzureCredentials.ClientId!)
+                            : null;
 
             Command(
-                ["dpi", "dpi.exe"],
+                new CommandSettings {
+                    ToolName = "dpi",
+                    ToolExecutableNames = ["dpi", "dpi.exe"],
+                    EnvironmentVariables = workload is null
+                        ? new Dictionary<string, string>()
+                        : new Dictionary<string, string> {
+                            ["AZURE_TENANT_ID"] = workload.TenantId,
+                            ["AZURE_CLIENT_ID"] = workload.ClientId,
+                            ["AZURE_FEDERATED_TOKEN_FILE"] = workload.FederatedTokenFile.FullPath
+                        }
+                },
                 new ProcessArgumentBuilder()
                     .Append("nuget")
                     .Append("--silent")
@@ -183,7 +192,9 @@ Task("NuGet-Login")
     .WithCriteria<BuildData>((context, data) => data.ShouldRunIntegrationTests(), "ShouldRunIntegrationTests")
     .Does<BuildData>(
         static async (context, data) => {
-            await context.PrepareAzureWorkloadIdentity(data);
+            var workload = data.ShouldPrepareAzureWorkloadIdentity()
+                            ? await GitHubActions.Commands.AzurePrepareWorkloadIdentity(data.AzureCredentials.TenantId!, data.AzureCredentials.ClientId!)
+                            : null;
 
             context.DotNetTool(
                 "tool",
@@ -197,7 +208,14 @@ Task("NuGet-Login")
                                                         .AppendQuoted(data.IntegrationTestPath.FullPath)
                                                         .Append("--skip-tenant-overview")
                                                         .Append("--include-site-application-settings"),
-                    WorkingDirectory = data.IntegrationTestPath
+                    WorkingDirectory = data.IntegrationTestPath,
+                    EnvironmentVariables = workload is null
+                        ? new Dictionary<string, string>()
+                        : new Dictionary<string, string> {
+                            ["AZURE_TENANT_ID"] = workload.TenantId,
+                            ["AZURE_CLIENT_ID"] = workload.ClientId,
+                            ["AZURE_FEDERATED_TOKEN_FILE"] = workload.FederatedTokenFile.FullPath
+                        }
                 }
             );
         }

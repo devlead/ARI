@@ -15,25 +15,6 @@ public partial class Program
 }
 
 
-public static class AzureWorkloadIdentityExtensions
-{
-    // GitHub OIDC tokens are short-lived, so prepare right before each Azure call
-    public static async Task PrepareAzureWorkloadIdentity(this ICakeContext context, BuildData data)
-    {
-        if (!data.ShouldPrepareAzureWorkloadIdentity())
-        {
-            return;
-        }
-
-        context.Information("Preparing Azure workload identity...");
-        var workload = await GitHubActions.Commands.AzurePrepareWorkloadIdentity(
-            data.AzureCredentials.TenantId!,
-            data.AzureCredentials.ClientId!);
-
-        System.Environment.SetEnvironmentVariable("AZURE_FEDERATED_TOKEN_FILE", workload.FederatedTokenFile.FullPath);
-    }
-}
-
 public static partial class CakeTaskBuilderExtensions
 {
     private static ExtensionHelper extensionHelper = new (Task, () => RunTarget(Argument("target", "Default")));
