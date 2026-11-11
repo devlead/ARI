@@ -93,7 +93,12 @@ Task("NuGet-Login")
     )
 .Then("DPI")
     .Does<BuildData>(
-        static (context, data) => {
+        static async (context, data) => {
+            if (data.ShouldReportDPI())
+            {
+                await context.PrepareAzureWorkloadIdentity(data);
+            }
+
             Command(
                 ["dpi", "dpi.exe"],
                 new ProcessArgumentBuilder()
@@ -177,7 +182,10 @@ Task("NuGet-Login")
 .Then("Integration-Tests-Tool")
     .WithCriteria<BuildData>((context, data) => data.ShouldRunIntegrationTests(), "ShouldRunIntegrationTests")
     .Does<BuildData>(
-        static (context, data) => context.DotNetTool(
+        static async (context, data) => {
+            await context.PrepareAzureWorkloadIdentity(data);
+
+            context.DotNetTool(
                 "tool",
                 new DotNetToolSettings {
                     ArgumentCustomization = args => args
@@ -191,7 +199,8 @@ Task("NuGet-Login")
                                                         .Append("--include-site-application-settings"),
                     WorkingDirectory = data.IntegrationTestPath
                 }
-            )
+            );
+        }
     )
 .Then("Integration-Tests-Upload-Results")
     .WithCriteria(BuildSystem.IsRunningOnGitHubActions, nameof(BuildSystem.IsRunningOnGitHubActions))
