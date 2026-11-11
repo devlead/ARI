@@ -59,11 +59,11 @@ jobs:
           NUGET_SOURCE: ${{ secrets.NUGET_SOURCE }}
           NUGET_USER: ${{ secrets.NUGET_USER }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          AZURE_TENANT_ID: ${{ env.TRUSTED_INGEST == 'true' && secrets.AZURE_TENANT_ID || '' }}
+          AZURE_CLIENT_ID: ${{ env.TRUSTED_INGEST == 'true' && secrets.AZURE_CLIENT_ID || '' }}
+          AZURE_CLIENT_SECRET: ${{ env.TRUSTED_INGEST == 'true' && secrets.AZURE_CLIENT_SECRET || '' }}
           AZURE_AUTHORITY_HOST: "https://login.microsoftonline.com"
-          AZURE_DOMAIN: ${{ secrets.AZURE_DOMAIN }}
+          AZURE_DOMAIN: ${{ env.TRUSTED_INGEST == 'true' && secrets.AZURE_DOMAIN || '' }}
         with:
           file-path: cake.cs
           target: GitHub-Actions
