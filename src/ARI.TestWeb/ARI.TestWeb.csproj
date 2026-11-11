@@ -21,7 +21,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="System.DirectoryServices.Protocols" Version="10.0.15" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.24" />
-    <PackageReference Include="AngleSharp" Version="1.10.1" />
+    <PackageReference Include="AngleSharp" Version="1.10.2" />
     <PackageReference Include="Microsoft.Build.Tasks.Core" Version="18.9.6" />
   </ItemGroup>
 
