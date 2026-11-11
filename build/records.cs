@@ -71,9 +71,13 @@ public record BuildData(
     public string? AzureTenantId { get; } = System.Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
     public string? AzureDomain { get; } = System.Environment.GetEnvironmentVariable("AZURE_DOMAIN");
 
+    public bool ShouldPrepareAzureWorkloadIdentity() => IsRunningOnGitHubActions &&
+                                                        AzureCredentials.WorkloadIdentitySpecified;
+
     public bool ShouldRunIntegrationTests() =>  !string.IsNullOrWhiteSpace(AzureDomain) &&
                                                 (
                                                     AzureCredentials.AzureCredentialsSpecified ||
+                                                    ShouldPrepareAzureWorkloadIdentity() ||
                                                     IsLocalBuild
                                                 );
 }
@@ -89,6 +93,10 @@ public record AzureCredentials(
                                                      !string.IsNullOrWhiteSpace(ClientId) &&
                                                      !string.IsNullOrWhiteSpace(ClientSecret) &&
                                                      !string.IsNullOrWhiteSpace(AuthorityHost);
+
+    public bool WorkloadIdentitySpecified { get; } = !string.IsNullOrWhiteSpace(TenantId) &&
+                                                     !string.IsNullOrWhiteSpace(ClientId) &&
+                                                     string.IsNullOrWhiteSpace(ClientSecret);
 }
 
 internal record ExtensionHelper(Func<string, CakeTaskBuilder> TaskCreate, Func<CakeReport> Run);

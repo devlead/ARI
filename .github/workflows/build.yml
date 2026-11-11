@@ -22,35 +22,22 @@ jobs:
         os: [windows-latest, ubuntu-latest, macos-latest]
     env:
       TRUSTED_INGEST: ${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop') }}
-      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     steps:
       - name: Get the sources
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Install .NET SDK 8.0.x, 9.0.x & 10.0.x
+      - name: Install .NET SDK 10.0.x
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: |
-            8.0.x
-            9.0.x
             10.0.x
 
       - name: Install .NET SDK
         uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
-
-      - name: Azure login
-        if: ${{ env.TRUSTED_INGEST == 'true' && env.AZURE_CLIENT_ID != '' && env.AZURE_TENANT_ID != '' && env.AZURE_SUBSCRIPTION_ID != '' }}
-        uses: azure/login@v3
-        with:
-          client-id: ${{ env.AZURE_CLIENT_ID }}
-          tenant-id: ${{ env.AZURE_TENANT_ID }}
-          subscription-id: ${{ env.AZURE_SUBSCRIPTION_ID }}
 
       - name: Run Cake script
         uses: cake-build/cake-action@v3
@@ -61,11 +48,10 @@ jobs:
           NUGET_SOURCE: ${{ secrets.NUGET_SOURCE }}
           NUGET_USER: ${{ secrets.NUGET_USER }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          AZURE_TENANT_ID: ${{ env.TRUSTED_INGEST == 'true' && secrets.AZURE_TENANT_ID || '' }}
+          AZURE_CLIENT_ID: ${{ env.TRUSTED_INGEST == 'true' && secrets.AZURE_CLIENT_ID || '' }}
           AZURE_AUTHORITY_HOST: "https://login.microsoftonline.com"
-          AZURE_DOMAIN: ${{ secrets.AZURE_DOMAIN }}
+          AZURE_DOMAIN: ${{ env.TRUSTED_INGEST == 'true' && secrets.AZURE_DOMAIN || '' }}
         with:
           file-path: cake.cs
           target: GitHub-Actions
