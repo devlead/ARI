@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net10.0;net9.0;net8.0;net11.0</TargetFrameworks>
+    <TargetFrameworks>net10.0;net11.0</TargetFrameworks>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -40,14 +40,11 @@
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.21.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.1 " Condition="'$(TargetFramework)' == 'net8.0'" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.22" Condition="'$(TargetFramework)' == 'net9.0'" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.14" Condition="'$(TargetFramework)' == 'net10.0'" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="11.0.0-rc.3.26522.148" Condition="'$(TargetFramework)' == 'net11.0'" />
-    <PackageReference Include="System.Linq.Async" Version="7.0.1" Condition="'$(TargetFramework)' != 'net10.0' AND '$(TargetFramework)' != 'net11.0'" />
-    <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2026.10.26.892" />
-    <PackageReference Include="Cake.Common" Version="6.3.0" />
-    <PackageReference Include="Devlead.Console" Version="2026.10.26.1021" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.15" Condition="'$(TargetFramework)' == 'net10.0'" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="11.0.0" Condition="'$(TargetFramework)' == 'net11.0'" />
+    <PackageReference Include="Cake.Bridge.DependencyInjection" Version="2026.11.11.906" />
+    <PackageReference Include="Cake.Common" Version="7.0.0" />
+    <PackageReference Include="Devlead.Console" Version="2026.11.11.1030" />
   </ItemGroup>
 
   <ItemGroup>
